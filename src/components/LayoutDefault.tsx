@@ -1,4 +1,4 @@
-import { Route } from 'react-router-dom'
+import { Route, useLocation } from 'react-router-dom'
 import AppHeader from './AppHeader'
 import AppFooter from './AppFooter'
 
@@ -11,17 +11,24 @@ interface IProps {
 const LayoutDefault = ({
   component: Component,
   ...rest
-}: IProps): JSX.Element => (
-  <Route
-    {...rest}
-    render={props => (
-      <>
-        <AppHeader />
-        <Component {...props} />
-        <AppFooter />
-      </>
-    )}
-  ></Route>
-)
+}: IProps): JSX.Element => {
+  const location = useLocation()
+  const isHomeView = location.pathname === '/'
+
+  return (
+    <Route
+      {...rest}
+      render={props => (
+        <>
+          <AppHeader />
+          <main>
+            <Component {...props} />
+          </main>
+          {!isHomeView ? <AppFooter /> : null}
+        </>
+      )}
+    ></Route>
+  )
+}
 
 export default LayoutDefault

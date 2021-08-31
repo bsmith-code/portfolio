@@ -1,75 +1,60 @@
-import { useState } from 'react'
-import { Link } from 'react-router-dom'
-import styled from 'styled-components'
+import { useState, useEffect } from 'react'
+import { Link, useLocation } from 'react-router-dom'
+import styled, { css } from 'styled-components'
+import { rem } from 'polished'
 
 const AppHeader = (): JSX.Element => {
-  const [isMenuActive, toggleMenu] = useState(false)
+  // Composition
+  const location = useLocation()
+
+  // Menu
+  const [isMenuActive, setIsMenuActive] = useState(false)
   const menuItems = [
     {
       path: 'about',
-      label: 'About',
-      component: StyledLink
+      label: 'About'
     },
     {
       path: 'expertise',
-      label: 'Expertise',
-      component: StyledLink
+      label: 'Expertise'
     },
     {
       path: 'experience',
-      label: 'Experience',
-      component: StyledLink
+      label: 'Experience'
     },
     {
       path: 'portfolio',
-      label: 'Portfolio',
-      component: StyledLink
+      label: 'Portfolio'
     },
     {
       path: 'contact',
-      label: 'Contact',
-      component: StyledLink
-    },
-    {
-      label: 'Resume',
-      component: StyledHref,
-      path: '/images/resumed.pdf'
+      label: 'Contact'
     }
   ]
+
+  useEffect(() => {
+    setIsMenuActive(false)
+  }, [location])
+
   return (
     <Wrapper>
       <Logo to="/">Brian M. Smith</Logo>
-      <Nav isMenuActive={isMenuActive}>
-        {isMenuActive && (
-          <CloseMenu onClick={() => toggleMenu(!isMenuActive)}>
-            <img alt="Close Menu" src="/images/close.svg" />
-          </CloseMenu>
-        )}
-        <StyledLink onClick={() => toggleMenu(!isMenuActive)} to="about">
-          About
-        </StyledLink>
-        <StyledLink onClick={() => toggleMenu(!isMenuActive)} to="expertise">
-          Expertise
-        </StyledLink>
-        <StyledLink onClick={() => toggleMenu(!isMenuActive)} to="portfolio">
-          Portfolio
-        </StyledLink>
-        <StyledLink onClick={() => toggleMenu(!isMenuActive)} to="contact">
-          Contact
-        </StyledLink>
-        <StyledHref
-          onClick={() => toggleMenu(!isMenuActive)}
-          href="/images/resume.pdf"
-          target="_blank"
-        >
+      <MenuWrapper isMenuActive={isMenuActive}>
+        <MenuClose onClick={() => setIsMenuActive(false)}>
+          <i className="material-icons">close</i>
+        </MenuClose>
+        {menuItems.map(({ path, label }) => (
+          <StyledLink key={`link-${path}`} to={path}>
+            {label}
+          </StyledLink>
+        ))}
+        <StyledHref href="/images/resume.pdf" target="_blank">
           Resume
         </StyledHref>
-      </Nav>
-      <OpenMenu onClick={() => toggleMenu(!isMenuActive)}>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-          <path d="M432 176H80c-8.8 0-16-7.2-16-16s7.2-16 16-16h352c8.8 0 16 7.2 16 16s-7.2 16-16 16zM432 272H80c-8.8 0-16-7.2-16-16s7.2-16 16-16h352c8.8 0 16 7.2 16 16s-7.2 16-16 16zM432 368H80c-8.8 0-16-7.2-16-16s7.2-16 16-16h352c8.8 0 16 7.2 16 16s-7.2 16-16 16z" />
-        </svg>
-      </OpenMenu>
+      </MenuWrapper>
+      <MenuOpen onClick={() => setIsMenuActive(true)}>
+        <i className="material-icons">menu</i>
+      </MenuOpen>
     </Wrapper>
   )
 }
@@ -85,13 +70,13 @@ const Wrapper = styled.header`
   align-items: center;
   justify-content: space-between;
   padding: 8px 32px;
-  background: #fff;
+  background: var(--white);
   box-shadow: 0px 7px 25px -6px rgba(0, 0, 0, 0.5);
   @media screen and (min-width: 767px) {
     padding: 16px 50px;
   }
 `
-const Nav = styled.nav`
+const MenuWrapper = styled.nav`
   display: block;
   position: fixed;
   top: 0;
@@ -101,7 +86,7 @@ const Nav = styled.nav`
   transition: transform 0.2s ease;
   transform: ${(props: { isMenuActive: boolean }) =>
     props.isMenuActive ? 'translateX(0)' : 'translateX(100%)'};
-  background: #fff;
+  background: var(--white);
   padding: 65px 25px;
   @media screen and (min-width: 767px) {
     background: none;
@@ -116,89 +101,53 @@ const Nav = styled.nav`
     padding: 0;
   }
 `
-
 const Logo = styled(Link)`
   font-weight: 800;
-  color: #7ebaeb;
+  color: var(--blue);
   padding: 0;
   @media screen and (min-width: 767px) {
-    color: #7ebaeb;
+    color: var(--blue);
     &:hover {
       color: #000;
     }
   }
 `
-
-const StyledLink = styled(Link)`
+const sharedLinkStyles = css`
   padding: 10px;
-  color: #7ebaeb;
+  color: var(--blue);
   font-weight: 700;
-  font-size: 16px;
   letter-spacing: 2.5px;
-  line-height: 2;
+  line-height: 1;
   display: block;
-  text-align: center;
   @media screen and (min-width: 767px) {
     padding: 0 15px;
     display: inline-block;
-    font-size: 12px;
+    font-size: ${rem(12)};
     &:hover {
       color: #000;
     }
   }
+`
+const StyledLink = styled(Link)`
+  ${sharedLinkStyles}
 `
 const StyledHref = styled.a`
-  padding: 10px;
-  color: #7ebaeb;
-  font-weight: 700;
-  font-size: 16px;
-  letter-spacing: 2.5px;
-  line-height: 2;
-  display: block;
-  text-align: center;
+  ${sharedLinkStyles}
+`
+const sharedBtnStyles = css`
   @media screen and (min-width: 767px) {
-    padding: 0 15px;
-    display: inline-block;
-    font-size: 12px;
-    &:hover {
-      color: #000;
-    }
+    display: none;
   }
 `
-
-const CloseMenu = styled.button`
-  display: block;
-  background: transparent;
-  padding: 0;
+const MenuClose = styled.button`
   position: absolute;
   top: 15px;
   right: 25px;
   z-index: 500;
-  img {
-    width: 40px;
-    height: 40px;
-    float: left;
-    line-height: 1;
-  }
-  @media screen and (min-width: 767px) {
-    display: none;
-  }
+  ${sharedBtnStyles}
 `
-
-const OpenMenu = styled.button`
-  display: block;
-  background: transparent;
-  padding: 0;
-  svg {
-    width: 40px;
-    height: 40px;
-    float: left;
-    line-height: 1;
-    fill: #7ebaeb;
-  }
-  @media screen and (min-width: 767px) {
-    display: none;
-  }
+const MenuOpen = styled.button`
+  ${sharedBtnStyles}
 `
 
 export default AppHeader
