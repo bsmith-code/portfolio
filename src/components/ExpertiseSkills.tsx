@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { rem } from 'polished'
 import { useAppSelector } from '../store'
 
 const getExpertiseSkillIcon = (icon: string): JSX.Element =>
@@ -40,10 +41,25 @@ const Wrapper = styled.ul`
 `
 const ExpertiseWrapper = styled.li``
 const ExpertiseName = styled.p``
-const ExpertiseSkillsWrapper = styled.div``
-const ExpertiseSkill = styled.div``
-const ExpertiseSkillName = styled.p``
-const ExpertiseSkillFont = styled.i``
+const ExpertiseSkillsWrapper = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+`
+const ExpertiseSkill = styled.div`
+  flex-shrink: 0;
+  margin: 0 45px 25px 0;
+  &:last-child {
+    margin: 0;
+  }
+`
+const ExpertiseSkillName = styled.p`
+  margin: 0;
+  display: none;
+`
+const ExpertiseSkillFont = styled.i`
+  font-size: ${rem(55)};
+  color: #7ebaeb;
+`
 const ExpertiseSkillImg = styled.img``
 
 export default ExpertiseSkills

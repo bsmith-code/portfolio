@@ -51,7 +51,7 @@ export const initialState: IExpertiseState = [
     name: 'Version Control',
     skills: [
       { name: 'Git', icon: 'devicon-git-plain' },
-      { name: 'GitHub', icon: '"devicon-github-original' },
+      { name: 'GitHub', icon: 'devicon-github-original' },
       { name: 'GitLab', icon: 'devicon-gitlab-plain' },
       { name: 'Bitbucket', icon: 'devicon-bitbucket-original' },
       { name: 'Sourcetree', icon: 'devicon-sourcetree-original' }
