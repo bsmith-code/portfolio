@@ -57,7 +57,7 @@ export const initialState: ITimelineState = {
   ],
   2014: [
     {
-      date: 'June 31st, 2014',
+      date: 'June 30th, 2014',
       title: 'Kruhu - Award Winning Agency',
       description:
         'While still working with Pilot Design Company, my business partner and I decided to get full time positions to further our careers with teams of experts in our fields. I received a job at Kruhu as a Front End Developer and was mentored by the great Otis Richardson, a Senior Programmer and multi-linguist musician'
@@ -71,7 +71,7 @@ export const initialState: ITimelineState = {
         'After 2 years in Augusta, GA, I decided it was time to make a move to the tech capital of the east where I could progress my career even further.'
     },
     {
-      date: 'May 1st, 2016',
+      date: 'May 2nd, 2016',
       title: 'Thee Digital',
       description:
         'During my brief tenure at Thee Digital, I was approached by a startup company called MedSign to. I jumped on the opportunity to venture out of the agency realm and enter the world of product development.'

@@ -7,19 +7,18 @@ const ViewExpertise = (): JSX.Element => {
   return (
     <>
       <LayoutViewTitle title="Expertise" />
-      <Wrapper>
+      <section>
         <div className="container">
           <ExpertiseWrapper>
             <ExpertiseProfile />
             <ExpertiseSkills />
           </ExpertiseWrapper>
         </div>
-      </Wrapper>
+      </section>
     </>
   )
 }
 
-const Wrapper = styled.section``
 const ExpertiseWrapper = styled.div`
   @media screen and (min-width: 767px) {
     box-sizing: border-box;
