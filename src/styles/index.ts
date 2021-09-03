@@ -4,6 +4,7 @@ import fonts from './fonts'
 import colors from './colors'
 import normalize from './normalize'
 import typography from './typography'
+import layout from './layout'
 
 const GlobalStyle = createGlobalStyle`
     ${fonts}
@@ -11,6 +12,7 @@ const GlobalStyle = createGlobalStyle`
     ${colors}
     ${base}
     ${typography}
+    ${layout}
 `
 
 export default GlobalStyle
