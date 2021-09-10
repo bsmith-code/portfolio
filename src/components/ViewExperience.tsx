@@ -12,7 +12,11 @@ const ViewExperience = (): JSX.Element => {
           <ExperienceWrapper>
             {experience.map(
               ({ url, logo, name, position, startDate, endDate }, idx) => (
-                <CompanyWrapper key={`company-${idx}`} href={url}>
+                <CompanyWrapper
+                  href={url}
+                  target="_blank"
+                  key={`company-${idx}`}
+                >
                   <CompanyLogo src={`assets/images/${logo}`} />
                   <CompanyName>{name}</CompanyName>
                   <CompanyPosition>{position}</CompanyPosition>
@@ -42,12 +46,7 @@ const CompanyWrapper = styled.a`
     min-height: 170px;
     flex-grow: 0;
     flex-shrink: 1;
-    max-width: calc(${`${100 / 3}%`} - 30px);
-    flex-basis: calc(${`${100 / 3}%`} - 30px);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    flex-basis: calc((100 / 3 * 1%) - 30px);
   }
 `
 const CompanyLogo = styled.img``
