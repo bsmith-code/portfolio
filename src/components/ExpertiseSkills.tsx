@@ -1,38 +1,6 @@
 import styled from 'styled-components'
 import { rem } from 'polished'
-import { useAppSelector } from '../store'
-
-const getExpertiseSkillIcon = (icon: string): JSX.Element =>
-  icon.indexOf('.') === -1 ? (
-    <ExpertiseSkillFont className={icon} />
-  ) : (
-    <ExpertiseSkillImg src={`assets/icons/${icon}`} />
-  )
-
-const ExpertiseSkills = (): JSX.Element => {
-  const { expertise } = useAppSelector(state => state)
-
-  return (
-    <Wrapper>
-      {expertise.map(({ name, skills }, idx) => (
-        <ExpertiseWrapper key={`expertise-${idx}`}>
-          <ExpertiseName>{name}</ExpertiseName>
-          <ExpertiseSkillsWrapper>
-            {skills.map(({ name, icon }, idx) => {
-              const ExpertiseSkillIcon = () => getExpertiseSkillIcon(icon)
-              return (
-                <ExpertiseSkill key={`skill-${idx}`}>
-                  <ExpertiseSkillName>{name}</ExpertiseSkillName>
-                  <ExpertiseSkillIcon />
-                </ExpertiseSkill>
-              )
-            })}
-          </ExpertiseSkillsWrapper>
-        </ExpertiseWrapper>
-      ))}
-    </Wrapper>
-  )
-}
+import { useAppSelector } from 'hooks/useRedux'
 
 const Wrapper = styled.ul`
   list-style-type: none;
@@ -98,5 +66,37 @@ const ExpertiseSkill = styled.div`
     }
   }
 `
+
+const getExpertiseSkillIcon = (icon: string) =>
+  !icon.includes('.') ? (
+    <ExpertiseSkillFont className={icon} />
+  ) : (
+    <ExpertiseSkillImg src={`assets/icons/${icon}`} />
+  )
+
+const ExpertiseSkills = () => {
+  const { expertise } = useAppSelector(state => state)
+
+  return (
+    <Wrapper>
+      {expertise.map(({ name: expName, skills }) => (
+        <ExpertiseWrapper key={`expertise-${expName}`}>
+          <ExpertiseName>{expName}</ExpertiseName>
+          <ExpertiseSkillsWrapper>
+            {skills.map(({ name: skillName, icon }) => {
+              const ExpertiseSkillIcon = () => getExpertiseSkillIcon(icon)
+              return (
+                <ExpertiseSkill key={`skill-${skillName}`}>
+                  <ExpertiseSkillName>{skillName}</ExpertiseSkillName>
+                  <ExpertiseSkillIcon />
+                </ExpertiseSkill>
+              )
+            })}
+          </ExpertiseSkillsWrapper>
+        </ExpertiseWrapper>
+      ))}
+    </Wrapper>
+  )
+}
 
 export default ExpertiseSkills

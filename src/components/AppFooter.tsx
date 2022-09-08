@@ -1,18 +1,6 @@
 import styled from 'styled-components'
 import { rem } from 'polished'
 
-const Footer = (): JSX.Element => {
-  const year = new Date().getFullYear()
-
-  return (
-    <Wrapper>
-      <Copyright>
-        &copy; Brian Matthew Smith, {year}. All Rights Reserved.
-      </Copyright>
-    </Wrapper>
-  )
-}
-
 const Wrapper = styled.footer`
   width: 100%;
   z-index: 900;
@@ -29,5 +17,17 @@ const Copyright = styled.p`
   font-weight: 400;
   letter-spacing: 2px;
 `
+
+const Footer = () => {
+  const year = new Date().getFullYear()
+
+  return (
+    <Wrapper>
+      <Copyright>
+        &copy; Brian Matthew Smith, {year}. All Rights Reserved.
+      </Copyright>
+    </Wrapper>
+  )
+}
 
 export default Footer

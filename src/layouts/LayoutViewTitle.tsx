@@ -1,15 +1,5 @@
 import styled from 'styled-components'
 
-interface IProps {
-  title: string
-}
-
-const LayoutViewTitle = ({ title }: IProps): JSX.Element => (
-  <Wrapper>
-    <Title>{title}</Title>
-  </Wrapper>
-)
-
 const Wrapper = styled.section`
   height: 280px;
   background-size: cover;
@@ -45,5 +35,15 @@ const Title = styled.h1`
     font-size: 30px;
   }
 `
+
+interface IProps {
+  title: string
+}
+
+const LayoutViewTitle = ({ title }: IProps) => (
+  <Wrapper>
+    <Title>{title}</Title>
+  </Wrapper>
+)
 
 export default LayoutViewTitle

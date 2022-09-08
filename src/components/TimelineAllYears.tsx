@@ -1,36 +1,7 @@
 import { Dispatch, SetStateAction } from 'react'
 import styled from 'styled-components'
 import { rem } from 'polished'
-import { useAppSelector } from '../store'
-
-interface IProps {
-  selectedYear: number
-  setSelectedYear: Dispatch<SetStateAction<number>>
-}
-
-const TimelineAllYears = ({
-  selectedYear,
-  setSelectedYear
-}: IProps): JSX.Element => {
-  // Extract years as numbers from state
-  const { allYears } = useAppSelector(state => ({
-    allYears: Object.keys(state.timeline).map(year => parseInt(year))
-  }))
-
-  return (
-    <Wrapper>
-      {allYears.map(year => (
-        <YearBtn
-          key={`allYears-${year}`}
-          onClick={() => setSelectedYear(year)}
-          className={[selectedYear === year ? 'active' : '']}
-        >
-          {year}
-        </YearBtn>
-      ))}
-    </Wrapper>
-  )
-}
+import { useAppSelector } from 'hooks/useRedux'
 
 const Wrapper = styled.div`
   @media screen and (min-width: 767px) {
@@ -80,5 +51,31 @@ const YearBtn = styled.button`
     border-top: none;
   }
 `
+
+interface IProps {
+  selectedYear: number
+  setSelectedYear: Dispatch<SetStateAction<number>>
+}
+
+const TimelineAllYears = ({ selectedYear, setSelectedYear }: IProps) => {
+  // Extract years as numbers from state
+  const { allYears } = useAppSelector(state => ({
+    allYears: Object.keys(state.timeline).map(year => Number.parseInt(year, 10))
+  }))
+
+  return (
+    <Wrapper>
+      {allYears.map(year => (
+        <YearBtn
+          key={`allYears-${year}`}
+          onClick={() => setSelectedYear(year)}
+          className={selectedYear === year ? 'active' : ''}
+        >
+          {year}
+        </YearBtn>
+      ))}
+    </Wrapper>
+  )
+}
 
 export default TimelineAllYears

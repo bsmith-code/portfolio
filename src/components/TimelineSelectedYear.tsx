@@ -1,28 +1,5 @@
-import { useAppSelector } from '../store'
+import { useAppSelector } from 'hooks/useRedux'
 import styled from 'styled-components'
-
-interface IProps {
-  selectedYear: number
-}
-
-const TimelineSelectedYear = ({ selectedYear }: IProps): JSX.Element => {
-  // Extract the selected year events from state
-  const { selectedYearEvents } = useAppSelector(state => ({
-    selectedYearEvents: state.timeline[selectedYear]
-  }))
-  return (
-    <Wrapper>
-      {selectedYearEvents.map(({ date, title, description }, idx) => (
-        <Event key={`event-${idx}`}>
-          <EventDate>{date}</EventDate>
-          <EventTitle>{title}</EventTitle>
-          <Separator />
-          <EventDescription>{description}</EventDescription>
-        </Event>
-      ))}
-    </Wrapper>
-  )
-}
 
 const Wrapper = styled.div`
   padding: 75px 25px;
@@ -80,5 +57,29 @@ const Separator = styled.span`
   background: #7ebaeb;
   margin: 25px 0;
 `
+
+interface IProps {
+  selectedYear: number
+}
+
+const TimelineSelectedYear = ({ selectedYear }: IProps) => {
+  // Extract the selected year events from state
+  const { selectedYearEvents } = useAppSelector(state => ({
+    selectedYearEvents: state.timeline[selectedYear]
+  }))
+
+  return (
+    <Wrapper>
+      {selectedYearEvents.map(({ date, title, description }) => (
+        <Event key={`event-${title}`}>
+          <EventDate>{date}</EventDate>
+          <EventTitle>{title}</EventTitle>
+          <Separator />
+          <EventDescription>{description}</EventDescription>
+        </Event>
+      ))}
+    </Wrapper>
+  )
+}
 
 export default TimelineSelectedYear

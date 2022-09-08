@@ -3,62 +3,6 @@ import { Link, useLocation } from 'react-router-dom'
 import styled, { css } from 'styled-components'
 import { rem } from 'polished'
 
-const AppHeader = (): JSX.Element => {
-  // Composition
-  const location = useLocation()
-
-  // Menu
-  const [isMenuActive, setIsMenuActive] = useState(false)
-  const menuItems = [
-    {
-      path: 'about',
-      label: 'About'
-    },
-    {
-      path: 'expertise',
-      label: 'Expertise'
-    },
-    {
-      path: 'experience',
-      label: 'Experience'
-    },
-    {
-      path: 'portfolio',
-      label: 'Portfolio'
-    },
-    {
-      path: 'contact',
-      label: 'Contact'
-    }
-  ]
-
-  useEffect(() => {
-    setIsMenuActive(false)
-  }, [location])
-
-  return (
-    <Wrapper>
-      <Logo to="/">Brian M. Smith</Logo>
-      <MenuWrapper isMenuActive={isMenuActive}>
-        <MenuClose onClick={() => setIsMenuActive(false)}>
-          <i className="material-icons">close</i>
-        </MenuClose>
-        {menuItems.map(({ path, label }) => (
-          <StyledLink key={`link-${path}`} to={path}>
-            {label}
-          </StyledLink>
-        ))}
-        <StyledHref href="/images/resume.pdf" target="_blank">
-          Resume
-        </StyledHref>
-      </MenuWrapper>
-      <MenuOpen onClick={() => setIsMenuActive(true)}>
-        <i className="material-icons">menu</i>
-      </MenuOpen>
-    </Wrapper>
-  )
-}
-
 const Wrapper = styled.header`
   position: fixed;
   top: 0;
@@ -149,5 +93,61 @@ const MenuClose = styled.button`
 const MenuOpen = styled.button`
   ${sharedBtnStyles}
 `
+
+const AppHeader = () => {
+  // Composition
+  const location = useLocation()
+
+  // Menu
+  const [isMenuActive, setIsMenuActive] = useState(false)
+  const menuItems = [
+    {
+      path: 'about',
+      label: 'About'
+    },
+    {
+      path: 'expertise',
+      label: 'Expertise'
+    },
+    {
+      path: 'experience',
+      label: 'Experience'
+    },
+    {
+      path: 'portfolio',
+      label: 'Portfolio'
+    },
+    {
+      path: 'contact',
+      label: 'Contact'
+    }
+  ]
+
+  useEffect(() => {
+    setIsMenuActive(false)
+  }, [location])
+
+  return (
+    <Wrapper>
+      <Logo to="/">Brian M. Smith</Logo>
+      <MenuWrapper isMenuActive={isMenuActive}>
+        <MenuClose onClick={() => setIsMenuActive(false)}>
+          <i className="material-icons">close</i>
+        </MenuClose>
+        {menuItems.map(({ path, label }) => (
+          <StyledLink key={`link-${path}`} to={path}>
+            {label}
+          </StyledLink>
+        ))}
+        <StyledHref href="/images/resume.pdf" target="_blank">
+          Resume
+        </StyledHref>
+      </MenuWrapper>
+      <MenuOpen onClick={() => setIsMenuActive(true)}>
+        <i className="material-icons">menu</i>
+      </MenuOpen>
+    </Wrapper>
+  )
+}
 
 export default AppHeader

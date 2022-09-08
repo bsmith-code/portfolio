@@ -1,36 +1,6 @@
 import styled from 'styled-components'
-import { useAppSelector } from '../store'
-import LayoutViewTitle from './LayoutViewTitle'
-
-const ViewExperience = (): JSX.Element => {
-  const { experience } = useAppSelector(state => state)
-  return (
-    <>
-      <LayoutViewTitle title="Experience" />
-      <section>
-        <div className="container">
-          <ExperienceWrapper>
-            {experience.map(
-              ({ url, logo, name, position, startDate, endDate }, idx) => (
-                <CompanyWrapper
-                  href={url}
-                  target="_blank"
-                  key={`company-${idx}`}
-                >
-                  <CompanyLogo src={`assets/images/${logo}`} />
-                  <CompanyName>{name}</CompanyName>
-                  <CompanyPosition>{position}</CompanyPosition>
-                  <CompanyDate>Start: {startDate}</CompanyDate>
-                  <CompanyDate>End: {endDate}</CompanyDate>
-                </CompanyWrapper>
-              )
-            )}
-          </ExperienceWrapper>
-        </div>
-      </section>
-    </>
-  )
-}
+import { useAppSelector } from 'hooks/useRedux'
+import LayoutViewTitle from 'layouts/LayoutViewTitle'
 
 const ExperienceWrapper = styled.div`
   @media screen and (min-width: 767px) {
@@ -53,5 +23,35 @@ const CompanyLogo = styled.img``
 const CompanyName = styled.h5``
 const CompanyPosition = styled.p``
 const CompanyDate = styled.span``
+
+const ViewExperience = () => {
+  const { experience } = useAppSelector(state => state)
+  return (
+    <>
+      <LayoutViewTitle title="Experience" />
+      <section>
+        <div className="container">
+          <ExperienceWrapper>
+            {experience.map(
+              ({ url, logo, name, position, startDate, endDate }) => (
+                <CompanyWrapper
+                  href={url}
+                  target="_blank"
+                  key={`company-${name}`}
+                >
+                  <CompanyLogo src={`assets/images/${logo}`} />
+                  <CompanyName>{name}</CompanyName>
+                  <CompanyPosition>{position}</CompanyPosition>
+                  <CompanyDate>Start: {startDate}</CompanyDate>
+                  <CompanyDate>End: {endDate}</CompanyDate>
+                </CompanyWrapper>
+              )
+            )}
+          </ExperienceWrapper>
+        </div>
+      </section>
+    </>
+  )
+}
 
 export default ViewExperience

@@ -1,19 +1,6 @@
 import styled from 'styled-components'
 import { rem } from 'polished'
 
-const ViewHome = (): JSX.Element => {
-  return (
-    <Wrapper>
-      <ContentWrapper>
-        <Logo alt="Senior Software Developer" src="assets/images/seed.png" />
-        <Title>Senior Software Developer</Title>
-        <Copy>10+ years of professional &amp; enterprise-level experience</Copy>
-      </ContentWrapper>
-      <Overlay />
-    </Wrapper>
-  )
-}
-
 const Wrapper = styled.section`
   width: 100%;
   height: 100vh;
@@ -67,5 +54,16 @@ const Copy = styled.p`
   font-weight: 700;
   line-height: 1.6;
 `
+
+const ViewHome = () => (
+  <Wrapper>
+    <ContentWrapper>
+      <Logo alt="Senior Software Developer" src="assets/images/seed.png" />
+      <Title>Senior Software Developer</Title>
+      <Copy>10+ years of professional &amp; enterprise-level experience</Copy>
+    </ContentWrapper>
+    <Overlay />
+  </Wrapper>
+)
 
 export default ViewHome

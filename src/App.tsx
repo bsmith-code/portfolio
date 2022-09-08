@@ -1,13 +1,11 @@
+import RouterApp from 'routers/RouterApp'
 import Styles from './styles'
-import AppRoutes from './components/AppRoutes'
 
-const App = (): JSX.Element => {
-  return (
-    <>
-      <Styles />
-      <AppRoutes />
-    </>
-  )
-}
+const App = () => (
+  <>
+    <Styles />
+    <RouterApp />
+  </>
+)
 
 export default App
