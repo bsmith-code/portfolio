@@ -1,7 +1,7 @@
 import { FC } from 'react'
 import { Route, useLocation } from 'react-router-dom'
-import AppHeader from 'components/AppHeader'
-import AppFooter from 'components/AppFooter'
+import LayoutAppHeader from 'components/LayoutAppHeader'
+import LayoutAppFooter from 'components/LayoutAppFooter'
 
 interface IProps {
   component: FC<any>
@@ -18,11 +18,11 @@ const LayoutDefault = ({ component: Component, ...rest }: IProps) => {
       {...rest}
       render={props => (
         <>
-          <AppHeader />
+          <LayoutAppHeader />
           <main>
             <Component {...props} />
           </main>
-          {!isHomeView ? <AppFooter /> : null}
+          {!isHomeView ? <LayoutAppFooter /> : null}
         </>
       )}
     />

@@ -1,4 +1,4 @@
-import { Switch, BrowserRouter as Router } from 'react-router-dom'
+import { Switch, Redirect, BrowserRouter as Router } from 'react-router-dom'
 import ViewHome from 'views/ViewHome'
 import ViewAbout from 'views/ViewAbout'
 import ViewContact from 'views/ViewContact'
@@ -16,6 +16,8 @@ const AppRoutes = () => (
       <LayoutDefault path="/experience" component={ViewExperience} />
       <LayoutDefault path="/portfolio" component={ViewPortfolio} />
       <LayoutDefault path="/contact" component={ViewContact} />
+
+      <Redirect exact from="/*" to="/" />
     </Switch>
   </Router>
 )

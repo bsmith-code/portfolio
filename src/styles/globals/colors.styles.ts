@@ -2,19 +2,19 @@ import { css } from 'styled-components'
 
 export default css`
   :root {
-    --blue: #7ebaeb;
     --orange: #ef7d21;
     --green: #48c700;
     --red: #f95d56;
     --white: #fff;
-    --off-white: #efefef;
+    --white-off: #efefef;
     --black: #000;
     --charcoal: #151515;
-    --light-gray: #f5f5f5;
     --gray: #aaaaaa;
-    --dark-gray: #666666;
-    --navy-blue: #252b35;
-    --stone-blue: #34495f;
-    --sky-blue: #4b9cd3;
+    --gray-light: #f5f5f5;
+    --gray-dark: #666666;
+    --blue: #7ebaeb;
+    --blue-navy: #252b35;
+    --blue-stone: #34495f;
+    --blue-sky: #4b9cd3;
   }
 `

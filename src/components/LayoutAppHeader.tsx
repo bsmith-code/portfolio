@@ -7,7 +7,7 @@ const Wrapper = styled.header`
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
+  right: 0;
   z-index: 900;
   display: flex;
   flex-direction: row;
@@ -17,7 +17,7 @@ const Wrapper = styled.header`
   background: var(--white);
   box-shadow: 0px 7px 25px -6px rgba(0, 0, 0, 0.5);
   @media screen and (min-width: 767px) {
-    padding: 16px 50px;
+    padding: 16px 64px;
   }
 `
 const MenuWrapper = styled.nav`

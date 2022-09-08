@@ -22,7 +22,7 @@ export const initialState: ITimelineState = {
       date: 'May 5th, 2007',
       title: 'Graduated High School',
       description:
-        'In the summer of 2007, I graduated from Green Hope High School in Cary, NC with my eyes set on a bright future and an exciting journey in front me.'
+        'In the summer of 2007, I graduated from Green Hope High School in Cary, NC with my eyes set upon an exciting and fruitful journey.'
     }
   ],
   2010: [
@@ -46,13 +46,13 @@ export const initialState: ITimelineState = {
       date: 'June 10th, 2013',
       title: 'Pilot Design Company',
       description:
-        'After 3 years at Action Sports Now, I decided to embark on my first entrepreneurial endeavor with a business partner to startup Pilot Design Company. We were a one stop shop for all things web which included server infrastructure, website hosting, database management, website and application development, SEO, marketing, web and print design, and so much more.'
+        'After 3 years at Action Sports Now, I decided to embark on my first entrepreneurial endeavor with a business partner to startup Pilot Design Company. We were a one-stop-shop for all things web which included server infrastructure, website hosting, database management, website and application development, SEO, marketing, web and print design, and so much more.'
     },
     {
       date: 'December 18th, 2013',
       title: 'Moved to Augusta, Georgia',
       description:
-        'After 6 wonderful years in Wilmington, NC, and without solidified plans for the future, I decided to move in with my parents who relocated to Augusta, GA while I was in college. This was ultimately a move to save money while serving clients with Pilot Design Company and to prepare for my next endeavor.'
+        'After 6 wonderful years in Wilmington, NC and without any solidified plans for the future, I decided to move in with my parents who relocated to Augusta, GA while I was in college. This was ultimately a move to save money while working for Pilot Design Company and preparing for my next endeavor.'
     }
   ],
   2014: [
@@ -60,7 +60,7 @@ export const initialState: ITimelineState = {
       date: 'June 30th, 2014',
       title: 'Kruhu - Award Winning Agency',
       description:
-        'While still working with Pilot Design Company, my business partner and I decided to get full time positions to further our careers with teams of experts in our fields. I received a job at Kruhu as a Front End Developer and was mentored by the great Otis Richardson, a Senior Programmer and multi-linguist musician'
+        'While still working with Pilot Design Company, my business partner and I decided to get full time positions to further our careers with teams of experts in our fields. I received a job at Kruhu as a Front End Developer and was mentored by the great Otis Richardson, a Senior Programmer and multi-linguist musician.'
     }
   ],
   2016: [
@@ -89,18 +89,6 @@ export const initialState: ITimelineState = {
       title: 'Atlantic BT',
       description:
         "After MedSign's funding diminished and its revenue unable to support our families we mutually agreed to disband the endeavor. This is when I reached out to ABT for an open Front End Developer position and gladly accepted an offer. This position eventually morphed into a Javascript Developer position as we continued to receive javascript focused projects in our pipeline."
-    },
-    {
-      date: 'August 3rd, 2017',
-      title: 'Roo',
-      description: ''
-    }
-  ],
-  2018: [
-    {
-      date: 'June 26th, 2018',
-      title: 'Homeowner',
-      description: ''
     }
   ],
   2019: [

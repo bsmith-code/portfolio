@@ -1,9 +1,9 @@
 import RouterApp from 'routers/RouterApp'
-import Styles from './styles'
+import StylesGlobal from 'styles/globals'
 
 const App = () => (
   <>
-    <Styles />
+    <StylesGlobal />
     <RouterApp />
   </>
 )
