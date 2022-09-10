@@ -7,7 +7,7 @@ const Wrapper = styled.footer`
   height: 50px;
   line-height: 50px;
   vertical-align: middle;
-  background: var(--off-white);
+  background: var(--white-off);
   text-align: center;
 `
 
