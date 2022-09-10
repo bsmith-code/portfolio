@@ -1,6 +1,12 @@
 import { css } from 'styled-components'
 
 export default css`
+  *,
+  *:before,
+  *:after {
+    box-sizing: border-box;
+  }
+
   button {
     line-height: 1;
     font-size: 0;

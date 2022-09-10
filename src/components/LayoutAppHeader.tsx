@@ -94,7 +94,7 @@ const MenuOpen = styled.button`
   ${sharedBtnStyles}
 `
 
-const AppHeader = () => {
+const LayoutAppHeader = () => {
   // Composition
   const location = useLocation()
 
@@ -150,4 +150,4 @@ const AppHeader = () => {
   )
 }
 
-export default AppHeader
+export default LayoutAppHeader
