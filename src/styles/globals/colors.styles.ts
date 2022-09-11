@@ -12,9 +12,8 @@ export default css`
     --gray: #aaaaaa;
     --gray-light: #f5f5f5;
     --gray-dark: #666666;
-    --blue: #7ebaeb;
+    --blue-sky: #7ebaeb;
     --blue-navy: #252b35;
     --blue-stone: #34495f;
-    --blue-sky: #4b9cd3;
   }
 `

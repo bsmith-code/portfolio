@@ -1,31 +1,24 @@
+// Common
 import { useState } from 'react'
-import styled from 'styled-components'
-import LayoutViewTitle from 'layouts/LayoutViewTitle'
-import TimelineAllYears from 'components/TimelineAllYears'
-import TimelineSelectedYear from 'components/TimelineSelectedYear'
 
-const TimelineWrapper = styled.section`
-  overflow: hidden;
-  position: relative;
-  @media screen and (min-width: 767px) {
-    overflow: scroll;
-  }
-`
+// Components
+import TimelineYears from 'components/TimelineYears'
+import TimelineYearsSelected from 'components/TimelineYearsSelected'
+
+// Styles
+import { TimelineWrapper } from 'styles/components/timeline.styles'
 
 const ViewAbout = () => {
   const [selectedYear, setSelectedYear] = useState(1989)
 
   return (
-    <>
-      <LayoutViewTitle title="About" />
-      <TimelineWrapper>
-        <TimelineSelectedYear selectedYear={selectedYear} />
-        <TimelineAllYears
-          selectedYear={selectedYear}
-          setSelectedYear={setSelectedYear}
-        />
-      </TimelineWrapper>
-    </>
+    <TimelineWrapper>
+      <TimelineYearsSelected selectedYear={selectedYear} />
+      <TimelineYears
+        selectedYear={selectedYear}
+        setSelectedYear={setSelectedYear}
+      />
+    </TimelineWrapper>
   )
 }
 

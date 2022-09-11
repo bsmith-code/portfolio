@@ -69,3 +69,28 @@ export const ExpertiseSkillIcon = styled.i`
   font-size: ${rem(55)};
   color: #7ebaeb;
 `
+
+export const ExpertiseProfileWrapper = styled.div`
+  text-align: center;
+  padding: 0 25px;
+  @media screen and (min-width: 767px) {
+    flex-shrink: 0;
+    flex-grow: 0;
+  }
+`
+
+export const ExpertiseProfileName = styled.h2`
+  font-size: 24px;
+  margin: 0 0 10px 0;
+`
+
+export const ExpertiseProfileTitle = styled.p`
+  font-weight: 700;
+  font-size: 14px;
+  color: #7ebaeb;
+  margin: 0;
+`
+
+export const ExpertiseProfileImg = styled.img`
+  max-width: 100%;
+`

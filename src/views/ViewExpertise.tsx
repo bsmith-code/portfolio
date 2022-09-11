@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import LayoutViewTitle from 'layouts/LayoutViewTitle'
+import LayoutViewTitle from 'components/LayoutViewTitle'
 import ExpertiseSkills from 'components/ExpertiseSkills'
 import ExpertiseProfile from 'components/ExpertiseProfile'
 

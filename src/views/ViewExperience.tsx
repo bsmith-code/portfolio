@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 import { useAppSelector } from 'hooks/useRedux'
-import LayoutViewTitle from 'layouts/LayoutViewTitle'
+import LayoutViewTitle from 'components/LayoutViewTitle'
 
 const ExperienceWrapper = styled.div`
   @media screen and (min-width: 767px) {

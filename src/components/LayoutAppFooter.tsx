@@ -1,32 +1,18 @@
-import styled from 'styled-components'
-import { rem } from 'polished'
-
-const Wrapper = styled.footer`
-  width: 100%;
-  z-index: 900;
-  height: 50px;
-  line-height: 50px;
-  vertical-align: middle;
-  background: var(--white-off);
-  text-align: center;
-`
-
-const Copyright = styled.p`
-  margin: 0;
-  font-size: ${rem(10)};
-  font-weight: 400;
-  letter-spacing: 2px;
-`
+// Styles
+import {
+  LayoutAppFooterWrapper,
+  LayoutAppFooterCopyright
+} from 'styles/components/layout.styles'
 
 const Footer = () => {
   const year = new Date().getFullYear()
 
   return (
-    <Wrapper>
-      <Copyright>
+    <LayoutAppFooterWrapper>
+      <LayoutAppFooterCopyright>
         &copy; Brian Matthew Smith, {year}. All Rights Reserved.
-      </Copyright>
-    </Wrapper>
+      </LayoutAppFooterCopyright>
+    </LayoutAppFooterWrapper>
   )
 }
 

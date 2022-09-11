@@ -5,7 +5,7 @@ import { useAppSelector } from 'hooks/useRedux'
 
 const Wrapper = styled.div`
   @media screen and (min-width: 767px) {
-    border-top: 1px solid var(--blue);
+    border-top: 1px solid var(--blue-sky);
     white-space: nowrap;
     display: flex;
     flex-direction: row;
@@ -17,17 +17,17 @@ const YearBtn = styled.button`
   text-align: center;
   padding: 15px;
   cursor: pointer;
-  border-top: 1px solid var(--blue);
+  border-top: 1px solid var(--blue-sky);
   background: var(--white);
-  color: var(--blue);
+  color: var(--blue-sky);
   transition: all 0.2s ease;
   font-size: ${rem(14)};
   &.active {
-    background: var(--blue);
+    background: var(--blue-sky);
     color: var(--white);
   }
   &:hover {
-    background: var(--blue);
+    background: var(--blue-sky);
     color: var(--white);
   }
   &:before {
