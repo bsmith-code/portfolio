@@ -12,4 +12,14 @@ export default css`
       padding: 0;
     }
   }
+
+  .content {
+    &__wrapper {
+      position: relative;
+      padding: 48px 0;
+      @media screen and (min-width: 767px) {
+        padding: 80px 0;
+      }
+    }
+  }
 `

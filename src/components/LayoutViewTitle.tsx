@@ -2,9 +2,11 @@ import styled from 'styled-components'
 
 const Wrapper = styled.section`
   height: 280px;
-  background-size: cover;
-  background-position: center;
+  background-image: url('../assets/images/test.jpg');
+  background-size: fit;
+  background-position: center right;
   position: relative;
+  margin-top: 64px;
   &:after {
     content: '';
     display: block;
@@ -16,7 +18,7 @@ const Wrapper = styled.section`
     background: rgba(255, 255, 255, 0.5);
   }
   @media screen and (min-width: 767px) {
-    height: 400px;
+    height: 480px;
   }
 `
 const Title = styled.h1`

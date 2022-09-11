@@ -13,11 +13,12 @@ export const LayoutAppHeaderWrapper = styled.header`
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  padding: 16px 32px;
+  padding: 0px 32px;
   background: var(--white);
   box-shadow: 0px 7px 25px -6px rgba(0, 0, 0, 0.5);
+  height: 64px;
   @media screen and (min-width: 767px) {
-    padding: 16px 64px;
+    padding: 0px 64px;
   }
 `
 

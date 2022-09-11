@@ -29,7 +29,7 @@ export const initialState: IExperienceState = [
   {
     url: '//atlanticbt.com',
     logo: 'company_atlanticbt.svg',
-    name: 'AtlanticBT',
+    name: 'Atlantic BT',
     position: 'Front-end Developer',
     startDate: '2017-02-27',
     endDate: '2019-07-03'

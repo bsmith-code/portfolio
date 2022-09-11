@@ -8,7 +8,7 @@ import { ExpertiseWrapper } from 'styles/components/expertise.styles'
 const ViewExpertise = () => (
   <section>
     <div className="container">
-      <ExpertiseWrapper>
+      <ExpertiseWrapper className="content__wrapper">
         <ExpertiseProfile />
         <ExpertiseSkills />
       </ExpertiseWrapper>
