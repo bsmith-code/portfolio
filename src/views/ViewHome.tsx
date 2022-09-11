@@ -4,7 +4,7 @@ import { rem } from 'polished'
 const Wrapper = styled.section`
   width: 100%;
   height: 100vh;
-  background: url('../assets/images/home.jpg') no-repeat center;
+  background: url('../assets/images/view_home-bg.jpg') no-repeat center;
   background-size: cover;
   background-position: center;
 `
@@ -58,7 +58,7 @@ const Copy = styled.p`
 const ViewHome = () => (
   <Wrapper>
     <ContentWrapper>
-      <Logo alt="Senior Software Developer" src="assets/images/seed.png" />
+      <Logo alt="Senior Software Developer" src="assets/images/logo_seed.png" />
       <Title>Senior Software Developer</Title>
       <Copy>10+ years of professional &amp; enterprise-level experience</Copy>
     </ContentWrapper>

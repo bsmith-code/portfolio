@@ -12,66 +12,66 @@ export type IExperienceState = ICompany[]
 export const initialState: IExperienceState = [
   {
     url: '//precisionhawk.com',
-    logo: '',
+    logo: 'company_precision-hawk.webp',
     name: 'PrecisionHawk',
     position: 'Senior Software Developer',
-    startDate: '9-13-2021',
+    startDate: '2021-09-13',
     endDate: 'Present'
   },
   {
     url: '//ine.com',
-    logo: 'ine.svg',
+    logo: 'company_ine.svg',
     name: 'Internetwork Expert',
-    position: 'Senior Javascript Develper',
-    startDate: '07-09-2019',
-    endDate: '09-10-2021'
+    position: 'Senior Javascript Developer',
+    startDate: '2019-07-09',
+    endDate: '2021-09-10'
   },
   {
     url: '//atlanticbt.com',
-    logo: 'atlanticbt.svg',
+    logo: 'company_atlanticbt.svg',
     name: 'AtlanticBT',
-    position: 'Javascript Developer',
-    startDate: '02-27-2017',
-    endDate: '07-03-2019'
+    position: 'Front-end Developer',
+    startDate: '2017-02-27',
+    endDate: '2019-07-03'
   },
   {
     url: '#',
-    logo: 'medsign.png',
+    logo: 'company_medsign.png',
     name: 'MedSign',
-    position: 'Javascript Developer',
-    startDate: '08-01-2016',
-    endDate: '02-24-2017'
+    position: 'Software Developer',
+    startDate: '2016-08-01',
+    endDate: '2017-02-24'
   },
   {
     url: '//theedigital.com',
-    logo: '',
+    logo: 'company_thee-digital.png',
     name: 'Thee Digital',
-    position: 'Front End Developer',
-    startDate: '05-02-2016',
-    endDate: '07-29-2016'
+    position: 'Front-end Developer',
+    startDate: '2016-05-02',
+    endDate: '2016-07-29'
   },
   {
     url: '//kruhu.com',
-    logo: 'kruhu.svg',
+    logo: 'company_kruhu.svg',
     name: 'Kruhu',
-    position: 'Front End Developer',
-    startDate: '06-30-2014',
-    endDate: '04-15-2016'
+    position: 'Front-end Developer',
+    startDate: '2014-06-30',
+    endDate: '2016-04-15'
   },
   {
     url: '#',
-    logo: 'pilot.jpg',
+    logo: 'company_pilot-design.jpeg',
     name: 'Pilot Design Co.',
-    position: 'Front End Developer',
-    startDate: '06-10-2013',
-    endDate: '06-30-2014'
+    position: 'Front-end Developer',
+    startDate: '2013-06-10',
+    endDate: '2014-06-30'
   },
   {
     url: '#',
-    logo: 'asn.png',
+    logo: 'company_asn.png',
     name: 'ActionSportsNow',
-    position: 'Front End Developer, Database Manager',
-    startDate: '09-01-2010',
-    endDate: '06-07-2013'
+    position: 'Front-end Developer, Database Manager',
+    startDate: '2010-09-01',
+    endDate: '2013-06-07'
   }
 ]

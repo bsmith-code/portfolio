@@ -1,3 +1,6 @@
+// Common
+import { shallowEqual } from 'react-redux'
+
 // Redux
 import { selectExpertise } from 'redux/slices/expertise'
 
@@ -16,7 +19,7 @@ import {
 } from 'styles/components/expertise.styles'
 
 const ExpertiseSkills = () => {
-  const expertise = useAppSelector(selectExpertise)
+  const expertise = useAppSelector(selectExpertise, shallowEqual)
 
   return (
     <ExpertiseGroupList>

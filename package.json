@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "@reduxjs/toolkit": "^1.8.5",
+    "date-fns": "^2.29.2",
     "material-icons": "^1.2.0",
     "node-sass": "^4.14.1",
     "normalize-scss": "^7.0.1",

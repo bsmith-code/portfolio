@@ -28,10 +28,10 @@ const LayoutDefault = ({ component: Component, ...rest }: IProps) => {
         <>
           <LayoutAppHeader />
           <main>
-            <LayoutViewTitle title={viewTitle} />
+            {!isHomeView && <LayoutViewTitle title={viewTitle} />}
             <Component {...props} />
           </main>
-          {!isHomeView ? <LayoutAppFooter /> : null}
+          {!isHomeView && <LayoutAppFooter />}
         </>
       )}
     />

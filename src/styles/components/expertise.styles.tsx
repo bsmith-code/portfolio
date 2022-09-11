@@ -1,6 +1,19 @@
 import styled from 'styled-components'
 import { rem } from 'polished'
 
+export const ExpertiseWrapper = styled.div`
+  @media screen and (min-width: 767px) {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+    align-content: flex-start;
+    margin: 0;
+  }
+`
+
 export const ExpertiseGroupList = styled.ul`
   list-style-type: none;
   margin: 0;
