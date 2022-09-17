@@ -23,7 +23,11 @@ const AppRoutes = () => (
   <Router>
     <Switch>
       <LayoutDefault exact path="/" component={ViewHome} />
-      <LayoutDefault path={ROUTE_PATH_ABOUT} component={ViewAbout} />
+      <LayoutDefault
+        path={ROUTE_PATH_ABOUT}
+        component={ViewAbout}
+        isWideLayout
+      />
       <LayoutDefault path={ROUTE_PATH_EXPERTISE} component={ViewExpertise} />
       <LayoutDefault path={ROUTE_PATH_EXPERIENCE} component={ViewExperience} />
       <LayoutDefault path={ROUTE_PATH_PORTFOLIO} component={ViewPortfolio} />

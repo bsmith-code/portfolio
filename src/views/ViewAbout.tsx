@@ -3,21 +3,18 @@ import { useState } from 'react'
 
 // Components
 import TimelineYears from 'components/TimelineYears'
-import TimelineYearsSelected from 'components/TimelineYearsSelected'
+import TimelineYearsActive from 'components/TimelineYearsActive'
 
 // Styles
 import { TimelineWrapper } from 'styles/components/timeline.styles'
 
 const ViewAbout = () => {
-  const [selectedYear, setSelectedYear] = useState(1989)
+  const [activeYear, setActiveYear] = useState(1989)
 
   return (
     <TimelineWrapper>
-      <TimelineYearsSelected selectedYear={selectedYear} />
-      <TimelineYears
-        selectedYear={selectedYear}
-        setSelectedYear={setSelectedYear}
-      />
+      <TimelineYearsActive activeYear={activeYear} />
+      <TimelineYears activeYear={activeYear} setActiveYear={setActiveYear} />
     </TimelineWrapper>
   )
 }

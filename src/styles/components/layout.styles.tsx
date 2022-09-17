@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom'
+import { Link, NavLink } from 'react-router-dom'
 import styled from 'styled-components'
 import { rem } from 'polished'
 import { ReactNode } from 'react'
@@ -76,9 +76,9 @@ export const LayoutAppHeaderLink = styled(
         {children}
       </a>
     ) : (
-      <Link to={path} {...restProps}>
+      <NavLink to={path} {...restProps}>
         {children}
-      </Link>
+      </NavLink>
     )
 )`
   padding: 10px;
@@ -87,6 +87,9 @@ export const LayoutAppHeaderLink = styled(
   letter-spacing: 2.5px;
   line-height: 1;
   display: block;
+  &.active {
+    color: var(--charcoal);
+  }
   @media screen and (min-width: 767px) {
     padding: 0 15px;
     display: inline-block;
@@ -125,4 +128,43 @@ export const LayoutAppFooterCopyright = styled.p`
   font-size: ${rem(10)};
   font-weight: 400;
   letter-spacing: 2px;
+`
+
+export const LayoutViewHeaderWrapper = styled.section`
+  height: 280px;
+  background-image: url('../assets/images/view_page-bg.jpg');
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  margin-top: 64px;
+  &:after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.5);
+  }
+  @media screen and (min-width: 767px) {
+    height: 400px;
+  }
+`
+
+export const LayoutViewHeaderTitle = styled.h1`
+  color: #333333;
+  font-size: 24px;
+  text-transform: uppercase;
+  letter-spacing: 15px;
+  font-weight: 400;
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 500;
+  @media screen and (min-width: 767px) {
+    font-size: 30px;
+  }
 `

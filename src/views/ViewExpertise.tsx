@@ -6,14 +6,10 @@ import ExpertiseProfile from 'components/ExpertiseProfile'
 import { ExpertiseWrapper } from 'styles/components/expertise.styles'
 
 const ViewExpertise = () => (
-  <section>
-    <div className="container">
-      <ExpertiseWrapper className="content__wrapper">
-        <ExpertiseProfile />
-        <ExpertiseSkills />
-      </ExpertiseWrapper>
-    </div>
-  </section>
+  <ExpertiseWrapper>
+    <ExpertiseProfile />
+    <ExpertiseSkills />
+  </ExpertiseWrapper>
 )
 
 export default ViewExpertise

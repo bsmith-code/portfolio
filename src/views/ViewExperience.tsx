@@ -5,13 +5,9 @@ import ExperienceCompanies from 'components/ExperienceCompanies'
 import { ExperienceWrapper } from 'styles/components/experience.styles'
 
 const ViewExperience = () => (
-  <section>
-    <div className="container">
-      <ExperienceWrapper>
-        <ExperienceCompanies />
-      </ExperienceWrapper>
-    </div>
-  </section>
+  <ExperienceWrapper>
+    <ExperienceCompanies />
+  </ExperienceWrapper>
 )
 
 export default ViewExperience
