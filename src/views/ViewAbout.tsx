@@ -9,7 +9,7 @@ import TimelineYearsActive from 'components/TimelineYearsActive'
 import { TimelineWrapper } from 'styles/components/timeline.styles'
 
 const ViewAbout = () => {
-  const [activeYear, setActiveYear] = useState(1989)
+  const [activeYear, setActiveYear] = useState(2021)
 
   return (
     <TimelineWrapper>

@@ -28,6 +28,7 @@ const ExperienceCompanies = () => {
         <ExperienceCompanyWrapper
           href={url}
           target="_blank"
+          rel="noreferrer"
           key={`company-${name}`}
         >
           <ExperienceCompanyLogoWrapper>
