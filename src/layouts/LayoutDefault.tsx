@@ -1,5 +1,4 @@
 // Common
-import { FC } from 'react'
 import { Route } from 'react-router-dom'
 
 // Constants
@@ -13,7 +12,7 @@ import LayoutViewHeader from 'components/LayoutViewHeader'
 interface IProps {
   path: string
   exact?: boolean
-  component: FC<any>
+  component: () => JSX.Element
   isWideLayout?: boolean
 }
 
@@ -29,12 +28,12 @@ const LayoutDefault = ({
   return (
     <Route
       {...rest}
-      render={props =>
+      render={() =>
         isHomeView ? (
           <>
             <LayoutAppHeader />
             <main>
-              <Component {...props} />
+              <Component />
             </main>
           </>
         ) : (
@@ -44,7 +43,7 @@ const LayoutDefault = ({
               <LayoutViewHeader title={viewTitle} />
               <section className="content__wrapper">
                 <div className={!isWideLayout ? 'container' : ''}>
-                  <Component {...props} />
+                  <Component />
                 </div>
               </section>
             </main>

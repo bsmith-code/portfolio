@@ -12,7 +12,7 @@ export type IExperienceState = ICompany[]
 export const initialState: IExperienceState = [
   {
     url: '//precisionhawk.com',
-    logo: 'company_precision-hawk.webp',
+    logo: 'company_ph.svg',
     name: 'PrecisionHawk',
     position: 'Senior Software Developer',
     startDate: '2021-09-13',

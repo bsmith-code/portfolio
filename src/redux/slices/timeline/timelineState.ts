@@ -76,7 +76,7 @@ export const initialState: ITimelineState = {
       date: 'February 27th, 2017',
       title: 'Atlantic BT',
       description:
-        "After MedSign's funding diminished and its revenue unable to support our families we mutually agreed to disband the project. I received an offer from Atlantic BT for an open Front-end Developer position and gladly accepted. This position eventually turned into a Javascript Developer position as we continued to receive javascript focused projects in our pipeline."
+        "After MedSign's funding diminished and its revenue unable to support our families, we mutually agreed to disband the project. I received an offer from Atlantic BT for an open Front-end Developer position and gladly accepted. This position eventually turned into a Javascript Developer position as we continued to receive javascript focused projects in our pipeline."
     }
   ],
   2019: [
