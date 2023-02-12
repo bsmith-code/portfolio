@@ -23,6 +23,9 @@ import {
   FORM_FIRST_NAME
 } from 'constants/index'
 
+const phoneRegex =
+  /^((\\+[1-9]{1,4}[ \\-]*)|(\\(\d{2,3}\\)[ \\-]*)|(\d{2,4})[ \\-]*)*?\d{3,4}?[ \\-]*\d{3,4}?$/
+
 const validationSchema = yup.object({
   [FORM_FIRST_NAME]: yup.string().required('First name is required.'),
   [FORM_LAST_NAME]: yup.string().required('Last name is required.'),
@@ -30,6 +33,10 @@ const validationSchema = yup.object({
     .string()
     .email('Invalid email.')
     .required('Email is required.'),
+  [FORM_PHONE]: yup.string().matches(phoneRegex, {
+    message: 'Invalid phone number.',
+    excludeEmptyString: true
+  }),
   [FORM_SUBJECT]: yup.string().required('Subject is required.'),
   [FORM_MESSAGE]: yup.string().required('Message is required.')
 })
