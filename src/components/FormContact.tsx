@@ -1,7 +1,6 @@
 // Common
-import { FieldValues, useForm } from 'react-hook-form'
+import { useForm } from 'react-hook-form'
 import { yupResolver } from '@hookform/resolvers/yup'
-import * as yup from 'yup'
 
 // Components
 import InputText from 'components/InputText'
@@ -13,6 +12,9 @@ import {
   ContactFormResponse
 } from 'styles/components/contact.styles'
 
+// Utils
+import { schemaContactForm } from 'helpers'
+
 // Constants
 import {
   FORM_EMAIL,
@@ -23,32 +25,25 @@ import {
   FORM_FIRST_NAME
 } from 'constants/index'
 
-const phoneRegex =
-  /^((\\+[1-9]{1,4}[ \\-]*)|(\\(\d{2,3}\\)[ \\-]*)|(\d{2,4})[ \\-]*)*?\d{3,4}?[ \\-]*\d{3,4}?$/
+// Types
+import { IFormContact } from 'types'
 
-const validationSchema = yup.object({
-  [FORM_FIRST_NAME]: yup.string().required('First name is required.'),
-  [FORM_LAST_NAME]: yup.string().required('Last name is required.'),
-  [FORM_EMAIL]: yup
-    .string()
-    .email('Invalid email.')
-    .required('Email is required.'),
-  [FORM_PHONE]: yup.string().matches(phoneRegex, {
-    message: 'Invalid phone number.',
-    excludeEmptyString: true
-  }),
-  [FORM_SUBJECT]: yup.string().required('Subject is required.'),
-  [FORM_MESSAGE]: yup.string().required('Message is required.')
-})
-
-const handleSubmit = (data: FieldValues) => {
-  console.log(data)
+const handleSubmit = (formData: IFormContact) => {
+  console.log(formData)
 }
 
 const FormContact = () => {
-  const form = useForm({
+  const form = useForm<IFormContact>({
     mode: 'onChange',
-    resolver: yupResolver(validationSchema)
+    defaultValues: {
+      [FORM_FIRST_NAME]: '',
+      [FORM_LAST_NAME]: '',
+      [FORM_EMAIL]: '',
+      [FORM_PHONE]: '',
+      [FORM_SUBJECT]: '',
+      [FORM_MESSAGE]: ''
+    },
+    resolver: yupResolver(schemaContactForm)
   })
 
   return (

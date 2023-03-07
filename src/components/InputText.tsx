@@ -1,32 +1,31 @@
 // Common
 import {
+  Path,
+  FieldValues,
   useController,
-  UseFormReturn,
-  ControllerRenderProps,
-  FieldValues
+  UseFormReturn
 } from 'react-hook-form'
 
 // Styles
 import { InputError } from 'styles/components/contact.styles'
 
-interface IProps {
+interface IProps<T extends FieldValues> {
   label?: string
-  name: string
-  form: UseFormReturn
+  name: Path<T>
+  form: UseFormReturn<T>
 }
 
-const InputText = ({ label = '', name, form }: IProps) => {
+const InputText = <T extends FieldValues>({
+  label = '',
+  name,
+  form
+}: IProps<T>) => {
   const {
     field,
     fieldState: { error }
   } = useController({ name, control: form.control })
 
-  const { value, onChange } = field as Omit<
-    ControllerRenderProps<FieldValues>,
-    'value'
-  > & {
-    value: string
-  }
+  const { value, onChange: handleChange } = field
 
   return (
     <fieldset>
@@ -35,7 +34,7 @@ const InputText = ({ label = '', name, form }: IProps) => {
         name={name}
         type="text"
         value={value}
-        onChange={onChange}
+        onChange={handleChange}
         id={`input-text-${name}`}
       />
       {!!error && <InputError>{error.message}</InputError>}
