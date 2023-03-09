@@ -4,7 +4,7 @@ import { rem } from 'polished'
 const Wrapper = styled.section`
   width: 100%;
   height: 100vh;
-  background: url('../assets/images/view_home-bg.jpg') no-repeat center;
+  background: url('../assets/images/view_page-bg.jpg') no-repeat center;
   background-size: cover;
   background-position: center;
 `
@@ -14,11 +14,12 @@ const Overlay = styled.div`
   left: 0;
   bottom: 0;
   right: 0;
-  background: radial-gradient(
+  /* background: radial-gradient(
     ellipse at center,
     rgba(21, 21, 21, 0.5) 0%,
     rgba(0, 0, 0, 0) 100%
-  );
+  ); */
+  background: rgba(255, 255, 255, 0.2);
   z-index: 0;
 `
 const ContentWrapper = styled.div`

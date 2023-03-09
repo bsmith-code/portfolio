@@ -2,6 +2,9 @@
 import { useForm } from 'react-hook-form'
 import { yupResolver } from '@hookform/resolvers/yup'
 
+// Redux
+import { useSendEmailMutation } from 'redux/slices/contact'
+
 // Components
 import InputText from 'components/InputText'
 
@@ -28,11 +31,14 @@ import {
 // Types
 import { IFormContact } from 'types'
 
-const handleSubmit = (formData: IFormContact) => {
-  console.log(formData)
-}
-
 const FormContact = () => {
+  const [sendEmail, { isLoading, isSuccess }] = useSendEmailMutation()
+
+  console.log(isLoading, isSuccess)
+  const handleSubmit = async (formData: IFormContact) => {
+    await sendEmail(formData)
+  }
+
   const form = useForm<IFormContact>({
     mode: 'onChange',
     defaultValues: {
