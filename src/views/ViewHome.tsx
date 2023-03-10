@@ -3,7 +3,7 @@ import { rem } from 'polished'
 
 const Wrapper = styled.section`
   width: 100%;
-  height: 100vh;
+  height: calc(100vh - 50px);
   background: url('../assets/images/view_page-bg.jpg') no-repeat center;
   background-size: cover;
   background-position: center;
@@ -14,12 +14,11 @@ const Overlay = styled.div`
   left: 0;
   bottom: 0;
   right: 0;
-  /* background: radial-gradient(
+  background: radial-gradient(
     ellipse at center,
-    rgba(21, 21, 21, 0.5) 0%,
-    rgba(0, 0, 0, 0) 100%
-  ); */
-  background: rgba(255, 255, 255, 0.2);
+    rgba(21, 21, 21, 0.2) 10%,
+    rgba(255, 255, 255, 0.4) 40%
+  );
   z-index: 0;
 `
 const ContentWrapper = styled.div`
@@ -59,7 +58,6 @@ const Copy = styled.p`
 const ViewHome = () => (
   <Wrapper>
     <ContentWrapper>
-      <Logo alt="Senior Software Developer" src="assets/images/logo_seed.png" />
       <Title>Senior Software Developer</Title>
       <Copy>10+ years of professional &amp; enterprise-level experience</Copy>
     </ContentWrapper>

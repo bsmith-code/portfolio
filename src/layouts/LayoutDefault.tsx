@@ -35,6 +35,7 @@ const LayoutDefault = ({
             <main>
               <Component />
             </main>
+            <LayoutAppFooter />
           </>
         ) : (
           <>
