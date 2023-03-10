@@ -1,6 +1,5 @@
 import {
   FORM_EMAIL,
-  FORM_PHONE,
   FORM_MESSAGE,
   FORM_SUBJECT,
   FORM_LAST_NAME,
@@ -11,7 +10,6 @@ interface IFormContact {
   [FORM_FIRST_NAME]: string
   [FORM_LAST_NAME]: string
   [FORM_EMAIL]: string
-  [FORM_PHONE]: string
   [FORM_SUBJECT]: string
   [FORM_MESSAGE]: string
 }

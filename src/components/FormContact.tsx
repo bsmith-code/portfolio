@@ -21,7 +21,6 @@ import { schemaContactForm } from 'helpers'
 // Constants
 import {
   FORM_EMAIL,
-  FORM_PHONE,
   FORM_MESSAGE,
   FORM_SUBJECT,
   FORM_LAST_NAME,
@@ -45,7 +44,6 @@ const FormContact = () => {
       [FORM_FIRST_NAME]: '',
       [FORM_LAST_NAME]: '',
       [FORM_EMAIL]: '',
-      [FORM_PHONE]: '',
       [FORM_SUBJECT]: '',
       [FORM_MESSAGE]: ''
     },
@@ -61,7 +59,6 @@ const FormContact = () => {
       <InputText name={FORM_FIRST_NAME} label="First Name" form={form} />
       <InputText name={FORM_LAST_NAME} label="Last Name" form={form} />
       <InputText name={FORM_EMAIL} label="Email" form={form} />
-      <InputText name={FORM_PHONE} label="Phone" form={form} />
       <InputText name={FORM_SUBJECT} label="Subject" form={form} />
       <InputText name={FORM_MESSAGE} label="Message" form={form} />
 
