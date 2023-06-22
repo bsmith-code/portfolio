@@ -1,7 +1,7 @@
 // Common
 import { createGlobalStyle } from 'styled-components'
-import normalize from 'normalize-scss/sass/normalize/_import-now.scss'
-import materialIcons from 'material-icons/iconfont/material-icons.scss'
+import normalize from '@biere/normalize-scss/sass/normalize/_import-now.scss?inline'
+import materialIcons from 'material-icons/iconfont/material-icons.scss?inline'
 
 // Global Styles
 import base from 'styles/globals/base.styles'
