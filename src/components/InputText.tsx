@@ -7,7 +7,7 @@ import {
 } from 'react-hook-form'
 
 // Styles
-import { InputError } from 'styles/components/contact.styles'
+import { StyledInputError } from 'styles/components/contact.styles'
 
 interface IProps<T extends FieldValues> {
   label?: string
@@ -37,7 +37,7 @@ const InputText = <T extends FieldValues>({
         onChange={handleChange}
         id={`input-text-${name}`}
       />
-      {!!error && <InputError>{error.message}</InputError>}
+      {!!error && <StyledInputError>{error.message}</StyledInputError>}
     </fieldset>
   )
 }

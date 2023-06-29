@@ -1,23 +1,23 @@
 import styled from 'styled-components'
 
-export const ContactFormResponse = styled.div`
+export const StyledFormResponse = styled.div`
   margin: 30px 0 0 0;
 `
 
-export const ContactFormWrapper = styled.form`
+export const StyledFormWrapper = styled.form`
   max-width: 600px;
   margin: 0 auto;
   padding: 0 25px;
 `
 
-export const InputError = styled.span`
+export const StyledInputError = styled.span`
   color: red;
   font-size: 12px;
   position: absolute;
   margin-top: 2px;
 `
 
-export const ButtonSubmit = styled.button`
+export const StyledButtonSubmit = styled.button`
   transition: all 0.2s ease;
   line-height: 1;
   font-weight: 700;

@@ -7,22 +7,25 @@ import { useSendEmailMutation } from 'redux/slices/contact'
 
 // Components
 import InputText from 'components/InputText'
+import InputReCaptcha from 'components/InputReCaptcha'
 
 // Styles
 import {
-  ButtonSubmit,
-  ContactFormWrapper,
-  ContactFormResponse
+  StyledButtonSubmit,
+  StyledFormWrapper,
+  StyledFormResponse,
+  StyledInputError
 } from 'styles/components/contact.styles'
 
 // Utils
-import { schemaContactForm } from 'helpers'
+import { getQueryError, schemaContactForm } from 'helpers'
 
 // Constants
 import {
   FORM_EMAIL,
   FORM_MESSAGE,
   FORM_SUBJECT,
+  FORM_CAPTCHA,
   FORM_LAST_NAME,
   FORM_FIRST_NAME
 } from 'constants/index'
@@ -31,9 +34,10 @@ import {
 import { IFormContact } from 'types'
 
 const FormContact = () => {
-  const [sendEmail, { isLoading, isSuccess }] = useSendEmailMutation()
+  // Composition
+  const [sendEmail, { error, isLoading, isSuccess }] = useSendEmailMutation()
 
-  console.log(isLoading, isSuccess)
+  // Form
   const handleSubmit = async (formData: IFormContact) => {
     await sendEmail(formData)
   }
@@ -45,13 +49,16 @@ const FormContact = () => {
       [FORM_LAST_NAME]: '',
       [FORM_EMAIL]: '',
       [FORM_SUBJECT]: '',
-      [FORM_MESSAGE]: ''
-    },
-    resolver: yupResolver(schemaContactForm)
+      [FORM_MESSAGE]: '',
+      [FORM_CAPTCHA]: ''
+    }
+    // resolver: yupResolver(schemaContactForm)
   })
 
-  return (
-    <ContactFormWrapper
+  return isSuccess ? (
+    <StyledFormResponse>Message sent successfully</StyledFormResponse>
+  ) : (
+    <StyledFormWrapper
       onSubmit={e => {
         void form.handleSubmit(handleSubmit)(e)
       }}
@@ -61,9 +68,12 @@ const FormContact = () => {
       <InputText name={FORM_EMAIL} label="Email" form={form} />
       <InputText name={FORM_SUBJECT} label="Subject" form={form} />
       <InputText name={FORM_MESSAGE} label="Message" form={form} />
-
-      <ButtonSubmit type="submit">Submit</ButtonSubmit>
-    </ContactFormWrapper>
+      <InputReCaptcha form={form} />
+      <StyledButtonSubmit disabled={isLoading} type="submit">
+        {isLoading ? 'Submitting' : 'Submit'}
+      </StyledButtonSubmit>
+      {error && <StyledInputError>{getQueryError(error)}</StyledInputError>}
+    </StyledFormWrapper>
   )
 }
 

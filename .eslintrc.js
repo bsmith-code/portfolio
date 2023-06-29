@@ -14,7 +14,6 @@ module.exports = {
     'airbnb-typescript',
     'plugin:@typescript-eslint/recommended',
     'plugin:@typescript-eslint/recommended-requiring-type-checking',
-    'plugin:jest/recommended',
     'plugin:promise/recommended',
     'plugin:unicorn/recommended',
     'plugin:prettier/recommended',
@@ -62,7 +61,6 @@ module.exports = {
         unnamedComponents: 'arrow-function',
       },
     ],
-    'jest/no-mocks-import': 'off',
     '@typescript-eslint/unbound-method': 'off',
     'react/require-default-props': [
       'error',

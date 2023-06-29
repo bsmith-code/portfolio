@@ -6,6 +6,7 @@ import {
   FORM_EMAIL,
   FORM_MESSAGE,
   FORM_SUBJECT,
+  FORM_CAPTCHA,
   FORM_LAST_NAME,
   FORM_FIRST_NAME
 } from 'constants/index'
@@ -19,5 +20,6 @@ export const schemaContactForm = yup.object({
     .required('Email is required.'),
 
   [FORM_SUBJECT]: yup.string().required('Subject is required.'),
-  [FORM_MESSAGE]: yup.string().required('Message is required.')
+  [FORM_MESSAGE]: yup.string().required('Message is required.'),
+  [FORM_CAPTCHA]: yup.string().required('Recaptcha is required.')
 })
