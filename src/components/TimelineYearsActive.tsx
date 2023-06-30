@@ -1,12 +1,3 @@
-// Common
-import { shallowEqual } from 'react-redux'
-
-// Redux
-import { selectTimelineActiveYear } from 'redux/slices/timeline'
-
-// Hooks
-import { useAppSelector } from 'hooks/useRedux'
-
 // Styles
 import {
   TimelineYearsActiveEvent,
@@ -17,30 +8,26 @@ import {
   TimelineYearsActiveEventDivider
 } from 'styles/components/timeline.styles'
 
+// Constants
+import { TIMELINE } from 'constants/index'
+
 interface IProps {
-  activeYear: number
+  activeYear: string
 }
 
-const TimelineYearsActive = ({ activeYear }: IProps) => {
-  const activeYearEvents = useAppSelector(
-    state => selectTimelineActiveYear(state, activeYear),
-    shallowEqual
-  )
-
-  return (
-    <TimelineYearsActiveWrapper>
-      {activeYearEvents.map(({ date, title, description }) => (
-        <TimelineYearsActiveEvent key={`event-${title}`}>
-          <TimelineYearsActiveEventDate>{date}</TimelineYearsActiveEventDate>
-          <TimelineYearsActiveEventTitle>{title}</TimelineYearsActiveEventTitle>
-          <TimelineYearsActiveEventDivider />
-          <TimelineYearsActiveEventDesc>
-            {description}
-          </TimelineYearsActiveEventDesc>
-        </TimelineYearsActiveEvent>
-      ))}
-    </TimelineYearsActiveWrapper>
-  )
-}
+const TimelineYearsActive = ({ activeYear }: IProps) => (
+  <TimelineYearsActiveWrapper>
+    {TIMELINE[activeYear].map(({ date, title, description }) => (
+      <TimelineYearsActiveEvent key={`event-${title}`}>
+        <TimelineYearsActiveEventDate>{date}</TimelineYearsActiveEventDate>
+        <TimelineYearsActiveEventTitle>{title}</TimelineYearsActiveEventTitle>
+        <TimelineYearsActiveEventDivider />
+        <TimelineYearsActiveEventDesc>
+          {description}
+        </TimelineYearsActiveEventDesc>
+      </TimelineYearsActiveEvent>
+    ))}
+  </TimelineYearsActiveWrapper>
+)
 
 export default TimelineYearsActive

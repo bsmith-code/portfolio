@@ -3,7 +3,7 @@ import { useForm } from 'react-hook-form'
 import { yupResolver } from '@hookform/resolvers/yup'
 
 // Redux
-import { useSendEmailMutation } from 'redux/slices/contact'
+import { useSendEmailMutation } from 'store/contact'
 
 // Components
 import InputText from 'components/InputText'

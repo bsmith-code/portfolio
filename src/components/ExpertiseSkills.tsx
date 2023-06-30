@@ -1,12 +1,3 @@
-// Common
-import { shallowEqual } from 'react-redux'
-
-// Redux
-import { selectExpertise } from 'redux/slices/expertise'
-
-// Hooks
-import { useAppSelector } from 'hooks/useRedux'
-
 // Styles
 import {
   ExpertiseGroupList,
@@ -18,26 +9,25 @@ import {
   ExpertiseSkillsGridItem
 } from 'styles/components/expertise.styles'
 
-const ExpertiseSkills = () => {
-  const expertise = useAppSelector(selectExpertise, shallowEqual)
+// Constants
+import { EXPERTISE } from 'constants/index'
 
-  return (
-    <ExpertiseGroupList>
-      {expertise.map(({ name: groupName, skills }) => (
-        <ExpertiseGroupListItem key={`expertise-${groupName}`}>
-          <ExpertiseGroupName>{groupName}</ExpertiseGroupName>
-          <ExpertiseSkillsGrid>
-            {skills.map(({ name: skillName, icon }) => (
-              <ExpertiseSkillsGridItem key={`skill-${skillName}`}>
-                <ExpertiseSkillName>{skillName}</ExpertiseSkillName>
-                <ExpertiseSkillIcon className={icon} />
-              </ExpertiseSkillsGridItem>
-            ))}
-          </ExpertiseSkillsGrid>
-        </ExpertiseGroupListItem>
-      ))}
-    </ExpertiseGroupList>
-  )
-}
+const ExpertiseSkills = () => (
+  <ExpertiseGroupList>
+    {EXPERTISE.map(({ name: groupName, skills }) => (
+      <ExpertiseGroupListItem key={`expertise-${groupName}`}>
+        <ExpertiseGroupName>{groupName}</ExpertiseGroupName>
+        <ExpertiseSkillsGrid>
+          {skills.map(({ name: skillName, icon }) => (
+            <ExpertiseSkillsGridItem key={`skill-${skillName}`}>
+              <ExpertiseSkillName>{skillName}</ExpertiseSkillName>
+              <ExpertiseSkillIcon className={icon} />
+            </ExpertiseSkillsGridItem>
+          ))}
+        </ExpertiseSkillsGrid>
+      </ExpertiseGroupListItem>
+    ))}
+  </ExpertiseGroupList>
+)
 
 export default ExpertiseSkills

@@ -1,14 +1,6 @@
-export interface IYear {
-  date: string
-  title: string
-  description: string
-}
+import { ITimelineYear } from 'types'
 
-export interface ITimelineState {
-  [key: number]: IYear[]
-}
-
-export const initialState: ITimelineState = {
+export const TIMELINE: Record<string, ITimelineYear[]> = {
   1989: [
     {
       date: 'April 29th, 1989',

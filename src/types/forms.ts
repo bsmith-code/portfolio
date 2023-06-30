@@ -7,7 +7,7 @@ import {
   FORM_FIRST_NAME
 } from 'constants/index'
 
-interface IFormContact {
+export interface IFormContact {
   [FORM_FIRST_NAME]: string
   [FORM_LAST_NAME]: string
   [FORM_EMAIL]: string

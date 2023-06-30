@@ -1,11 +1,6 @@
-export interface IExpertise {
-  name: string
-  skills: { name: string; icon: string }[]
-}
+import { IExpertise } from 'types'
 
-export type IExpertiseState = IExpertise[]
-
-export const initialState: IExpertiseState = [
+export const EXPERTISE: IExpertise[] = [
   {
     name: 'Front End',
     skills: [

@@ -1,16 +1,10 @@
 // Common
 import { configureStore } from '@reduxjs/toolkit'
 
-// Reducers
-import timeline from 'redux/slices/timeline'
-import expertise from 'redux/slices/expertise'
-import experience from 'redux/slices/experience'
-import { contactApi } from 'redux/slices/contact'
+// APIs
+import { contactApi } from 'store/contact'
 
 const reducer = {
-  timeline,
-  expertise,
-  experience,
   [contactApi.reducerPath]: contactApi.reducer
 }
 

@@ -23,13 +23,13 @@ export const StyledButtonSubmit = styled.button`
   font-weight: 700;
   font-size: 14px;
   padding: 10px 30px;
-  display: inline-block;
+  display: block;
   text-align: center;
   vertical-align: middle;
   border-radius: 4px;
   background: #7ebaeb;
   color: #fff;
-  margin: 15px 0 0 0;
+  margin: 16px 0;
   &:hover {
     background: #5e9ed2;
   }

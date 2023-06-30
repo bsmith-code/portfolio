@@ -1,15 +1,6 @@
-export interface ICompany {
-  url: string
-  logo: string
-  name: string
-  position: string
-  startDate: string
-  endDate: string
-}
+import { IExperienceCompany } from 'types'
 
-export type IExperienceState = ICompany[]
-
-export const initialState: IExperienceState = [
+export const EXPERIENCE: IExperienceCompany[] = [
   {
     url: '//precisionhawk.com',
     logo: 'company_ph.svg',
