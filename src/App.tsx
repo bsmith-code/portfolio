@@ -1,13 +1,11 @@
-import Styles from './styles'
-import AppRoutes from './components/AppRoutes'
+import RouterApp from 'routers/RouterApp'
+import StylesGlobal from 'styles/globals'
 
-const App = (): JSX.Element => {
-  return (
-    <>
-      <Styles />
-      <AppRoutes />
-    </>
-  )
-}
+const App = () => (
+  <>
+    <StylesGlobal />
+    <RouterApp />
+  </>
+)
 
 export default App
