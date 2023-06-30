@@ -12,7 +12,11 @@ export const ROUTE_LABEL_EXPERTISE = 'Expertise'
 export const ROUTE_LABEL_PORTFOLIO = 'Portfolio'
 export const ROUTE_LABEL_EXPERIENCE = 'Experience'
 
-export const ROUTES_PUBLIC = [
+export const ROUTES_PUBLIC: {
+  path: string
+  label: string
+  isAnchor?: boolean
+}[] = [
   {
     path: ROUTE_PATH_ABOUT,
     label: ROUTE_LABEL_ABOUT
@@ -28,12 +32,12 @@ export const ROUTES_PUBLIC = [
   {
     path: ROUTE_PATH_CONTACT,
     label: ROUTE_LABEL_CONTACT
-  },
-  {
-    isAnchor: true,
-    path: ROUTE_PATH_RESUME,
-    label: ROUTE_LABEL_RESUME
   }
+  // {
+  //   isAnchor: true,
+  //   path: ROUTE_PATH_RESUME,
+  //   label: ROUTE_LABEL_RESUME
+  // }
 ]
 
 export const ROUTES_PATH_TO_LABEL_MAP: Record<string, string> = {
