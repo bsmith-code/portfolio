@@ -1,4 +1,3 @@
-export * from 'types/redux'
 export * from 'types/forms'
 export * from 'types/timeline'
 export * from 'types/expertise'
