@@ -51,9 +51,11 @@ const FormContact = () => {
       [FORM_SUBJECT]: '',
       [FORM_MESSAGE]: '',
       [FORM_CAPTCHA]: ''
-    }
-    // resolver: yupResolver(schemaContactForm)
+    },
+    resolver: yupResolver(schemaContactForm)
   })
+
+  const formError = error && getQueryError(error)
 
   return isSuccess ? (
     <StyledFormResponse>Message sent successfully</StyledFormResponse>
@@ -70,9 +72,9 @@ const FormContact = () => {
       <InputText name={FORM_MESSAGE} label="Message" form={form} />
       <InputReCaptcha form={form} />
       <StyledButtonSubmit disabled={isLoading} type="submit">
-        {isLoading ? 'Submitting' : 'Submit'}
+        {isLoading ? 'Submitting...' : 'Submit'}
       </StyledButtonSubmit>
-      {error && <StyledInputError>{getQueryError(error)}</StyledInputError>}
+      {formError && <StyledInputError>{formError}</StyledInputError>}
     </StyledFormWrapper>
   )
 }
