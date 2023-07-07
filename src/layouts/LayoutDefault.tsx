@@ -43,7 +43,7 @@ const LayoutDefault = ({
             <main>
               <LayoutViewHeader title={viewTitle} />
               <section className="content__wrapper">
-                <div className={!isWideLayout ? 'container' : ''}>
+                <div className={isWideLayout ? '' : 'container'}>
                   <Component />
                 </div>
               </section>

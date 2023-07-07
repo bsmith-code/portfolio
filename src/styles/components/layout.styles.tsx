@@ -76,8 +76,9 @@ export const LayoutAppHeaderLink = styled(
         {children}
       </a>
     ) : (
-      <NavLink to={path} {...restProps} children={children} />
-
+      <NavLink to={path} {...restProps}>
+        {children}
+      </NavLink>
     )
 )`
   padding: 10px;
