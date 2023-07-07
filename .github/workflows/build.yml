@@ -1,7 +1,7 @@
 # This workflow will do a clean installation of node dependencies, cache/restore them, build the source code and run tests across different versions of node
 # For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-nodejs
 
-name: Node.js CI
+name: CI Build
 
 on:
   push:
@@ -11,34 +11,34 @@ on:
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
-
-    strategy:
-      matrix:
-        node-version: [18.x]
-        # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
-
     steps:
     - uses: actions/checkout@v3
-    - name: Use Node.js ${{ matrix.node-version }}
+    - name: Use Node.js 18.x
       uses: actions/setup-node@v3
       with:
-        node-version: ${{ matrix.node-version }}
+        node-version: 18.x
         cache: 'npm'
     - run: npm install yarn
     - run: yarn && yarn build
+    - name: Upload artifact
+      uses: actions/upload-artifact@v3
+      with:
+        name: build
+        path: build
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: Deploy NodeJS app
+      - name: Download artifact
+        uses: actions/download-artifact@v3
+        with:
+          name: build
+      - name: Deploy artifact
         uses: appleboy/ssh-action@v0.1.2
         with:
-          host: ${{secrets.SSH_HOST}} # IP address of the server you wish to ssh into
-          key: ${{secrets.SSH_KEY}} # Private or public key of the server
-          username: ${{ secrets.SSH_USERNAME }} # User of the server you want to ssh into
-
-          script: |
-            cd /var/www/html/brianmatthewsmith.com_new/portfolio
-            git pull
+          host: ${{secrets.SSH_HOST}}
+          key: ${{secrets.SSH_KEY}}
+          username: ${{ secrets.SSH_USERNAME }}
+          run: |
+            cp ./build /var/www/html/brianmatthewsmith.com_new/build
             echo 'Deployment successful to digital ocean'
