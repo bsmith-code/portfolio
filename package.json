@@ -5,7 +5,7 @@
   "scripts": {
     "start": "dotenv -e .env.local vite",
     "preview": "dotenv -e .env.prod vite build && vite preview",
-    "build": "dotenv -e .env.prod tsc && vite build",
+    "build": "tsc && dotenv -e .env.prod vite build",
     "test": "TZ=America/New_York jest --updateSnapshot --watchAll=false --logHeapUsage --maxWorkers=50%",
     "eject": "react-scripts eject"
   },
