@@ -39,10 +39,6 @@ export const ROUTES_PUBLIC: {
     label: ROUTE_LABEL_EXPERIENCE
   },
   {
-    path: ROUTE_PATH_STUDY,
-    label: ROUTE_LABEL_STUDY
-  },
-  {
     path: ROUTE_PATH_CONTACT,
     label: ROUTE_LABEL_CONTACT
   },
