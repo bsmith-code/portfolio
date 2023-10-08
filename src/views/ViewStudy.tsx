@@ -39,6 +39,12 @@ const ViewStudy = () => {
   }
 
   useEffect(() => {
+    if (!showAnswer) {
+      handleNextQuestion()
+    }
+  }, [showAnswer])
+
+  useEffect(() => {
     setShowAnswer(false)
   }, [currentIndex])
 

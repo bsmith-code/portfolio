@@ -2,6 +2,214 @@ export const STUDY_GUIDE: Record<
   string,
   { question: string; answer: string }[]
 > = {
+  Javascript: [
+    {
+      question: 'What is prototypal inheritance?',
+      answer: `Prototypal inheritance is a fundamental concept in JavaScript that allows objects to inherit properties and methods from other objects. JavaScript is a prototype-based language, which means that inheritance is achieved by linking objects together through their prototypes rather than through class hierarchies as in class-based languages.
+
+      Every object in JavaScript has a hidden property called [[Prototype]], which refers to another object (or null). This [[Prototype]] is also referred to as the object's prototype. Objects inherit properties and methods from their prototype.
+
+      Objects in JavaScript are organized in a prototype chain. When you access a property or method on an object, JavaScript looks for that property/method in the object itself. If it doesn't find it, it goes up the prototype chain and checks the object's prototype, and so on, until it either finds the property or reaches the end of the chain with a null prototype.
+
+      Constructor functions in JavaScript have a prototype property. When you create objects using these constructors with the new keyword, the new object's [[Prototype]] is set to the constructor's prototype.`
+    },
+    {
+      question: 'Pass by ref vs pass by value',
+      answer: `In summary, "pass by value" means that a copy of the data is passed, and changes inside the function do not affect the original data. "Pass by reference" means that a reference to the original data is passed, and changes inside the function affect the original data. JavaScript exhibits a unique behavior with objects and arrays, where the reference to the data is passed by value, allowing changes to the data but not reassignment of the reference itself.`
+    },
+    {
+      question: 'What are primitive values?',
+      answer: `String: Represents a sequence of characters, enclosed in single (''), double ("") quotes, or backticks. Example: "Hello, world!".
+
+      Number: Represents both integer and floating-point numbers. Example: 42, 3.14.
+
+      Boolean: Represents a binary value, either true or false, typically used for logical operations and conditional expressions.
+
+      Undefined: Represents a variable that has been declared but hasn't been assigned a value. Variables declared without initialization are automatically assigned the value undefined.
+
+      Null: Represents an intentional absence of any object value or no value at all. It's often used to indicate that a variable should have no value.
+
+      Symbol (ES6): Represents a unique and immutable value primarily used as object property keys. Symbols are created using the Symbol() constructor. Example: const mySymbol = Symbol('description').
+
+      Primitive types are compared by their value, which means that two primitive values with the same content are considered equal. For example, "hello" and "hello" are equal, and 42 and 42 are equal.`
+    },
+    {
+      question: 'What are non-primitive values?',
+      answer: `In JavaScript, non-primitive values are data types that are not classified as primitive types. Unlike primitive types, which represent single, immutable values, non-primitive values are more complex data structures and can hold multiple values and methods. Non-primitive values are often referred to as reference types because they are stored by reference rather than by value. Objects, Arrays, Function, Date, RegExp, Map, Set`
+    },
+    {
+      question: 'What are pure functions?',
+      answer: `
+      In JavaScript, a pure function is a function that produces the same output value for the same input values and has no observable side effects. This definition can be broken down into two key characteristics: Deterministic and No side effects. `
+    },
+    {
+      question: 'What are the benefits of pure functions?',
+      answer: `Predictability: Pure functions are easy to reason about because their behavior is entirely determined by their inputs. This predictability simplifies debugging and testing.
+
+      Testability: Since pure functions have no side effects, testing them is straightforward. You can provide inputs and assert the expected outputs without worrying about external state changes.
+
+      Immutability: Pure functions encourage the use of immutable data structures, which helps prevent unintended changes to data and simplifies concurrent programming.
+
+      Memoization: Pure functions are ideal candidates for memoization, where you can cache the results of function calls for the same inputs to improve performance.
+
+      Parallelization: Because pure functions have no dependencies on external state, they can be executed in parallel without concerns about shared state.`
+    },
+    {
+      question: 'What are the differences between a Map and an Object?',
+      answer: `Maps and objects in JavaScript are both used to store collections of key-value pairs, but they have some key differences in terms of their characteristics and use cases:
+      Key Types - Objects can only be strings or symbols (primitive type) and Map key can be of any type.
+      Key Order - Objects do not guarantee order for their properties. Maps maintain their order.
+      Iteration - Objects do not have a built in iterator, must use Object.keys/values/entries. Maps provide built in methods for iterating over their entries such as map.keys(), map.values(), map.entries()
+      Size - The num of properties in an object must be manually counted. Maps have a built in size property.
+
+      In summary, Maps are more versatile when it comes to keys, offer ordered iteration, and have built-in methods for working with key-value pairs. Objects, on the other hand, are commonly used for more general purposes, and their keys are limited to strings or symbols. Your choice between Maps and objects depends on the specific requirements of your application and the characteristics you need for your data structure.
+      `
+    },
+    {
+      question: 'What are the differences between a Set and an Array?',
+      answer: `Sets and arrays in JavaScript are both used to store collections of values, but they have distinct characteristics and use cases. Here are the key differences between them:
+      Duplicate Values - Arrays allow duplicate values, Sets do not.
+      Order - Arrays are ordered collections, sets are unordered.
+      Indexing - You can access elements in arrays using numeric indicies such as myArray[0], Sets do not support indexing or direct access to elements by position, you must iterate over the set to access its values.
+      Methods - Arrays have a wide range of built-in methods for adding, removing, and manipulating elements. Sets provide methods for adding and deleting elements (add(), delete()) and for checking if an element exists (has()). Sets also have methods for set operations like union, intersection, and difference.
+      Use Cases - Arrays are commonly used when you need an ordered collection with the potential for duplicate values and when you want to access elements by index. They are versatile and suitable for a wide range of scenarios. Sets are used when you need a collection of unique values, and the order of elements does not matter. They are particularly useful for tasks that involve eliminating duplicates or checking for the presence of specific values.
+
+      In summary, arrays are ordered collections that allow duplicate values and provide easy indexing and manipulation of elements. Sets, on the other hand, are unordered collections of unique values and are suitable for scenarios where uniqueness and order are not significant. Your choice between them depends on the specific requirements of your application and the nature of the data you need to store.
+      `
+    },
+    {
+      question: 'What is the callstack?',
+      answer:
+        'The call stack in JavaScript is a fundamental data structure used for managing the execution context of functions and tracking the order in which functions are called and returned. It plays a crucial role in understanding how JavaScript manages function calls and handles the call stack frame by frame.'
+    },
+    {
+      question: 'What is event propagation?',
+      answer: `Event propagation in JavaScript refers to the process by which events triggered by user interactions, such as mouse clicks or keyboard presses, are propagated or "bubbled" through the DOM (Document Object Model) hierarchy from the target element that originally triggered the event up to the root of the document or down to a specific target element, depending on the phase of propagation. The event propagation process allows multiple elements in the DOM hierarchy to observe and respond to the same event, and it provides a way to delegate event handling to ancestor elements, which can be more efficient than attaching event handlers to individual elements.`
+    },
+    {
+      question: 'What is event capturing?',
+      answer: `
+      Event capturing is one of the two phases of event propagation in JavaScript, the other being event bubbling. Event capturing occurs before the event reaches the target element, and it involves the propagation of the event from the root of the DOM (Document Object Model) hierarchy down to the target element that triggered the event.
+
+      Here's how event capturing works:
+
+      Event Triggering: When a user interacts with a web page, such as clicking a button or hovering over an element, an event is triggered, such as a click event or a mouseover event.
+
+      Event Capturing Phase: During the event capturing phase, the event starts at the root of the DOM hierarchy, which is typically the document object, and then travels down through the hierarchy of ancestor elements toward the target element. It descends from the root element through its parent elements, then their parent elements, and so on.
+
+      Target Element: Once the event reaches the target element that originally triggered the event, it enters the target phase. This is where event handlers registered on the target element itself are executed.
+
+      Event Bubbling Phase: After the target phase, the event proceeds to the event bubbling phase, where it starts to bubble up through the hierarchy from the target element, passing through its parent elements, and continuing up to the root element (document). During this phase, event handlers on each element along the propagation path have an opportunity to respond to the event.
+      `
+    },
+    {
+      question: 'What is event bubbling?',
+      answer: `Event bubbling allows you to capture events at higher levels of the DOM hierarchy, making it easier to handle events for multiple elements with a common ancestor. It simplifies event delegation and can lead to more efficient event handling.
+
+      Event Triggering: When a user interacts with a web page, such as clicking a button or clicking on an element, an event is triggered, such as a click event.
+
+      Event Propagation: The event starts at the target element where it was triggered and then bubbles up through the hierarchy of ancestor elements. It travels from the target element through its parent elements, then their parent elements, and so on, all the way up to the root element, which is typically the document object.
+
+      Event Handling: During the bubbling phase, each element along the propagation path has the opportunity to respond to the event by executing event handlers registered on those elements. Event handlers can be functions that perform specific actions in response to the event, such as changing the content of an element, toggling a CSS class, or triggering other JavaScript functions.
+      `
+    },
+    {
+      question: 'Explain the concept of "hoisting" in JavaScript.',
+      answer: `Hoisting is a JavaScript behavior where variable and function declarations are moved to the top of their containing scope during compilation. This means that you can use variables and functions before they are declared, but they will be initialized with undefined until their declarations are encountered in the code.`
+    },
+    {
+      question:
+        'What are arrow functions in ES6, and how do they differ from regular functions?',
+      answer: `Arrow functions are a concise way to write functions in ES6. They have a shorter syntax and automatically capture the this value from the surrounding lexical context. Arrow functions do not have their own this, arguments, or super binding, making them particularly useful for functions within classes or callbacks.`
+    },
+    {
+      question: 'Function expression vs function declaration',
+      answer: `Key differences of arrow function expressions:
+
+      Arrow functions do not have their own this. They inherit the this value from their enclosing lexical scope.
+      They cannot be used as constructor functions with the new keyword.
+      Arrow functions are always anonymous; you cannot give them a name.
+      They are often preferred for short, simple functions and for functions that need to preserve the value of this.
+      In summary, function declarations are hoisted and named, function expressions are not hoisted and can be anonymous or named, and arrow function expressions have a distinct syntax and inherit this from their lexical scope. The choice between them depends on your specific use case and coding style preferences.`
+    },
+    {
+      question:
+        'Describe the concept of the "this" keyword in JavaScript and how it behaves in different contexts.',
+      answer: `The this keyword refers to the current execution context in JavaScript. Its value depends on how and where a function is called:
+
+      In a regular function, this is determined by the function's caller.
+      In an arrow function, this is lexically scoped and retains the value of this from its surrounding code.`
+    },
+    {
+      question:
+        'What is a generator function, and how does it differ from a regular function?',
+      answer: `A generator function is a special type of function in JavaScript that allows you to pause and resume its execution. It's defined using an asterisk (function*). When a generator function is called, it returns an iterator object that can be used to control the flow of execution using the yield keyword.`
+    },
+    {
+      question: 'What is the purpose of the bind() method in JavaScript?',
+      answer: `The bind() method allows you to create a new function with a specified this value and initial arguments. It's commonly used to set the context (the value of this) for a function, especially in event handlers and callback functions.`
+    },
+    {
+      question:
+        'What is the difference between null and undefined in JavaScript?',
+      answer: `null represents an intentionally missing value or absence of an object value. undefined represents a variable that has been declared but has not been assigned a value, or a non-existent object property.`
+    },
+    {
+      question:
+        'Explain the differences between let, const, and var in terms of variable declaration in ES6.',
+      answer: `var has function scope and can be re-declared within the same function.
+      let and const have block scope and cannot be re-declared within the same block.
+      const is used for variables that should not be reassigned after declaration, while let allows reassignment.`
+    },
+    {
+      question:
+        'Explain Promises and the role they play in asynchronous JavaScript.',
+      answer:
+        'Promises are objects that represent the eventual completion or failure of an asynchronous operation. They provide a more structured way to handle asynchronous code compared to callbacks. Promises have three states: pending, resolved (fulfilled), and rejected. Developers can attach .then() and .catch() handlers to handle successful and failed outcomes of asynchronous tasks.'
+    },
+    {
+      question:
+        'What are some differences between promise.all and promise.allSettled?',
+      answer: `In summary, Promise.all is used when you need all promises to succeed for the overall operation to succeed and when you want to short-circuit on the first rejection. Promise.allSettled is used when you want to monitor the status and results of all promises, regardless of whether they fulfill or reject, and when you don't need the operation to fail immediately upon a single rejection. The choice between them depends on the specific requirements of your asynchronous task.`
+    },
+    {
+      question: 'What is a constructor function?',
+      answer:
+        "A constructor function in JavaScript is a special type of function that is used to create and initialize objects. Constructor functions are often used as templates or blueprints for creating multiple objects of the same type. They are a fundamental part of object-oriented programming in JavaScript and a key concept in JavaScript's prototype-based inheritance model."
+    },
+    {
+      question: 'What is a closure?',
+      answer:
+        "A closure is the combination of a function bundled together (enclosed) with references to its surrounding state (the lexical environment). In other words, a closure gives you access to an outer function's scope from an inner function. In JavaScript, closures are created every time a function is created, at function creation time. Closures are important because they allow for data encapsulation, private variables, and the creation of functions with persistent state."
+    },
+    {
+      question: 'What is a stale closure?',
+      answer:
+        'The stale closure problem occurs when a closure captures outdated variables. An efficient way to solve stale closures is to correctly set the dependencies of React hooks.'
+    },
+    {
+      question: 'What is the Event Loop?',
+      answer:
+        'Allows JS to perform non-blocking async operations despite being a single threaded language giving the illusion of multi-threading. Whenever an async function is called, it is sent to the event queue in the browser API. The event loop then checks whether the call stack is empty and adds any events in the queue that were offloaded from the main thread.'
+    },
+    {
+      question: 'What is the temporal dead zone?',
+      answer:
+        "Describes the state where variables are un-reachable. They are in scope, but they aren't declared. The let and const variables exist in the TDZ from the start of their enclosing scope until they are declared. Let, Const and Var are all hoisted - Vars are hoisted and initialized which is why we see “undefined” when evaluating a var before it's declared and a reference error when evaluating a const/let."
+    },
+    {
+      question: 'What is the super keyword used for?',
+      answer:
+        'The super keyword in JavaScript is used in order to call the methods of the parent class. By itself, super() is used within a constructor function to call the parent constructor function.'
+    },
+    {
+      question: 'Bind vs Call vs Apply',
+      answer: `Use bind when you want to create a new function with a fixed this context that you can call later.
+      Use call when you want to invoke a function immediately with a specific context and individual arguments.
+      Use apply when you want to invoke a function immediately with a specific context and an array (or array-like object) of arguments.
+      These methods are handy for controlling function context and argument passing in JavaScript, especially in scenarios involving object-oriented programming, callbacks, and event handling.`
+    }
+  ],
   React: [
     {
       question: 'What is React?',
@@ -152,123 +360,6 @@ export const STUDY_GUIDE: Record<
     }
   ],
   Redux: [],
-  Javascript: [
-    {
-      question: 'What is event propagation?',
-      answer: `Event propagation in JavaScript refers to the process by which events triggered by user interactions, such as mouse clicks or keyboard presses, are propagated or "bubbled" through the DOM (Document Object Model) hierarchy from the target element that originally triggered the event up to the root of the document or down to a specific target element, depending on the phase of propagation. The event propagation process allows multiple elements in the DOM hierarchy to observe and respond to the same event, and it provides a way to delegate event handling to ancestor elements, which can be more efficient than attaching event handlers to individual elements.`
-    },
-    {
-      question: 'What is event capturing?',
-      answer: `
-      Event capturing is one of the two phases of event propagation in JavaScript, the other being event bubbling. Event capturing occurs before the event reaches the target element, and it involves the propagation of the event from the root of the DOM (Document Object Model) hierarchy down to the target element that triggered the event.
-
-      Here's how event capturing works:
-
-      Event Triggering: When a user interacts with a web page, such as clicking a button or hovering over an element, an event is triggered, such as a click event or a mouseover event.
-
-      Event Capturing Phase: During the event capturing phase, the event starts at the root of the DOM hierarchy, which is typically the document object, and then travels down through the hierarchy of ancestor elements toward the target element. It descends from the root element through its parent elements, then their parent elements, and so on.
-
-      Target Element: Once the event reaches the target element that originally triggered the event, it enters the target phase. This is where event handlers registered on the target element itself are executed.
-
-      Event Bubbling Phase: After the target phase, the event proceeds to the event bubbling phase, where it starts to bubble up through the hierarchy from the target element, passing through its parent elements, and continuing up to the root element (document). During this phase, event handlers on each element along the propagation path have an opportunity to respond to the event.
-      `
-    },
-    {
-      question: 'What is event bubbling?',
-      answer: `Event bubbling allows you to capture events at higher levels of the DOM hierarchy, making it easier to handle events for multiple elements with a common ancestor. It simplifies event delegation and can lead to more efficient event handling.
-
-      Event Triggering: When a user interacts with a web page, such as clicking a button or clicking on an element, an event is triggered, such as a click event.
-
-      Event Propagation: The event starts at the target element where it was triggered and then bubbles up through the hierarchy of ancestor elements. It travels from the target element through its parent elements, then their parent elements, and so on, all the way up to the root element, which is typically the document object.
-
-      Event Handling: During the bubbling phase, each element along the propagation path has the opportunity to respond to the event by executing event handlers registered on those elements. Event handlers can be functions that perform specific actions in response to the event, such as changing the content of an element, toggling a CSS class, or triggering other JavaScript functions.
-      `
-    },
-    {
-      question: 'Explain the concept of "hoisting" in JavaScript.',
-      answer: `Hoisting is a JavaScript behavior where variable and function declarations are moved to the top of their containing scope during compilation. This means that you can use variables and functions before they are declared, but they will be initialized with undefined until their declarations are encountered in the code.`
-    },
-    {
-      question:
-        'What are arrow functions in ES6, and how do they differ from regular functions?',
-      answer: `Arrow functions are a concise way to write functions in ES6. They have a shorter syntax and automatically capture the this value from the surrounding lexical context. Arrow functions do not have their own this, arguments, or super binding, making them particularly useful for functions within classes or callbacks.`
-    },
-    {
-      question: 'Function expression vs function declaration',
-      answer: `Key differences of arrow function expressions:
-
-      Arrow functions do not have their own this. They inherit the this value from their enclosing lexical scope.
-      They cannot be used as constructor functions with the new keyword.
-      Arrow functions are always anonymous; you cannot give them a name.
-      They are often preferred for short, simple functions and for functions that need to preserve the value of this.
-      In summary, function declarations are hoisted and named, function expressions are not hoisted and can be anonymous or named, and arrow function expressions have a distinct syntax and inherit this from their lexical scope. The choice between them depends on your specific use case and coding style preferences.`
-    },
-    {
-      question:
-        'Describe the concept of the "this" keyword in JavaScript and how it behaves in different contexts.',
-      answer: `The this keyword refers to the current execution context in JavaScript. Its value depends on how and where a function is called:
-
-      In a regular function, this is determined by the function's caller.
-      In an arrow function, this is lexically scoped and retains the value of this from its surrounding code.`
-    },
-    {
-      question:
-        'What is a generator function, and how does it differ from a regular function?',
-      answer: `A generator function is a special type of function in JavaScript that allows you to pause and resume its execution. It's defined using an asterisk (function*). When a generator function is called, it returns an iterator object that can be used to control the flow of execution using the yield keyword.`
-    },
-    {
-      question: 'hat is the purpose of the bind() method in JavaScript?',
-      answer: `The bind() method allows you to create a new function with a specified this value and initial arguments. It's commonly used to set the context (the value of this) for a function, especially in event handlers and callback functions.`
-    },
-    {
-      question:
-        'What is the difference between null and undefined in JavaScript?',
-      answer: `null represents an intentionally missing value or absence of an object value. undefined represents a variable that has been declared but has not been assigned a value, or a non-existent object property.`
-    },
-    {
-      question:
-        'Explain the differences between let, const, and var in terms of variable declaration in ES6.',
-      answer: `var has function scope and can be re-declared within the same function.
-      let and const have block scope and cannot be re-declared within the same block.
-      const is used for variables that should not be reassigned after declaration, while let allows reassignment.`
-    },
-    {
-      question:
-        'Explain Promises and the role they play in asynchronous JavaScript.',
-      answer:
-        'Promises are objects that represent the eventual completion or failure of an asynchronous operation. They provide a more structured way to handle asynchronous code compared to callbacks. Promises have three states: pending, resolved (fulfilled), and rejected. Developers can attach .then() and .catch() handlers to handle successful and failed outcomes of asynchronous tasks.'
-    },
-    {
-      question: 'What is a constructor function?',
-      answer:
-        "A constructor function in JavaScript is a special type of function that is used to create and initialize objects. Constructor functions are often used as templates or blueprints for creating multiple objects of the same type. They are a fundamental part of object-oriented programming in JavaScript and a key concept in JavaScript's prototype-based inheritance model."
-    },
-    {
-      question: 'What is a closure?',
-      answer:
-        "A closure is the combination of a function bundled together (enclosed) with references to its surrounding state (the lexical environment). In other words, a closure gives you access to an outer function's scope from an inner function. In JavaScript, closures are created every time a function is created, at function creation time. Closures are important because they allow for data encapsulation, private variables, and the creation of functions with persistent state."
-    },
-    {
-      question: 'What is a stale closure?',
-      answer:
-        'The stale closure problem occurs when a closure captures outdated variables. An efficient way to solve stale closures is to correctly set the dependencies of React hooks.'
-    },
-    {
-      question: 'What is the Event Loop?',
-      answer:
-        'Allows JS to perform non-blocking async operations despite being a single threaded language giving the illusion of multi-threading. Whenever an async function is called, it is sent to the event queue in the browser API. The event loop then checks whether the call stack is empty and adds any events in the queue that were offloaded from the main thread.'
-    },
-    {
-      question: 'What is the temporal dead zone?',
-      answer:
-        "Describes the state where variables are un-reachable. They are in scope, but they aren't declared. The let and const variables exist in the TDZ from the start of their enclosing scope until they are declared. Let, Const and Var are all hoisted - Vars are hoisted and initialized which is why we see “undefined” when evaluating a var before it's declared and a reference error when evaluating a const/let."
-    },
-    {
-      question: 'What is the super keyword used for?',
-      answer:
-        'The super keyword in JavaScript is used in order to call the methods of the parent class. By itself, super() is used within a constructor function to call the parent constructor function.'
-    }
-  ],
   Patterns: [
     {
       question: 'What is the Observer Pattern?',

@@ -25,7 +25,7 @@ export const StyledFlashCard = styled.div<{ showAnswer: boolean }>`
   margin: 0 auto 40px auto;
   padding: 24px;
   max-width: 600px;
-  transition: 0.5s;
+  transition: ${props => (props.showAnswer ? '0.5s' : '0s')};
   min-height: 300px;
   position: relative;
   align-items: center;
