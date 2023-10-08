@@ -22,6 +22,10 @@ export const LayoutAppHeaderWrapper = styled.header`
   }
 `
 
+export const StyledLayoutView = styled.main`
+  min-height: calc(100vh - 128px);
+`
+
 export const LayoutAppHeaderMenu = styled.nav`
   display: block;
   position: fixed;
@@ -164,6 +168,7 @@ export const LayoutViewHeaderTitle = styled.h1`
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 500;
+  text-align: center;
   @media screen and (min-width: 767px) {
     font-size: 30px;
   }

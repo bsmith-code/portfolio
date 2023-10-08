@@ -1,9 +1,11 @@
 export const ROUTE_PATH_ABOUT = '/about'
-export const ROUTE_PATH_RESUME = '/assets/documents/resume.pdf'
+export const ROUTE_PATH_STUDY = '/study'
 export const ROUTE_PATH_CONTACT = '/contact'
 export const ROUTE_PATH_EXPERTISE = '/expertise'
 export const ROUTE_PATH_PORTFOLIO = '/portfolio'
 export const ROUTE_PATH_EXPERIENCE = '/experience'
+export const ROUTE_PATH_RESUME =
+  'https://www.canva.com/design/DAFwZNtk1rI/n-X2iMXImthvLrSktG0tBQ/view'
 
 export const ROUTE_LABEL_ABOUT = 'About'
 export const ROUTE_LABEL_RESUME = 'Resume'
@@ -11,6 +13,7 @@ export const ROUTE_LABEL_CONTACT = 'Contact'
 export const ROUTE_LABEL_EXPERTISE = 'Expertise'
 export const ROUTE_LABEL_PORTFOLIO = 'Portfolio'
 export const ROUTE_LABEL_EXPERIENCE = 'Experience'
+export const ROUTE_LABEL_STUDY = 'Study Guide'
 
 export const ROUTES_PUBLIC: {
   path: string
@@ -30,14 +33,18 @@ export const ROUTES_PUBLIC: {
     label: ROUTE_LABEL_EXPERIENCE
   },
   {
+    path: ROUTE_PATH_STUDY,
+    label: ROUTE_LABEL_STUDY
+  },
+  {
     path: ROUTE_PATH_CONTACT,
     label: ROUTE_LABEL_CONTACT
+  },
+  {
+    isAnchor: true,
+    path: ROUTE_PATH_RESUME,
+    label: ROUTE_LABEL_RESUME
   }
-  // {
-  //   isAnchor: true,
-  //   path: ROUTE_PATH_RESUME,
-  //   label: ROUTE_LABEL_RESUME
-  // }
 ]
 
 export const ROUTES_PATH_TO_LABEL_MAP: Record<string, string> = {
@@ -45,5 +52,6 @@ export const ROUTES_PATH_TO_LABEL_MAP: Record<string, string> = {
   [ROUTE_PATH_CONTACT]: ROUTE_LABEL_CONTACT,
   [ROUTE_PATH_EXPERTISE]: ROUTE_LABEL_EXPERTISE,
   [ROUTE_PATH_PORTFOLIO]: ROUTE_LABEL_PORTFOLIO,
-  [ROUTE_PATH_EXPERIENCE]: ROUTE_LABEL_EXPERIENCE
+  [ROUTE_PATH_EXPERIENCE]: ROUTE_LABEL_EXPERIENCE,
+  [ROUTE_PATH_STUDY]: ROUTE_LABEL_STUDY
 }

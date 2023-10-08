@@ -7,10 +7,12 @@ import {
   ROUTE_PATH_CONTACT,
   ROUTE_PATH_PORTFOLIO,
   ROUTE_PATH_EXPERTISE,
-  ROUTE_PATH_EXPERIENCE
+  ROUTE_PATH_EXPERIENCE,
+  ROUTE_PATH_STUDY
 } from 'constants/index'
 
 // Components
+import ViewStudy from 'views/ViewStudy'
 import ViewHome from 'views/ViewHome'
 import ViewAbout from 'views/ViewAbout'
 import ViewContact from 'views/ViewContact'
@@ -32,6 +34,7 @@ const AppRoutes = () => (
       <LayoutDefault path={ROUTE_PATH_EXPERIENCE} component={ViewExperience} />
       <LayoutDefault path={ROUTE_PATH_PORTFOLIO} component={ViewPortfolio} />
       <LayoutDefault path={ROUTE_PATH_CONTACT} component={ViewContact} />
+      <LayoutDefault path={ROUTE_PATH_STUDY} component={ViewStudy} />
 
       <Redirect exact from="/*" to="/" />
     </Switch>

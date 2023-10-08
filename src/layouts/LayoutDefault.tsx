@@ -9,6 +9,9 @@ import LayoutAppHeader from 'components/LayoutAppHeader'
 import LayoutAppFooter from 'components/LayoutAppFooter'
 import LayoutViewHeader from 'components/LayoutViewHeader'
 
+// Styles
+import { StyledLayoutView } from 'styles/components/layout.styles'
+
 interface IProps {
   path: string
   exact?: boolean
@@ -40,14 +43,14 @@ const LayoutDefault = ({
         ) : (
           <>
             <LayoutAppHeader />
-            <main>
+            <StyledLayoutView>
               <LayoutViewHeader title={viewTitle} />
               <section className="content__wrapper">
                 <div className={isWideLayout ? '' : 'container'}>
                   <Component />
                 </div>
               </section>
-            </main>
+            </StyledLayoutView>
             <LayoutAppFooter />
           </>
         )

@@ -1,3 +1,4 @@
+export * from 'constants/study'
 export * from 'constants/forms'
 export * from 'constants/routes'
 export * from 'constants/timeline'
