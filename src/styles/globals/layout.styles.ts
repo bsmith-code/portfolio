@@ -7,6 +7,7 @@ export default css`
     margin: 0 auto;
     height: inherit;
     z-index: 500;
+    position: relative;
     padding: 0 32px;
     @media screen and (min-width: 1364px) {
       padding: 0;
