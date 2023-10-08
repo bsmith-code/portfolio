@@ -55,7 +55,7 @@ export const StyledPagination = styled.div`
   justify-content: center;
   & > button {
     color: var(--charcoal);
-    margin: 0 30px;
+    margin: 0 30px 30px;
     font-size: ${rem(20)};
   }
 `

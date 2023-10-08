@@ -17,7 +17,7 @@ export const StyledInputError = styled.span`
   margin-top: 2px;
 `
 
-export const StyledButtonSubmit = styled.button`
+export const StyledButtonSubmit = styled.button<{ center: boolean }>`
   transition: all 0.2s ease;
   line-height: 1;
   font-weight: 700;
@@ -29,7 +29,7 @@ export const StyledButtonSubmit = styled.button`
   border-radius: 4px;
   background: #7ebaeb;
   color: #fff;
-  margin: 16px 0;
+  margin: ${props => (props.center ? `16px auto` : `16px 0`)};
   &:hover {
     background: #5e9ed2;
   }

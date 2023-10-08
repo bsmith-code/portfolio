@@ -12,6 +12,7 @@ import {
   StyledPagination,
   StyledStudyCategory
 } from 'styles/components/study.styles'
+import { StyledButtonSubmit } from 'styles/components/contact.styles'
 
 const ViewStudy = () => {
   const [showAnswer, setShowAnswer] = useState(false)
@@ -41,6 +42,11 @@ const ViewStudy = () => {
     setShowAnswer(false)
   }, [currentIndex])
 
+  useEffect(() => {
+    setShowAnswer(false)
+    setCurrentIndex(0)
+  }, [selectedCategory])
+
   return selectedCategory ? (
     <>
       <StyledFlashCard
@@ -61,6 +67,13 @@ const ViewStudy = () => {
           ❯
         </button>
       </StyledPagination>
+      <StyledButtonSubmit
+        center
+        type="button"
+        onClick={() => setSelectedCategory('')}
+      >
+        Back to categories
+      </StyledButtonSubmit>
     </>
   ) : (
     <StyledStudyGuide>
