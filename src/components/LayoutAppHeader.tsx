@@ -33,15 +33,17 @@ const LayoutAppHeader = () => {
     <LayoutAppHeaderWrapper>
       <LayoutAppHeaderLogo to="/">Brian M. Smith</LayoutAppHeaderLogo>
       <LayoutAppHeaderMenu isMenuActive={isMenuActive}>
-        {ROUTES_PUBLIC.map(({ path, label, isAnchor = false }) => (
-          <LayoutAppHeaderLink
-            path={path}
-            isAnchor={isAnchor}
-            key={`route-${label}`}
-          >
-            {label}
-          </LayoutAppHeaderLink>
-        ))}
+        {ROUTES_PUBLIC.map(
+          ({ path, label, isAnchor = false, isIcon = false }) => (
+            <LayoutAppHeaderLink
+              path={path}
+              isAnchor={isAnchor}
+              key={`route-${label}`}
+            >
+              {isIcon ? <i className={label} /> : label}
+            </LayoutAppHeaderLink>
+          )
+        )}
       </LayoutAppHeaderMenu>
       <LayoutAppHeaderMenuBtn onClick={handleMenuBtnClick}>
         <i className="material-icons">{isMenuActive ? 'close' : 'menu'}</i>

@@ -17,7 +17,7 @@ export const StyledInputError = styled.span`
   margin-top: 2px;
 `
 
-export const StyledButtonSubmit = styled.button<{ center: boolean }>`
+export const StyledButtonSubmit = styled.button<{ center?: boolean }>`
   transition: all 0.2s ease;
   line-height: 1;
   font-weight: 700;

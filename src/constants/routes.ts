@@ -6,6 +6,9 @@ export const ROUTE_PATH_PORTFOLIO = '/portfolio'
 export const ROUTE_PATH_EXPERIENCE = '/experience'
 export const ROUTE_PATH_RESUME =
   'https://www.canva.com/design/DAFwZNtk1rI/n-X2iMXImthvLrSktG0tBQ/view'
+export const ROUTE_PATH_LINKEDIN =
+  'https://www.linkedin.com/in/brian-matthew-smith/'
+export const ROUTE_PATH_GITHUB = 'https://github.com/bsmith-code'
 
 export const ROUTE_LABEL_ABOUT = 'About'
 export const ROUTE_LABEL_RESUME = 'Resume'
@@ -14,10 +17,13 @@ export const ROUTE_LABEL_EXPERTISE = 'Expertise'
 export const ROUTE_LABEL_PORTFOLIO = 'Portfolio'
 export const ROUTE_LABEL_EXPERIENCE = 'Experience'
 export const ROUTE_LABEL_STUDY = 'Study Guide'
+export const ROUTE_LABEL_LINKEDIN = 'devicon-linkedin-plain colored'
+export const ROUTE_LABEL_GITHUB = 'devicon-github-original colored'
 
 export const ROUTES_PUBLIC: {
   path: string
   label: string
+  isIcon?: boolean
   isAnchor?: boolean
 }[] = [
   {
@@ -44,6 +50,18 @@ export const ROUTES_PUBLIC: {
     isAnchor: true,
     path: ROUTE_PATH_RESUME,
     label: ROUTE_LABEL_RESUME
+  },
+  {
+    isAnchor: true,
+    isIcon: true,
+    path: ROUTE_PATH_LINKEDIN,
+    label: ROUTE_LABEL_LINKEDIN
+  },
+  {
+    isAnchor: true,
+    isIcon: true,
+    path: ROUTE_PATH_GITHUB,
+    label: ROUTE_LABEL_GITHUB
   }
 ]
 
