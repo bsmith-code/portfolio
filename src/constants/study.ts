@@ -19,34 +19,22 @@ export const STUDY_GUIDE: Record<
     },
     {
       question: 'What are primitive values?',
-      answer: `String: Represents a sequence of characters, enclosed in single (''), double ("") quotes, or backticks. Example: "Hello, world!".
-
-      Number: Represents both integer and floating-point numbers. Example: 42, 3.14.
-
-      Boolean: Represents a binary value, either true or false, typically used for logical operations and conditional expressions.
-
-      Undefined: Represents a variable that has been declared but hasn't been assigned a value. Variables declared without initialization are automatically assigned the value undefined.
-
-      Null: Represents an intentional absence of any object value or no value at all. It's often used to indicate that a variable should have no value.
-
-      Symbol (ES6): Represents a unique and immutable value primarily used as object property keys. Symbols are created using the Symbol() constructor. Example: const mySymbol = Symbol('description').
-
-      Primitive types are compared by their value, which means that two primitive values with the same content are considered equal. For example, "hello" and "hello" are equal, and 42 and 42 are equal.`
+      answer: `Strings, Numbers, Booleans, Undefined, Null, and Symbols.
+      Primitive types which represent single and immutable values are compared by their value, which means that two primitive values with the same content are considered equal. For example, "hello" and "hello" are equal, and 42 and 42 are equal.`
     },
     {
       question: 'What are non-primitive values?',
-      answer: `In JavaScript, non-primitive values are data types that are not classified as primitive types. Unlike primitive types, which represent single, immutable values, non-primitive values are more complex data structures and can hold multiple values and methods. Non-primitive values are often referred to as reference types because they are stored by reference rather than by value. Objects, Arrays, Function, Date, RegExp, Map, Set`
+      answer: `Non-primitive values are more complex data structures and can hold multiple values and methods. Non-primitive values are often referred to as reference types because they are stored by reference rather than by value. Objects, Arrays, Function, Date, RegExp, Map, Set`
     },
     {
       question: 'What are pure functions?',
-      answer: `
-      In JavaScript, a pure function is a function that produces the same output value for the same input values and has no observable side effects. This definition can be broken down into two key characteristics: Deterministic and No side effects. `
+      answer: `A pure function is a function that produces the same output value for the same input values and has no observable side effects. This definition can be broken down into two key characteristics: Deterministic and No side effects. `
     },
     {
       question: 'What are the benefits of pure functions?',
       answer: `Predictability: Pure functions are easy to reason about because their behavior is entirely determined by their inputs. This predictability simplifies debugging and testing.
 
-      Testability: Since pure functions have no side effects, testing them is straightforward. You can provide inputs and assert the expected outputs without worrying about external state changes.
+      Testability: Since pure functions have no side effects, testing them is straightforward.
 
       Immutability: Pure functions encourage the use of immutable data structures, which helps prevent unintended changes to data and simplifies concurrent programming.
 
@@ -84,33 +72,23 @@ export const STUDY_GUIDE: Record<
     },
     {
       question: 'What is event propagation?',
-      answer: `Event propagation in JavaScript refers to the process by which events triggered by user interactions, such as mouse clicks or keyboard presses, are propagated or "bubbled" through the DOM (Document Object Model) hierarchy from the target element that originally triggered the event up to the root of the document or down to a specific target element, depending on the phase of propagation. The event propagation process allows multiple elements in the DOM hierarchy to observe and respond to the same event, and it provides a way to delegate event handling to ancestor elements, which can be more efficient than attaching event handlers to individual elements.`
-    },
-    {
-      question: 'What is event capturing?',
-      answer: `
-      Event capturing is one of the two phases of event propagation in JavaScript, the other being event bubbling. Event capturing occurs before the event reaches the target element, and it involves the propagation of the event from the root of the DOM (Document Object Model) hierarchy down to the target element that triggered the event.
-
-      Here's how event capturing works:
-
-      Event Triggering: When a user interacts with a web page, such as clicking a button or hovering over an element, an event is triggered, such as a click event or a mouseover event.
-
+      answer: `Event propagation is the over arching term for event capturing and event bubbling.
       Event Capturing Phase: During the event capturing phase, the event starts at the root of the DOM hierarchy, which is typically the document object, and then travels down through the hierarchy of ancestor elements toward the target element. It descends from the root element through its parent elements, then their parent elements, and so on.
 
       Target Element: Once the event reaches the target element that originally triggered the event, it enters the target phase. This is where event handlers registered on the target element itself are executed.
 
-      Event Bubbling Phase: After the target phase, the event proceeds to the event bubbling phase, where it starts to bubble up through the hierarchy from the target element, passing through its parent elements, and continuing up to the root element (document). During this phase, event handlers on each element along the propagation path have an opportunity to respond to the event.
+      Event Bubbling Phase: After the target phase, the event proceeds to the event bubbling phase, where it starts to bubble up through the hierarchy from the target element, passing through its parent elements, and continuing up to the root element (document). During this phase, event handlers on each element along the propagation path have an opportunity to respond to the event. `
+    },
+    {
+      question: 'What is event capturing?',
+      answer: `
+      During the event capturing phase, the event starts at the root of the DOM hierarchy, which is typically the document object, and then travels down through the hierarchy of ancestor elements toward the target element. It descends from the root element through its parent elements, then their parent elements, and so on.
       `
     },
     {
       question: 'What is event bubbling?',
-      answer: `Event bubbling allows you to capture events at higher levels of the DOM hierarchy, making it easier to handle events for multiple elements with a common ancestor. It simplifies event delegation and can lead to more efficient event handling.
-
-      Event Triggering: When a user interacts with a web page, such as clicking a button or clicking on an element, an event is triggered, such as a click event.
-
-      Event Propagation: The event starts at the target element where it was triggered and then bubbles up through the hierarchy of ancestor elements. It travels from the target element through its parent elements, then their parent elements, and so on, all the way up to the root element, which is typically the document object.
-
-      Event Handling: During the bubbling phase, each element along the propagation path has the opportunity to respond to the event by executing event handlers registered on those elements. Event handlers can be functions that perform specific actions in response to the event, such as changing the content of an element, toggling a CSS class, or triggering other JavaScript functions.
+      answer: `
+      During the bubbling phase, each element along the propagation path has the opportunity to respond to the event by executing event handlers registered on those elements. Event handlers can be functions that perform specific actions in response to the event, such as changing the content of an element, toggling a CSS class, or triggering other JavaScript functions. Event bubbling allows you to capture events at higher levels of the DOM hierarchy, making it easier to handle events for multiple elements with a common ancestor. It simplifies event delegation and can lead to more efficient event handling.
       `
     },
     {
@@ -162,10 +140,15 @@ export const STUDY_GUIDE: Record<
       const is used for variables that should not be reassigned after declaration, while let allows reassignment.`
     },
     {
+      question: 'Explain async/await',
+      answer: `
+      async/await is a powerful and concise way to work with asynchronous code in JavaScript. It provides a more readable and structured approach to handling asynchronous operations compared to traditional callback functions and promises. async/await is built on top of the Promise API and makes asynchronous code appear more like synchronous code, improving code clarity and maintainability.`
+    },
+    {
       question:
         'Explain Promises and the role they play in asynchronous JavaScript.',
       answer:
-        'Promises are objects that represent the eventual completion or failure of an asynchronous operation. They provide a more structured way to handle asynchronous code compared to callbacks. Promises have three states: pending, resolved (fulfilled), and rejected. Developers can attach .then() and .catch() handlers to handle successful and failed outcomes of asynchronous tasks.'
+        'Promises are objects that represent the eventual completion or failure of an asynchronous operation. A Promise is a proxy for a value not necessarily known when the promise is created. They provide a more structured way to handle asynchronous code compared to callbacks. Promises have three states: pending, resolved (fulfilled), and rejected. Developers can attach .then() and .catch() handlers to handle successful and failed outcomes of asynchronous tasks.'
     },
     {
       question:
@@ -208,6 +191,69 @@ export const STUDY_GUIDE: Record<
       Use call when you want to invoke a function immediately with a specific context and individual arguments.
       Use apply when you want to invoke a function immediately with a specific context and an array (or array-like object) of arguments.
       These methods are handy for controlling function context and argument passing in JavaScript, especially in scenarios involving object-oriented programming, callbacks, and event handling.`
+    },
+    {
+      question: 'What is a callback function?',
+      answer: `A callback function is a function passed into another function as an argument. The callback function is then invoked inside the callee to complete an action.`
+    },
+    {
+      question: 'What is the nullish coalescing operator?',
+      answer: `Nullish coalescing is a JavaScript logical operator represented by two question marks (??). Nullish coalescing is an operator that returns the first “defined” value. “defined” here refers to an expression whose value is neither null nor undefined.`
+    },
+    {
+      question: 'What is a spread operator',
+      answer: `Spread operator allows iterables such as arrays, objects, and strings to be expanded into single arguments. The spread operator is denoted by three dots (...) followed by the variable to be expanded.`
+    },
+    {
+      question: 'What is the rest parameter',
+      answer: `The rest parameter syntax allows a function to accept an indefinite number of arguments as an array. The rest operator puts the contents of the variable after the rest operator into an array (rest parameter can only be used as the last parameter of a function).`
+    },
+    {
+      question: 'What are logical operators?',
+      answer:
+        'There are 4 logical operator in JS - OR, AND, NOT, and nullish coalescing.'
+    },
+    {
+      question: 'What is memoization?',
+      answer: `Memoization is an optimization technique that speeds up your code by storing the results of expensive function calls and reusing the stored result when the same input occurs again. An expensive function refers to functions that consume a lot of resources (time and memory) during their execution due to heavy computation.`
+    },
+    {
+      question: 'What is function currying?',
+      answer: `Currying is a transformation of functions that translates a function from callable as f(a, b, c) into callable as f(a)(b)(c). In other words, currying a function means the function takes one argument at a time and returns a new function expecting the next argument. Instead of taking all arguments at the same time, currying decomposes the function into a sequence of functions with a single argument.`
+    },
+    {
+      question: 'What is typecasting?',
+      answer: `Typecasting or coercion means to change the data type of a value to another data type. For example, a conversion from a string to an integer or vice versa. There are three typecasts provided by JavaScript:
+
+      Boolean(value): Casts the input value to a boolean value
+      Number(value): Casts the input value to a float or integer value
+      String(value): Casts the input value to a string`
+    },
+    {
+      question: 'What is a microtask?',
+      answer: `A priority asynchronous task that is executed after the call stack is empty but before the next task from the event loop's task queue is executed. Microtasks are typically used for high-priority, non-blocking operations that need to be performed as soon as possible without blocking the main thread. Promises, .then, .catch, Mutation Observers`
+    },
+    {
+      question: 'What is a higher order function?',
+      answer: `Functions that can take other functions as arguments or return functions as their results. They are a fundamental concept in functional programming and provide a powerful way to work with functions and data. Higher-order functions enable you to abstract and compose functionality, making your code more modular and expressive.`
+    },
+    {
+      question: 'What are the different types of native errors in JavaScript?',
+      answer: `Error, SyntaxError, ReferenceError, TypeError, RangeError, URIError`
+    },
+    {
+      question:
+        'What is the difference between attributes and properties in JavaScript?',
+      answer: `Attributes are part of the HTML markup and define the initial state of an element, while properties are JavaScript objects that allow you to interact with and manipulate the current state of an element in the DOM. Although attributes and properties often have the same name, they serve different purposes and should be used accordingly when working with the DOM in JavaScript.`
+    },
+    {
+      question:
+        'What are the main differences between a forEach loop and a map loop?',
+      answer: `forEach is primarily used for iterating and performing actions on array elements without creating a new array, while map is used for creating a new array by applying a function to each element in the original array. The choice between them depends on your specific use case and whether you need to transform data or just perform actions on it.`
+    },
+    {
+      question: 'How do you compare two objects in JavaScript?',
+      answer: `Comparing two objects in JavaScript can be a bit tricky because objects are reference types, and comparing them directly with == or === will check if they reference the same object in memory, not if their properties/values are the same. To compare the contents of two objects, you typically need to perform a deep comparison by comparing their properties recursively. Using a library or custom deep equal comparison function`
     }
   ],
   React: [
