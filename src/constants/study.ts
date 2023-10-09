@@ -5,7 +5,7 @@ export const STUDY_GUIDE: Record<
   Javascript: [
     {
       question: 'What is prototypal inheritance?',
-      answer: `Prototypal inheritance is a fundamental concept in JavaScript that allows objects to inherit properties and methods from other objects. JavaScript is a prototype-based language, which means that inheritance is achieved by linking objects together through their prototypes rather than through class hierarchies as in class-based languages.
+      answer: `Allows objects to inherit properties and methods from other objects. JavaScript is a prototype-based language, which means that inheritance is achieved by linking objects together through their prototypes rather than through class hierarchies as in class-based languages.
 
       Every object in JavaScript has a hidden property called [[Prototype]], which refers to another object (or null). This [[Prototype]] is also referred to as the object's prototype. Objects inherit properties and methods from their prototype.
 
@@ -163,7 +163,7 @@ export const STUDY_GUIDE: Record<
     {
       question: 'What is a closure?',
       answer:
-        "A closure is the combination of a function bundled together (enclosed) with references to its surrounding state (the lexical environment). In other words, a closure gives you access to an outer function's scope from an inner function. In JavaScript, closures are created every time a function is created, at function creation time. Closures are important because they allow for data encapsulation, private variables, and the creation of functions with persistent state."
+        "A closure is the combination of a function bundled together with references to its surrounding state (the lexical environment). In other words, a closure gives you access to an outer function's scope from an inner function. In JavaScript, closures are created every time a function is created, at function creation time. Closures are important because they allow for data encapsulation, private variables, and the creation of functions with persistent state."
     },
     {
       question: 'What is a stale closure?',
@@ -254,6 +254,48 @@ export const STUDY_GUIDE: Record<
     {
       question: 'How do you compare two objects in JavaScript?',
       answer: `Comparing two objects in JavaScript can be a bit tricky because objects are reference types, and comparing them directly with == or === will check if they reference the same object in memory, not if their properties/values are the same. To compare the contents of two objects, you typically need to perform a deep comparison by comparing their properties recursively. Using a library or custom deep equal comparison function`
+    },
+    {
+      question: `What does the instanceof operator do?`,
+      answer: `The instanceof operator checks whether the prototype property of a constructor appears anywhere in the prototype chain of an object. In other words, the instanceof operator checks if the object is an instance of a class or not at run time.`
+    },
+    {
+      question: 'How do you create a shallow copy of an object?',
+      answer: `A shallow copy of an object creates a new object, but it only copies the references to the nested objects or properties of the original object. In other words, the top-level properties of the copied object are new, but the nested objects are still references to the same objects as the original.
+
+      There are two main ways to create a shallow copy of an object in JavaScript:
+      1. Using the spread operator
+      2. Using Object.assign
+      `
+    },
+    {
+      question: 'How does JavaScript garbage collector work?',
+      answer: `JavaScript employs automatic memory management through a mechanism known as a garbage collector. The primary purpose of the garbage collector is to identify and reclaim memory that is no longer in use, preventing memory leaks and ensuring efficient memory utilization`
+    },
+    {
+      question: 'What is a proper tail call?',
+      answer: `a specific type of function call that occurs as the last operation in a function before it returns a result. In a proper tail call, the return value of the calling function is directly determined by the return value of the called function, without any additional work or computation required in the calling function after the call.`
+    },
+    {
+      question: 'What is the purpose of queueMicrotask?',
+      answer: `JavaScript has a task queue and a microtask queue. The task queue includes tasks like script execution, rendering, and handling user interactions. The microtask queue is used for shorter, higher-priority tasks. queueMicrotask allows you to schedule a function to run in the microtask queue.`
+    },
+    {
+      question: 'Shim vs polyfill',
+      answer: `A shim provides a consistent interface or behavior for a feature that may be missing or behave differently in certain browsers.
+      A polyfill is a specialized type of shim that specifically targets older browsers, providing modern functionality by emulating the missing feature or API.`
+    },
+    {
+      question: 'What is preventDefault?',
+      answer: `preventDefault allows you to intercept default actions and implement custom behavior, giving you greater control over how your web pages and applications respond to user interactions. Prevent form submissions, link navigation, or scrolling`
+    },
+    {
+      question: 'What is a proxy object?',
+      answer: `Proxies provide a powerful way to create custom behavior for objects, making them useful for tasks like validation, logging, memoization, and more.`
+    },
+    {
+      question: 'What are JavaScript accessors?',
+      answer: `Also known as getters and setters, are a pair of special methods that allow you to define the behavior for reading and writing the values of an object's properties. They provide a way to encapsulate and control access to an object's data by defining custom logic when getting and setting property values. Accessors are used to ensure data consistency, validation, or to add additional behavior when interacting with object properties.`
     }
   ],
   React: [
@@ -403,48 +445,143 @@ export const STUDY_GUIDE: Record<
 
       Common Use Cases: Use useLayoutEffect when you need to make changes that affect the layout of the DOM and need to be reflected immediately. For example, when you want to measure the size of an element, you'd use useLayoutEffect to ensure that you have access to accurate layout information before the browser repaints.
       `
+    },
+    {
+      question: 'What is the difference between Object.freeze() and const?',
+      answer: `A variable declared with the const keyword can't be assigned a new value.
+      Object.freeze(), on the other hand, makes the contents of the object immutable. You can't modify the properties in the object.
+      `
+    },
+    {
+      question: 'What is Strict mode in JavaScript?',
+      answer: `Strict mode is a mode in JavaScript to enforce stricter parsing and error handling on your JavaScript code.
+
+      The main benefit of using strict mode is catching errors early and making debugging your code easier. Common errors such as assigning a value to an undeclared variable would throw an error in strict mode alerting you that there is something wrong in your code.`
+    },
+    {
+      question:
+        'What is the difference between local storage and session storage?',
+      answer: `Data stored in local storage is only cleared when removed explicitly through the browser's settings or programmatically by the application and can be accessed cross tabs. Data stored in session storage gets cleared when the page session ends. A page session lasts as long as the tab or browser is open and persists between page reloads and restores.`
     }
   ],
   Redux: [],
   Patterns: [
     {
-      question: 'What is the Observer Pattern?',
+      question: 'Singleton Pattern',
       answer:
-        'The Observer is a design pattern where an object (known as a subject) maintains a list of objects depending on it (observers), automatically notifying them of any changes to state.'
+        'Ensures that a class has only one instance and provides a global point of access to that instance. Useful for managing global settings or resources.'
     },
     {
-      question: 'What is the Module Pattern?',
-      answer:
-        "Modules are an integral piece of any robust application's architecture and typically help in keeping the units of code for a project both cleanly separated and organized. Good to hear - ESM, AMD, CommonJS"
+      question: 'Module Pattern',
+      answer: `Encapsulates related variables and functions into a single object, providing a clean and organized way to structure code. Commonly used in JavaScript for creating private and public members. ESM, AMD, Commonjs`
     },
     {
-      question: 'What is the Prototype Pattern?',
-      answer:
-        'We can think of the prototype pattern as being based on prototypal inheritance where we create objects which act as prototypes for other objects. The prototype object itself is effectively used as a blueprint for each object the constructor creates. If the prototype of the constructor function used contains a property "name" example (as per the code sample lower down), then each object created by that same constructor will also have this same property.'
+      question: 'Factory Pattern',
+      answer: `Provides an interface for creating objects but allows subclasses to alter the type of objects that will be created. Useful for creating objects with similar structures.`
     },
     {
-      question: 'What is the Constructor Pattern?',
+      question: 'Constructor Pattern',
       answer:
-        'Object constructors are used to create specific types of objects - both preparing the object for use and accepting arguments which a constructor can use to set the values of member properties and methods when the object is first created.'
+        'Defines a blueprint for creating objects. Constructors are used with the new keyword to create instances. This is the traditional way of creating classes in JavaScript before ES6 classes.'
     },
     {
-      question: 'What is the Factory Pattern?',
+      question: 'Prototype Pattern',
       answer:
-        "The Factory pattern is another creational pattern concerned with the notion of creating objects. Where it differs from the other patterns in its category is that it doesn't explicitly require us to use a constructor which allows us to return more than just objects."
+        'Allows you to create objects by cloning an existing object, known as a prototype. Promotes code reuse and inheritance without the need for traditional classes.'
     },
     {
-      question: 'What is Dependency Injection?',
+      question: 'Observer Pattern',
       answer:
-        "Dependency injection is providing the objects that an object needs (its dependencies) instead of having it construct them itself. It's a very useful technique for testing, since it allows dependencies to be mocked or stubbed out. Parameterizing dependencies."
+        'Defines a one-to-many dependency between objects so that when one object changes state, all its dependents are notified and updated automatically. Commonly used in event handling.'
+    },
+    {
+      question: 'Pub/Sub Pattern (Publisher/Subscriber)',
+      answer: `Similar to the Observer pattern but allows objects (publishers) to send messages to a central hub (broker), which then distributes messages to subscribers. Enables loose coupling between components.`
+    },
+    {
+      question: 'Decorator Pattern',
+      answer: `Allows you to add behavior or responsibilities to individual objects, either statically or dynamically, without affecting the behavior of other objects from the same class.`
+    },
+    {
+      question: 'Adapter Pattern',
+      answer: `Allows the interface of an existing class to be used as another interface. It is often used to make existing classes work with others without modifying their source code.`
+    },
+    {
+      question: 'Facade Pattern',
+      answer: `Provides a simplified interface to a more complex system of classes, making it easier to interact with the system and hide its complexity.`
+    },
+    {
+      question: 'Composite Pattern',
+      answer: `Composes objects into tree structures to represent part-whole hierarchies. Allows clients to treat individual objects and compositions of objects uniformly.`
+    },
+    {
+      question: 'Strategy Pattern',
+      answer: `Defines a family of interchangeable algorithms, encapsulates each one, and makes them interchangeable. Clients can switch between algorithms at runtime.`
+    },
+    {
+      question: 'Command Pattern',
+      answer: `Encapsulates a request as an object, thereby allowing you to parameterize clients with queues, requests, and operations. Useful for implementing undo functionality.`
+    },
+    {
+      question: 'State Pattern',
+      answer: `Allows an object to alter its behavior when its internal state changes. The object will appear to change its class.`
+    },
+    {
+      question: 'Chain of Responsibility Pattern',
+      answer: `Passes a request along a chain of handlers. Upon receiving a request, each handler decides either to process the request or pass it to the next handler in the chain.`
+    },
+    {
+      question: 'Proxy Pattern',
+      answer: `Provides a surrogate or placeholder for another object to control access to it. Common use cases include lazy loading, access control, and logging.`
+    },
+    {
+      question: 'Flyweight Pattern',
+      answer: `Minimizes memory usage or computational expenses by sharing as much as possible with related objects. Useful when dealing with a large number of lightweight objects.`
+    },
+    {
+      question: 'Command Query Responsibility Segregation (CQRS)',
+      answer: `Separates the responsibility for modifying data from the responsibility for reading data. It is often used in conjunction with event sourcing in complex applications.`
+    },
+    {
+      question: 'Dependency Injection Pattern',
+      answer: `Allows objects to be decoupled from their dependencies. Dependencies are provided externally (injected) rather than being created internally.`
+    },
+    {
+      question: 'MVC (Model-View-Controller) Pattern',
+      answer: `Separates an application into three interconnected components: the Model (data and business logic), the View (user interface), and the Controller (handles user input and updates the Model and View).`
     }
   ],
   Typescript: [],
   CORS: [],
+  Interview: [
+    {
+      question: 'What questions do you have for us?',
+      answer: `
+        What's the managing style here? What typical time zones overlap with other engineers? What is the engineering culture? What surrounding technologies do you use? How are deployments handled? What does your ci/cd pipelines look like? Do you have QA? What does the leadership culture look like? Is your company cashflow positive and if not, who are your investors? How much code coverage of unit tests do you have?
+      `
+    },
+    {
+      question:
+        'Describe an interesting technical challenge you have faced in your work and how you overcame it as a software developer?',
+      answer: `
+        Point - state the scenario, Evidence - provide the example, Evaluate - What did you learn.
+
+      `
+    }
+  ],
   Exercises: [
     {
       question:
         'Create a function that accepts 2 strings and removes the common characters from the outputted string',
-      answer: 'codepen url'
+      answer: 'https://codepen.io/bsmith-code/pen/MWXqGKw'
+    },
+    {
+      question: 'Deduplicate an array',
+      answer: 'https://codepen.io/bsmith-code/pen/Jjabape'
+    },
+    {
+      question: 'How do you flatten a multi-dimensional array?',
+      answer: 'https://codepen.io/bsmith-code/pen/xxmMOdp'
     }
   ]
 }
