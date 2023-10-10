@@ -296,6 +296,23 @@ export const STUDY_GUIDE: Record<
     {
       question: 'What are JavaScript accessors?',
       answer: `Also known as getters and setters, are a pair of special methods that allow you to define the behavior for reading and writing the values of an object's properties. They provide a way to encapsulate and control access to an object's data by defining custom logic when getting and setting property values. Accessors are used to ensure data consistency, validation, or to add additional behavior when interacting with object properties.`
+    },
+    {
+      question: 'What is the difference between Object.freeze() and const?',
+      answer: `A variable declared with the const keyword can't be assigned a new value.
+      Object.freeze(), on the other hand, makes the contents of the object immutable. You can't modify the properties in the object.
+      `
+    },
+    {
+      question: 'What is Strict mode in JavaScript?',
+      answer: `Strict mode is a mode in JavaScript to enforce stricter parsing and error handling on your JavaScript code.
+
+      The main benefit of using strict mode is catching errors early and making debugging your code easier. Common errors such as assigning a value to an undeclared variable would throw an error in strict mode alerting you that there is something wrong in your code.`
+    },
+    {
+      question:
+        'What is the difference between local storage and session storage?',
+      answer: `Data stored in local storage is only cleared when removed explicitly through the browser's settings or programmatically by the application and can be accessed cross tabs. Data stored in session storage gets cleared when the page session ends. A page session lasts as long as the tab or browser is open and persists between page reloads and restores.`
     }
   ],
   React: [
@@ -307,17 +324,11 @@ export const STUDY_GUIDE: Record<
     {
       question: 'What is JSX?',
       answer:
-        'JSX stands for JavaScript XML and is a syntax extension for JavaScript used in React to define the structure and layout of UI components. It allows you to write HTML-like code within your JavaScript files, making it easier to create and manage the user interface of your React applications. Basically it just provides the syntactic sugar for the React.createElement(type, props, ...children) function, giving us expressiveness of JavaScript along with HTML like template syntax.'
+        'JSX stands for JavaScript XML and is a syntax extension for JavaScript used in React to define the structure and layout of UI components. It allows you to write HTML-like code within your JavaScript files, making it easier to create and manage the user interface of your React applications.'
     },
     {
       question: 'What are the major features of React?',
-      answer: `The major features of React are:
-
-      Virtual DOM: React uses a virtual DOM (Document Object Model) to improve performance. Instead of directly updating the actual DOM when the state changes, React first updates a virtual representation of the DOM in memory. It then calculates the most efficient way to update the real DOM, minimizing costly operations. This approach results in faster rendering and improved application performance.
-
-      Unidirectional Data Flow: React enforces a unidirectional data flow, which means data flows in one direction—from parent components to child components. This makes it easier to understand and debug the application's behavior since changes in data are predictable and traceable.
-
-      JSX: JSX, or JavaScript XML, is a syntax extension that allows you to write UI components using a syntax that closely resembles HTML. JSX makes it easier to visualize and define the structure of your UI within your JavaScript code.`
+      answer: `Virtual DOM, Unidirectional Data Flow, JSX, Declarative Syntax, Rich Ecosystem, Component based architecture.`
     },
     {
       question: 'What are react components?',
@@ -382,19 +393,19 @@ export const STUDY_GUIDE: Record<
     {
       question: 'What is context?',
       answer:
-        'React Context is an advanced feature in React that provides a way to share data between components in a React application without having to pass props explicitly through the component tree. It is primarily used to manage and propagate global or application-level state and settings, making it easier to access this data throughout your component hierarchy. Dependency injection tool.'
+        'A dependency injection tool that provides a way to share data between components without having to pass props explicitly through the component tree. It is primarily used to manage and propagate global or application-level state and settings, making it easier to access this data throughout your component hierarchy.'
     },
     {
       question: 'What is reconciliation?',
-      answer: `Reconciliation in React refers to the process of updating the user interface to reflect changes in application state or component props. It is a fundamental part of React's rendering process, where React compares the previous state of the component's virtual DOM (Virtual Document Object Model) with the current state and determines what updates, if any, are needed to synchronize the UI with the latest data.`
+      answer: `The process of updating the user interface to reflect changes in application state or component props. It is a fundamental part of React's rendering process, where React compares the previous state of the component's virtual DOM (Virtual Document Object Model) with the current state and determines what updates, if any, are needed to synchronize the UI with the latest data.`
     },
     {
       question: 'What are react fragments?',
-      answer: `React Fragments, introduced in React 16.2, are a feature that allows you to group multiple child elements within a single parent element without adding extra nodes to the HTML markup. Fragments are useful in situations where you want to group elements for rendering purposes without introducing additional DOM elements.`
+      answer: `Allows you to group multiple child elements within a single parent element without adding extra nodes to the HTML markup. Fragments are useful in situations where you want to group elements for rendering purposes without introducing additional DOM elements.`
     },
     {
       question: 'What are react portals?',
-      answer: `React Portals are a feature in React that provide a way to render a component's content outside of its parent's DOM hierarchy. They allow you to render a component's content at a different place in the DOM tree, typically at a higher level in the hierarchy or in a completely different part of the DOM.`
+      answer: `Provide a way to render a component's content outside of its parent's DOM hierarchy. They allow you to render a component's content at a different place in the DOM tree, typically at a higher level in the hierarchy or in a completely different part of the DOM.`
     },
     {
       question: 'What are some limitations of react?',
@@ -403,6 +414,38 @@ export const STUDY_GUIDE: Record<
       Integrating React into a traditional MVC framework requires some additional configuration.
       The code complexity increases with inline templating and JSX.
       Too many smaller components leading to over engineering or boilerplate.`
+    },
+    {
+      question: 'What is the useState hook?',
+      answer: `Allows you to add state management to functional components. It returns a state variable and a function to update that variable. You can use it to store and manage component-level state`
+    },
+    {
+      question: 'What is the useEffect hook?',
+      answer: `Managing side effects in functional components, ensuring that your component behaves correctly and efficiently when interacting with external data sources and the DOM. Data fetching, DOM updates, Subscriptions (external data sources or web sockets), Timers & Intervals`
+    },
+    {
+      question: 'What is the useRef hook?',
+      answer: `used for creating mutable references to DOM elements or to persist values across renders without causing re-renders when the reference changes. It provides a way to access and interact with DOM elements directly and can also be used to store and manage mutable values that do not trigger re-renders.`
+    },
+    {
+      question: 'What is the useContext hook?',
+      answer: `Enables access to the context of a parent component, allowing you to share data and functions across components without manually passing props through intermediate components.`
+    },
+    {
+      question: 'What is the useReducer hook?',
+      answer: `Is an alternative to useState for managing complex state logic. It's often used when the state transitions depend on the previous state or require more complex updates. Think of it as a finite state machine that should be utilized when 3+ state data are reliant on each other.`
+    },
+    {
+      question: 'What is the useImperativeHandle hook?',
+      answer: `Allows you to customize the instance value that is exposed when using ref with a forwardRef component. It's useful for controlling the behavior of the ref object`
+    },
+    {
+      question: 'What are the useTransition and useDeferredValue?',
+      answer: `Introduced in React 18, these hooks are used for creating smoother transitions and prioritizing updates in concurrent mode.`
+    },
+    {
+      question: 'What is suspense?',
+      answer: `Manages asynchronous data fetching and rendering in a more declarative and user-friendly manner. React Suspense aims to simplify the handling of loading states, error handling, and code-splitting in React applications. Pair with React.lazy.`
     },
     {
       question: 'What is the useCallback hook?',
@@ -429,39 +472,102 @@ export const STUDY_GUIDE: Record<
       answer: `
       useEffect and useLayoutEffect are both hooks in React used for handling side effects in functional components. However, they differ in when they are executed during the component's lifecycle and whether they block rendering.
 
-      useEffect:
+      useEffect is called asynchronously after rendering is committed to the screen. This means it runs after the render cycle is complete, and the DOM has been updated. Suitable for most scenarios, such as data fetching, setting up subscriptions, or performing DOM manipulations that don't impact layout.
 
-      Execution Timing: useEffect is called asynchronously after rendering is committed to the screen. This means it runs after the render cycle is complete, and the DOM has been updated.
-
-      Blocking Rendering: useEffect does not block the rendering process. It allows the component to render first, and then it performs its side effects. Therefore, any changes it makes to the DOM or state won't be reflected until the next render cycle.
-
-      Common Use Cases: Use useEffect for side effects that don't need to be synchronous with rendering. This is suitable for most scenarios, such as data fetching, setting up subscriptions, or performing DOM manipulations that don't impact layout.
-
-      useLayoutEffect:
-
-      Execution Timing: useLayoutEffect is called synchronously immediately after rendering but before the browser has painted the screen. This means it runs before the render cycle is complete and before any changes to the DOM are visible to the user.
-
-      Blocking Rendering: useLayoutEffect blocks the rendering process. If you perform complex or time-consuming tasks within it, it may lead to slower rendering and a less responsive user interface.
-
-      Common Use Cases: Use useLayoutEffect when you need to make changes that affect the layout of the DOM and need to be reflected immediately. For example, when you want to measure the size of an element, you'd use useLayoutEffect to ensure that you have access to accurate layout information before the browser repaints.
+      useLayoutEffect is called synchronously immediately after rendering but before the browser has painted the screen. This means it runs before the render cycle is complete and before any changes to the DOM are visible to the user. Use useLayoutEffect when you need to make changes that affect the layout of the DOM and need to be reflected immediately. For example, when you want to measure the size of an element, you'd use useLayoutEffect to ensure that you have access to accurate layout information before the browser repaints.
       `
     },
     {
-      question: 'What is the difference between Object.freeze() and const?',
-      answer: `A variable declared with the const keyword can't be assigned a new value.
-      Object.freeze(), on the other hand, makes the contents of the object immutable. You can't modify the properties in the object.
-      `
+      question: 'What are refs?',
+      answer: `Refs provide a way to access DOM nodes or React elements created in the render method.
+
+      Refs act as an escape hatch to the regular React dataflow of passing props down a component tree. They are used to update the child component (including both React components and DOM elements) without passing in new props.`
     },
     {
-      question: 'What is Strict mode in JavaScript?',
-      answer: `Strict mode is a mode in JavaScript to enforce stricter parsing and error handling on your JavaScript code.
+      question: 'What are stateless components?',
+      answer: `Stateless components (a flavor of “reusable” components) are nothing more than pure functions that render DOM-based solely on the properties provided to them.`
+    },
+    {
+      question: 'What are the 4 stages a component goes through?',
+      answer: `Each React component has its own lifecycle. Each stage of the lifecycle invokes a series of methods allowing us to perform specific tasks at a specific stage of the component's lifecycle. Understanding the different stages within a component's lifecycle enables us to use them effectively.
 
-      The main benefit of using strict mode is catching errors early and making debugging your code easier. Common errors such as assigning a value to an undeclared variable would throw an error in strict mode alerting you that there is something wrong in your code.`
+      Initialization - the component is constructed with the given props and default state
+      Mounting - rendering the JSX returned by the render method
+      Updating - when the state of a component is updated and the application is repainted
+      Unmounting - the final stage of the component lifecycle where the component is removed from the DOM`
+    },
+    {
+      question: 'How is react different?',
+      answer: `Component-Based Architecture, Virtual DOM, Declarative Syntax, 1 way data flow, JSX, Vast ecosystem, React Native, SSR, Optimizations.
+
+      React focuses on the view layer of an application and can be combined with other libraries and tools to build full-featured web applications. It is very un-opinionated.`
+    },
+    {
+      question: 'When to choose React over Vue/Angular.',
+      answer: `Factors such as the project's scale, complexity, timeline, and the skills of your development team should all influence your decision. Additionally, evaluating the strengths and weaknesses of each technology in the context of your project is crucial for making an informed choice. Specific ecosystem needs (specific library), Personal or team preferences, building PWAs with next or remix, State Management Freedom, Large ecosystem, etc.`
     },
     {
       question:
-        'What is the difference between local storage and session storage?',
-      answer: `Data stored in local storage is only cleared when removed explicitly through the browser's settings or programmatically by the application and can be accessed cross tabs. Data stored in session storage gets cleared when the page session ends. A page session lasts as long as the tab or browser is open and persists between page reloads and restores.`
+        'What are some pitfalls of building a large scale application with react?',
+      answer: `State management complexity, component prop drilling, performance optimizations, component/folder structure, global styles / theming, testing complexity, routing, SSR & SEO, Code splitting & lazy loading, documentation.`
+    },
+    {
+      question: 'What are some pitfalls of JSX?',
+      answer: `Learning curve, build tool config, eslint config, HTML vs JSX diffs, Fragments, Complex expressions and overuse of JSX`
+    },
+    {
+      question: 'What are render props?',
+      answer: `Render prop is a technique to share code between components by passing a function (the function should return an element) as the component's props. The component with the render prop can then use the element from the passed-in function in its render function to compose a new component.`
+    },
+    {
+      question: 'What is the flux pattern?',
+      answer: `Flux is an architectural pattern that enforces unidirectional data flow — its core purpose is to control derived data so that multiple components can interact with that data without risking pollution.
+
+      In the Flux pattern, the Store is the central authority for all data; any mutations to the data must occur within the store. Changes to the Store data are subsequently broadcast to subscribing Views via events. Views then update themselves based on the new state of received data.
+
+      To request changes to any Store data, Actions may be fired. These Actions are controlled by a central Dispatcher; Actions may not occur simultaneously, ensuring that a Store only mutates data once per Action.
+
+      The strict unidirectional flow of this Flux pattern enforces data stability, reducing data-related runtime errors throughout an application.`
+    },
+    {
+      question: 'Flux vs MVC',
+      answer: `With an MVC architecture, the data contained within the Model is shared between both the master and detail Views. Each of these views might have its own Controller delegating updates between the Model and the View. At any point the data contained within the Model might be updated — and it's difficult to know where exactly that change occurred. Did it happen in one of the Views sharing that Model, or in one of the Controllers? Because the Model's data can be mutated by any actor in the application, the risk of data pollution in complex UIs is greater than we'd like.
+
+      With a Flux architecture, the Store data is similarly shared between multiple Views. However this data can't be directly mutated — all of the requests to update the data must pass through the Action > Dispatcher chain first, eliminating the risk of random data pollution. When updates are made to the data, it's now much easier to locate the code requesting those changes.`
+    },
+    {
+      question: 'What is a pure component?',
+      answer: `Is a specific type of component that optimizes rendering performance by implementing a shallow comparison of props and state. Pure components automatically prevent unnecessary re-renders when their input data (props or state) remains the same between updates. This optimization can lead to improved performance in certain scenarios.`
+    },
+    {
+      question: 'What are error boundaries?',
+      answer: `React components that catch JavaScript errors anywhere in its child component tree. The Error boundary component can then log those errors and display fallback UI instead of crashing the entire component tree. You can think of error boundaries as a catch block for components.`
+    },
+    {
+      question: 'What is React Profiler and what is it used for?',
+      answer: `A means to measure the cost of rendering in a React application. The purpose of this component is to help developers identify parts of the application that are slow and may benefit from further optimizations.`
+    },
+    {
+      question: 'How do you measure performance in a react app?',
+      answer: `Chrome Dev tools, React dev tools - specifically the profiler tab, the profiler API, analytics and monitoring`
+    },
+    {
+      question: 'What is StrictMode in React?',
+      answer: `StrictMode is a tool to highlight potential problems in an application. Although StrictMode is used as a component, it doesn't create a visible UI in the DOM. It only enables additional checks for its descendants.
+      Benefits of using StrictMode include:
+
+        Identifying components with unsafe lifecycles,
+        Warning about legacy string ref API usage,
+        Warning about deprecated findDOMNode usage,
+        Detecting unexpected side effects,
+        Detecting legacy context API,
+        Ensuring reusable state,
+
+      `
+    },
+    {
+      question: 'How does the React Router differ from conventional routing?',
+      answer: `React Router is often used in Single-Page Applications (SPAs), where a single HTML page is loaded initially, and subsequent route changes are managed by the client-side JavaScript. Conventional routing is more common in multi-page applications, where distinct HTML pages are served for different routes.`
     }
   ],
   Redux: [],
@@ -567,6 +673,15 @@ export const STUDY_GUIDE: Record<
         Point - state the scenario, Evidence - provide the example, Evaluate - What did you learn.
 
       `
+    },
+    {
+      question:
+        'How do you stay up-to-date with best practices and industry trends?',
+      answer: `Bytes.dev & This week in react newsletters / articles. Also react, typescript, software development subreddits which spin off different articles and discussions. I also subscribe to Kent C. Dobbs, Wes Boss, and Dan Abramov.`
+    },
+    {
+      question: 'Why our company?',
+      answer: `I'm looking for a company that values and respects me as a human along with a positive and fulfilling work culture. As long as I'm programming, being challenged, collaborating, and not stagnant, the product im working on is irrelevant. I will turn complex business requirements into a work of art, this is what I do and what I'm extremely good at. I value work-life balance - up until 2020 when I had a few health scare I used to work after work... brain chemistry changed I no longer do that unless we are under a deadline, I value a strong and clear mission, I value recognition and I value innovation. All of these factors are what drove me to this interview.`
     }
   ],
   Exercises: [
