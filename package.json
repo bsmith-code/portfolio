@@ -2,6 +2,7 @@
   "name": "portfolio",
   "version": "2.0.0",
   "private": true,
+  "type": "module",
   "scripts": {
     "start": "dotenv -e .env.local vite",
     "preview": "dotenv -e .env.prod vite build && vite preview",

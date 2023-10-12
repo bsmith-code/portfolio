@@ -1,3 +1,4 @@
+/* eslint-disable import/no-extraneous-dependencies */
 import { defineConfig } from 'vite'
 import reactRefresh from '@vitejs/plugin-react'
 import svgrPlugin from 'vite-plugin-svgr'
@@ -8,18 +9,19 @@ import EnvironmentPlugin from 'vite-plugin-environment'
 // https://vitejs.dev/config/
 export default defineConfig({
   build: {
-    outDir: 'build',
+    outDir: 'build'
   },
   server: {
     port: 3000,
+    host: 'brianmatthewsmith.local'
   },
   plugins: [
     reactRefresh(),
     tsconfigPaths(),
     svgrPlugin(),
     checker({
-      typescript: true,
+      typescript: true
     }),
-    EnvironmentPlugin('all', { prefix: 'REACT_APP_' }),
-  ],
+    EnvironmentPlugin('all', { prefix: 'REACT_APP_' })
+  ]
 })

@@ -96,19 +96,28 @@ export const STUDY_GUIDE: Record<
       answer: `Hoisting is a JavaScript behavior where variable and function declarations are moved to the top of their containing scope during compilation. This means that you can use variables and functions before they are declared, but they will be initialized with undefined until their declarations are encountered in the code.`
     },
     {
-      question:
-        'What are arrow functions in ES6, and how do they differ from regular functions?',
-      answer: `Arrow functions are a concise way to write functions in ES6. They have a shorter syntax and automatically capture the this value from the surrounding lexical context. Arrow functions do not have their own this, arguments, or super binding, making them particularly useful for functions within classes or callbacks.`
+      question: 'Function Declaration',
+      answer: `
+        Syntax: Function declarations start with the "function" keyword followed by the function name, parameters enclosed in parentheses, and the function body enclosed in curly braces.
+        Hoisting: Function declarations are hoisted, meaning they can be used before they are declared in the code.
+        Use Case: Function declarations are suitable for creating reusable functions that are intended to be used throughout your code.
+      `
     },
     {
-      question: 'Function expression vs function declaration',
-      answer: `Key differences of arrow function expressions:
-
-      Arrow functions do not have their own this. They inherit the this value from their enclosing lexical scope.
-      They cannot be used as constructor functions with the new keyword.
-      Arrow functions are always anonymous; you cannot give them a name.
-      They are often preferred for short, simple functions and for functions that need to preserve the value of this.
-      In summary, function declarations are hoisted and named, function expressions are not hoisted and can be anonymous or named, and arrow function expressions have a distinct syntax and inherit this from their lexical scope. The choice between them depends on your specific use case and coding style preferences.`
+      question: 'Function Expression',
+      answer: `
+        Syntax: Function expressions define functions as part of an expression. They can be named or anonymous. If named, the function name is only available inside the function.
+        Not Hoisted: Function expressions are not hoisted, so you cannot use them before they are declared.
+        Use Case: Function expressions are often used to define functions within other functions or as values assigned to variables, making them suitable for conditional or dynamic function creation.
+      `
+    },
+    {
+      question: 'Arrow Function Expression',
+      answer: `
+        Syntax: Arrow functions have a more concise syntax. They don't have their "this" context and are always anonymous. They use the arrow (=>) notation.
+        Not Hoisted: Like function expressions, arrow functions are not hoisted.
+        Use Case: Arrow functions are suitable for short, single-expression functions, especially when you want to maintain a concise and clean code style. They are also commonly used in ES6 for callback functions and functions that need to capture the "this" value from their lexical scope.
+      `
     },
     {
       question:
@@ -313,6 +322,92 @@ export const STUDY_GUIDE: Record<
       question:
         'What is the difference between local storage and session storage?',
       answer: `Data stored in local storage is only cleared when removed explicitly through the browser's settings or programmatically by the application and can be accessed cross tabs. Data stored in session storage gets cleared when the page session ends. A page session lasts as long as the tab or browser is open and persists between page reloads and restores.`
+    }
+  ],
+  Typescript: [
+    {
+      question: 'What is Typescript?',
+      answer:
+        'Typescript is a superset of JS that allows you to strongly type your code which can lead to catching bugs at compile time and describing shapes of objects within your code.'
+    },
+    {
+      question: 'Benefits of TS?',
+      answer:
+        'Better tooling and intellisense with IDEs, Scalability and maintability of codebase by describing shapes of objects and call signatures of functions offering better readability and documentation.'
+    },
+    {
+      question: 'What are interfaces',
+      answer: `Interface are a way to describe data shapes.`
+    },
+    {
+      question: 'How do you create a new type using a subset of an interface?',
+      answer: `TypeScript has a utility type called omit that lets you construct a new type by passing a current type/interface and selecting the keys to be excluded from the new type.`
+    },
+    {
+      question: 'How do “enums” work in TypeScript?',
+      answer: `Are a means of defining a set of named constants. These data structures have a constant length and contain a set of constant values. Enums in TypeScript are commonly used to represent a set number of options for a given value using a set of key/value pairs. Bodyguard for your object. Under the hood, TypeScript translates enums into plain JavaScript objects after compilation. This makes the use of enums more favorable compared to using multiple independent const variables. The grouping that enums offer makes your code type-safe and more readable.`
+    },
+    {
+      question: 'What access modifiers are supported by TypeScript?',
+      answer: `
+      There are three types of access modifiers in TypeScript: public, private, and protected.
+      public: All properties and methods are public by default. Public members of a class are visible and accessible from any location.
+      protected: Protected properties are accessible from within the same class and its subclass. For example, a variable or method with the protected keyword will be accessible from anywhere within its class and within a different class that extends the class containing the variable or method.
+      private: Private properties are only accessible from within the class the property or method is defined.
+`
+    },
+    {
+      question: 'What are generics and how to use them in TypeScript?',
+      answer: `
+      Generics in TypeScript are a feature that allows you to create flexible, reusable, and type-safe components, functions, or classes by enabling you to work with a variety of data types while preserving type information. Generics are especially valuable when you want to write code that is not tied to a specific data type but can be applied to a range of types. reverseArray<T>(array: T) => {} -- reverseArray<number>()
+      `
+    },
+    {
+      question: 'When should you use the unknown type?',
+      answer: `unknown is a special type that is similar to any. Like any, a common use case of the unknown type is when you don't know the exact type upfront. unknown variables accept any value. However, when trying to operate on an unknown variable, TypeScript requires a type check or a type assertion.`
+    },
+    {
+      question: 'What is noImplicitAny and what is its purpose?',
+      answer: `noImplicitAny is a property in a TypeScript project's configuration file (tsconfig.json) that modifies how TypeScript's compiler handles your project's implicit any types.
+        When the noImplicitAny flag is false (by default), the compiler doesn't infer the variable type based on how it's used. Instead, the compiler defaults the type to any.
+
+        On the other hand, when the noImplicitAny flag is true, the compiler will attempt to infer the type, throwing a compile-time error if the compiler isn't able to infer the type.
+      `
+    },
+    {
+      question: 'What are conditional types in TypeScript?',
+      answer: `Conditional types in TypeScript are similar to ternary operators. As the name suggests, it assigns a type to the variable based on a condition.`
+    },
+    {
+      question: 'What is the difference between union and intersection types?',
+      answer: `A union type is described as a type that can be one of several types. Intersection on the other hand, is described as a type that combines multiple types into one - combining all the properties of each type to create a new type.`
+    },
+    {
+      question:
+        'What is the difference between extends and implements in TypeScript?',
+      answer: `When a class extends another class, the child class will inherit all the properties and methods of the class it extends. When a class implements another class or interface, the class has to implement all the methods and properties from the implemented class or interface. The implements keyword acts as a contract that the class has to follow, and TypeScript will make sure that the class is of the same shape as the class or interface it implements.`
+    },
+    {
+      question: 'Explain how optional chaining works in TypeScript.',
+      answer: `Optional chaining uses the question mark followed by a period (?.) as its operator. TypeScript evaluates each reference in the chain and performs a null or undefined check before accessing its children. TypeScript immediately stops the execution when it fails the null or undefined check and returns undefined for the entire chain.`
+    },
+    {
+      question: 'What are abstract classes?',
+      answer: `Abstract classes specify a contract for the objects without the ability to instantiate them directly. However, an abstract class may also provide implementation details for its members. abstract class Vehicle`
+    },
+    {
+      question: 'What are type assertions in TypeScript?',
+      answer: `Type assertion allows you to explicitly set the type of a value and tell the compiler not to infer it. This is useful when you know the type of an object more specifically than its current type or current inferred type. In such cases, you can use type assertions to tell TypeScript the current type of the variable.
+      `
+    },
+    {
+      question:
+        'What is the difference between type inference and contextual typing?',
+      answer: `TypeScript can infer the type of a variable usually based on the variable's initialization or declaration. This process is known as type inference. Contextual typing is a subset of type inference where TypeScript uses the location or context of a variable to infer its type. You can think about this as type inference in the opposite direction.`
+    },
+    {
+      question: 'How does function overloads work in TypeScript?',
+      answer: `Function overloading helps make functions more flexible and reusable by allowing the same function to behave a different way based on the set of input passed in. Function overload is when the same function name is used multiple times with a different set of arguments - the number of arguments, types, or return types.`
     }
   ],
   React: [
@@ -657,7 +752,6 @@ export const STUDY_GUIDE: Record<
       answer: `Separates an application into three interconnected components: the Model (data and business logic), the View (user interface), and the Controller (handles user input and updates the Model and View).`
     }
   ],
-  Typescript: [],
   CORS: [],
   Interview: [
     {
