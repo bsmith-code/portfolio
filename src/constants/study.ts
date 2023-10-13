@@ -167,7 +167,7 @@ export const STUDY_GUIDE: Record<
     {
       question: 'What is a constructor function?',
       answer:
-        "A constructor function in JavaScript is a special type of function that is used to create and initialize objects. Constructor functions are often used as templates or blueprints for creating multiple objects of the same type. They are a fundamental part of object-oriented programming in JavaScript and a key concept in JavaScript's prototype-based inheritance model."
+        'A constructor function in JavaScript is a special type of function that is used to create and initialize objects. Constructor functions are often used as templates or blueprints for creating multiple objects of the same type. '
     },
     {
       question: 'What is a closure?',
@@ -665,7 +665,53 @@ export const STUDY_GUIDE: Record<
       answer: `React Router is often used in Single-Page Applications (SPAs), where a single HTML page is loaded initially, and subsequent route changes are managed by the client-side JavaScript. Conventional routing is more common in multi-page applications, where distinct HTML pages are served for different routes.`
     }
   ],
-  Redux: [],
+  Redux: [
+    {
+      question:
+        'What is Redux, and why would you use it in a React application?',
+      answer: `Redux is a predictable state container for JavaScript apps, particularly useful in managing state for larger applications. It provides a single source of truth for the state, makes it easier to manage changes and actions, and simplifies debugging and testing.`
+    },
+    {
+      question: 'What are the core concepts of Redux?',
+      answer: `Redux is built around three core principles:
+      Store: It holds the state of the application.
+      Actions: These are objects that describe the changes to the state.
+      Reducers: These are pure functions that specify how the state changes in response to actions.`
+    },
+    {
+      question:
+        'What is the role of an action in Redux, and how do you create one?',
+      answer: `Actions are payloads of information that send data from your application to the store. They are plain JavaScript objects and must have a type property to indicate the type of action. You can create actions using action creator functions, which return action objects.`
+    },
+    {
+      question: 'Explain the purpose of a Reducer in Redux.',
+      answer: `Reducers specify how the application's state changes in response to actions. They are pure functions that take the previous state and an action as arguments, and return a new state. Reducers ensure that the state transition is predictable and transparent.`
+    },
+    {
+      question: 'What is a Redux store?',
+      answer: `The store is a single JavaScript object that holds the state of your application. It is the central repository for state and exposes methods to dispatch actions and subscribe to state changes.`
+    },
+    {
+      question:
+        'What is the purpose of middleware in Redux? Name a few popular middleware.',
+      answer: `Middleware in Redux allows you to intercept and process actions before they reach the reducer. Popular middleware includes redux-thunk for handling asynchronous actions, redux-saga for complex side effects, and redux-logger for logging actions and state changes.`
+    },
+    {
+      question: 'How can you optimize performance in a Redux application?',
+      answer: `To optimize performance in Redux, you can:
+      Use the reselect library to create memoized selectors.
+      Avoid unnecessary re-renders by using the shouldComponentUpdate method or hooks like useMemo.
+      Normalize your state structure for efficient updates.`
+    },
+    {
+      question: 'What is a redux thunk?',
+      answer: `Redux Thunk middleware allows you to write action creators that return a function instead of an action which gives us the power to incorporate some logic or run some asynchronous code before dispatching an action. The functions returned by the action creators have access to the dispatch function, which is used to dispatch actions to the Redux store. This enables you to dispatch actions at various points in an asynchronous operation, such as when data is requested and when it is received.`
+    },
+    {
+      question: '',
+      answer: ``
+    }
+  ],
   Patterns: [
     {
       question: 'Singleton Pattern',
@@ -775,7 +821,21 @@ export const STUDY_GUIDE: Record<
     },
     {
       question: 'Why our company?',
-      answer: `I'm looking for a company that values and respects me as a human along with a positive and fulfilling work culture. As long as I'm programming, being challenged, collaborating, and not stagnant, the product im working on is irrelevant. I will turn complex business requirements into a work of art, this is what I do and what I'm extremely good at. I value work-life balance - up until 2020 when I had a few health scare I used to work after work... brain chemistry changed I no longer do that unless we are under a deadline, I value a strong and clear mission, I value recognition and I value innovation. All of these factors are what drove me to this interview.`
+      answer: `
+      I am actively seeking a company that places a high priority on recognizing and respecting the individual, fostering a positive and supportive work culture. For me, the core of job satisfaction lies in the opportunity to face challenges, engage in meaningful collaboration, and continue my personal and professional growth. The specific product or project I'm working on is secondary to this drive. My passion lies in the transformation of intricate business requirements into works of art—a skill I've honed and excel at.
+
+      Moreover, I place significant importance on work-life balance. While I used to dedicate extra hours to work prior to 2020, a few health concerns led to a shift in my approach. Now, I prioritize a healthier work-life equilibrium, except during crucial deadlines. A clear and compelling company mission, recognition for accomplishments, and a culture of innovation are among the key values I hold dear.
+
+      In essence, I'm on the lookout for an organization that not only values its employees as individuals but also cultivates an environment where professional and personal growth is nurtured and celebrated.`
+    },
+    {
+      question:
+        'What is the difference between a junior, mid-level, and senior developer?',
+      answer: `Junior: you have limited knowledge and willing to learn
+
+      Mid level: you know what you are doing, still learning but you are independent.
+
+      Senior: you pull others up, can be trusted to lead projects and understand the importance of human cohesion and communication`
     }
   ],
   Exercises: [
