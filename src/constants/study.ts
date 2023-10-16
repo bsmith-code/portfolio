@@ -371,6 +371,24 @@ export const STUDY_GUIDE: Record<
 
       In JavaScript, WeakMap and WeakSet are two specialized data structures that allow you to store weak references to objects. These structures are particularly useful when you want to associate data with objects in a way that doesn't prevent those objects from being garbage collected when they are no longer needed.
       `
+    },
+    {
+      question: 'What is RESTful API?',
+      answer: `REST is a design philosophy for web interfaces to make them scalable and predictable.`
+    },
+    {
+      question: 'What is a Web Hook?',
+      answer: `A webhook is a mechanism used in web development and web services to enable real-time communication and data transfer between different applications or systems. It allows one application to send data or events to another application as soon as they occur, rather than relying on periodic or manual requests for updates. Webhooks are often used for various purposes, including automation, integration, and notification systems.
+      Webhooks are designed to trigger actions or notifications in response to specific events or data changes. For example, when a user submits a form on a website, a webhook can be used to notify another system to process the form data. Webhooks typically use HTTP/HTTPS protocols for communication.
+      `
+    },
+    {
+      question: 'What is a web socket?',
+      answer: `A WebSocket is a communication protocol that provides full-duplex, bidirectional communication channels over a single, long-lived connection. It is designed to enable real-time, low-latency, interactive communication between a client (typically a web browser) and a server. Unlike traditional HTTP communication, which relies on request-response cycles, WebSockets establish a persistent, low-overhead connection that allows data to flow in both directions at any time.`
+    },
+    {
+      question: 'Webhook vs websocket?',
+      answer: `The key differences between Webhooks and Websockets are the communication direction, connection type, protocol, and use cases. Webhooks are suitable for one-way, event-driven notifications, while Websockets provide full-duplex, persistent communication for real-time interactions and bidirectional data flow. The choice between the two depends on the specific requirements of your application, whether it's a need for one-way notifications or two-way real-time communication.`
     }
   ],
   Typescript: [
@@ -718,22 +736,13 @@ export const STUDY_GUIDE: Record<
       answer: `Lazying loading a component means that a component is unbundled from the rest of your application, and isn't requested/loaded until the component is rendered. Lazy loading can improve initial load times since the initial bundle is smaller. Useful for admin views that most users will never visit. The trade-off is that your users will be sent to suspense/loading pages more often as they navigate which may feel a little choppy. This only applies to static bundles (SPAs), SSR frameworks like next have their own way of keeping per page bundles low.`
     },
     {
-      question: 'What is RESTful API?',
-      answer: `REST is a design philosophy for web interfaces to make them scalable and predictable.`
-    },
-    {
-      question: 'What is a Web Hook?',
-      answer: `A webhook is a mechanism used in web development and web services to enable real-time communication and data transfer between different applications or systems. It allows one application to send data or events to another application as soon as they occur, rather than relying on periodic or manual requests for updates. Webhooks are often used for various purposes, including automation, integration, and notification systems.
-      Webhooks are designed to trigger actions or notifications in response to specific events or data changes. For example, when a user submits a form on a website, a webhook can be used to notify another system to process the form data. Webhooks typically use HTTP/HTTPS protocols for communication.
-      `
-    },
-    {
-      question: 'What is a web socket?',
-      answer: `A WebSocket is a communication protocol that provides full-duplex, bidirectional communication channels over a single, long-lived connection. It is designed to enable real-time, low-latency, interactive communication between a client (typically a web browser) and a server. Unlike traditional HTTP communication, which relies on request-response cycles, WebSockets establish a persistent, low-overhead connection that allows data to flow in both directions at any time.`
-    },
-    {
-      question: 'Webhook vs websocket?',
-      answer: `The key differences between Webhooks and Websockets are the communication direction, connection type, protocol, and use cases. Webhooks are suitable for one-way, event-driven notifications, while Websockets provide full-duplex, persistent communication for real-time interactions and bidirectional data flow. The choice between the two depends on the specific requirements of your application, whether it's a need for one-way notifications or two-way real-time communication.`
+      question:
+        'Why were functional component/hooks introduced in react if class components was working fine?',
+      answer: `The main justification for hooks is that it allows you to reuse chunks of logic between components far more easily. The syntax is nicer, and the react core team is very into functional (as opposed to OOP) patterns, but at the end of the day, code reuse is the killer feature.
+
+      For example, lets say you have a popup that needs to show up on first render, then go away after 10 seconds and never show back up. In a class component, all the logic for that would go into lifecycle methods, which would be tied to that component alone. So when you need the same behavior of popping in on first render and disappearing after a while for another component, you either need to make a complicated wrapping component, which is gross, or you copy-paste the lifecycle logic.
+
+      Now you can wrap that logic in a 'usePopUp' custom hook that can be stuck in any component. You could make every item on your page do the same thing, with very clean code, if you wanted to. A popup is kind of a silly example, but when you extend that to other types of extractable logic, the impact is tremendous.`
     }
   ],
   Redux: [
