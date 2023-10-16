@@ -1,5 +1,7 @@
 // Common
-import { useEffect, useState } from 'react'
+import Markdown from 'react-markdown'
+import remarkGfm from 'remark-gfm'
+import { useEffect, useMemo, useState } from 'react'
 
 // Constants
 import { STUDY_GUIDE } from 'constants/index'
@@ -14,12 +16,18 @@ import {
 } from 'styles/components/study.styles'
 import { StyledButtonSubmit } from 'styles/components/contact.styles'
 
+// Utils
+import { shuffleArray } from 'helpers'
+
 const ViewStudy = () => {
   const [showAnswer, setShowAnswer] = useState(false)
   const [currentIndex, setCurrentIndex] = useState(0)
   const [selectedCategory, setSelectedCategory] = useState('')
 
-  const preparedQuestions = STUDY_GUIDE?.[selectedCategory] ?? []
+  const preparedQuestions = useMemo(
+    () => shuffleArray(STUDY_GUIDE?.[selectedCategory] ?? []),
+    [selectedCategory]
+  )
   const { question, answer } = preparedQuestions?.[currentIndex] ?? {}
 
   const handleNextQuestion = () => {
@@ -60,7 +68,9 @@ const ViewStudy = () => {
         showAnswer={showAnswer}
       >
         <div className="question">{question}</div>
-        <div className="answer">{answer}</div>
+        <div className="answer">
+          <Markdown remarkPlugins={[remarkGfm]}>{answer}</Markdown>
+        </div>
       </StyledFlashCard>
       <StyledPagination>
         <button type="button" onClick={handlePrevQuestion}>

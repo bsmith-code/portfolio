@@ -353,6 +353,26 @@ export const STUDY_GUIDE: Record<
       question: 'What is XSS?',
       answer: `
       XSS, or Cross-Site Scripting, is a type of security vulnerability in web applications where an attacker injects malicious scripts (typically JavaScript) into content that is then served to other users. These scripts can be executed in the context of the victim's browser, potentially compromising the user's session, stealing data, or performing actions on the user's behalf without their consent. To prevent XSS attacks, web developers should implement proper input validation, output encoding, and other security measures like Content Security Policy (CSP) headers to restrict the sources from which content can be loaded. Additionally, security practices such as escaping user-generated content and using secure coding standards can help mitigate the risk of XSS vulnerabilities.`
+    },
+    {
+      question: 'Weak map',
+      answer: `
+      A WeakMap is a collection of key-value pairs where the keys are objects, and the values can be arbitrary data.
+      The key-object pairs in a WeakMap are weak references, meaning that they do not prevent the objects used as keys from being garbage collected when no other references to them exist.
+      This makes WeakMap useful for scenarios where you need to associate metadata with objects but want the metadata to be automatically cleared when the associated objects are no longer in use.
+
+
+      In JavaScript, WeakMap and WeakSet are two specialized data structures that allow you to store weak references to objects. These structures are particularly useful when you want to associate data with objects in a way that doesn't prevent those objects from being garbage collected when they are no longer needed.
+      `
+    },
+    {
+      question: 'Weak set',
+      answer: `A WeakSet is a collection of objects, and it only allows you to store objects. The objects in a WeakSet are also weakly referenced.
+      Similar to WeakMap, the objects in a WeakSet do not prevent those objects from being garbage collected when no other references exist. This is useful for maintaining a set of objects without preventing their disposal by the garbage collector.
+
+
+      In JavaScript, WeakMap and WeakSet are two specialized data structures that allow you to store weak references to objects. These structures are particularly useful when you want to associate data with objects in a way that doesn't prevent those objects from being garbage collected when they are no longer needed.
+      `
     }
   ],
   Typescript: [
@@ -463,7 +483,7 @@ export const STUDY_GUIDE: Record<
     {
       question: 'What is a react hook?',
       answer:
-        'A React hook is a function that allows you to "hook into" React state and lifecycle features in functional components. React introduced hooks in React 16.8 to provide a way to manage component logic and state in functional components without the need for class components. Hooks enable you to reuse stateful logic across different components and make functional components more powerful and expressive.'
+        'React hooks are a way to manage state and side effects in functional components. Hooks enable you to reuse stateful logic across different components and make functional components more powerful and expressive.'
     },
     {
       question: 'What is state in react?',
@@ -694,6 +714,28 @@ export const STUDY_GUIDE: Record<
     {
       question: 'How does the React Router differ from conventional routing?',
       answer: `React Router is often used in Single-Page Applications (SPAs), where a single HTML page is loaded initially, and subsequent route changes are managed by the client-side JavaScript. Conventional routing is more common in multi-page applications, where distinct HTML pages are served for different routes.`
+    },
+    {
+      question: 'What is lazy loading in react?',
+      answer: `Lazying loading a component means that a component is unbundled from the rest of your application, and isn't requested/loaded until the component is rendered. Lazy loading can improve initial load times since the initial bundle is smaller. Useful for admin views that most users will never visit. The trade-off is that your users will be sent to suspense/loading pages more often as they navigate which may feel a little choppy. This only applies to static bundles (SPAs), SSR frameworks like next have their own way of keeping per page bundles low.`
+    },
+    {
+      question: 'What is RESTful API?',
+      answer: `REST is a design philosophy for web interfaces to make them scalable and predictable.`
+    },
+    {
+      question: 'What is a Web Hook?',
+      answer: `A webhook is a mechanism used in web development and web services to enable real-time communication and data transfer between different applications or systems. It allows one application to send data or events to another application as soon as they occur, rather than relying on periodic or manual requests for updates. Webhooks are often used for various purposes, including automation, integration, and notification systems.
+      Webhooks are designed to trigger actions or notifications in response to specific events or data changes. For example, when a user submits a form on a website, a webhook can be used to notify another system to process the form data. Webhooks typically use HTTP/HTTPS protocols for communication.
+      `
+    },
+    {
+      question: 'What is a web socket?',
+      answer: `A WebSocket is a communication protocol that provides full-duplex, bidirectional communication channels over a single, long-lived connection. It is designed to enable real-time, low-latency, interactive communication between a client (typically a web browser) and a server. Unlike traditional HTTP communication, which relies on request-response cycles, WebSockets establish a persistent, low-overhead connection that allows data to flow in both directions at any time.`
+    },
+    {
+      question: 'Webhook vs websocket?',
+      answer: `The key differences between Webhooks and Websockets are the communication direction, connection type, protocol, and use cases. Webhooks are suitable for one-way, event-driven notifications, while Websockets provide full-duplex, persistent communication for real-time interactions and bidirectional data flow. The choice between the two depends on the specific requirements of your application, whether it's a need for one-way notifications or two-way real-time communication.`
     }
   ],
   Redux: [
@@ -989,8 +1031,49 @@ export const STUDY_GUIDE: Record<
       answer: 'https://codepen.io/bsmith-code/pen/Jjabape'
     },
     {
-      question: 'How do you flatten a multi-dimensional array?',
+      question: 'Flatten a multi-dimensional array?',
       answer: 'https://codepen.io/bsmith-code/pen/xxmMOdp'
+    },
+    {
+      question: 'Shuffle an array',
+      answer: `https://codepen.io/bsmith-code/pen/XWoLJLV`
+    },
+    {
+      question: 'Bubble sort',
+      answer: `https://codepen.io/bsmith-code/pen/abPrdwE`
+    },
+    {
+      question: 'Fibonacci Sequence',
+      answer: `https://codepen.io/bsmith-code/pen/VwqgOgM`
+    },
+    {
+      question: 'Merge sorted arrays without creating a new array in memory.',
+      answer: `https://codepen.io/bsmith-code/pen/OJrdqmG`
+    },
+    {
+      question: 'Maximum subarray sum',
+      answer: `https://codepen.io/bsmith-code/pen/eYbxXWB`
+    },
+    {
+      question:
+        'Find 2 numbers in an array that add up to the passed value, return their indices',
+      answer: `https://codepen.io/bsmith-code/pen/BavMMgG`
+    },
+    {
+      question: 'Detect if 2 strings are Palindromes',
+      answer: `https://codepen.io/bsmith-code/pen/LYMqqqy`
+    },
+    {
+      question: `Reverse a string without using reverse()`,
+      answer: `https://codepen.io/bsmith-code/pen/PoXVVxa`
+    },
+    {
+      question: 'FizzBuzz',
+      answer: `https://codepen.io/bsmith-code/pen/ExGrreK`
+    },
+    {
+      question: 'Flatten Array',
+      answer: `https://codepen.io/bsmith-code/pen/xxmMOdp`
     }
   ]
 }
