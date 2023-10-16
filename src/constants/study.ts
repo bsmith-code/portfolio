@@ -7,11 +7,11 @@ export const STUDY_GUIDE: Record<
       question: 'What is prototypal inheritance?',
       answer: `Allows objects to inherit properties and methods from other objects. JavaScript is a prototype-based language, which means that inheritance is achieved by linking objects together through their prototypes rather than through class hierarchies as in class-based languages.
 
-      Every object in JavaScript has a hidden property called [[Prototype]], which refers to another object (or null). This [[Prototype]] is also referred to as the object's prototype. Objects inherit properties and methods from their prototype.
+      * Every object in JavaScript has a hidden property called [[Prototype]], which refers to another object (or null). This [[Prototype]] is also referred to as the object's prototype. Objects inherit properties and methods from their prototype.
 
-      Objects in JavaScript are organized in a prototype chain. When you access a property or method on an object, JavaScript looks for that property/method in the object itself. If it doesn't find it, it goes up the prototype chain and checks the object's prototype, and so on, until it either finds the property or reaches the end of the chain with a null prototype.
+      * Objects in JavaScript are organized in a prototype chain. When you access a property or method on an object, JavaScript looks for that property/method in the object itself. If it doesn't find it, it goes up the prototype chain and checks the object's prototype, and so on, until it either finds the property or reaches the end of the chain with a null prototype.
 
-      Constructor functions in JavaScript have a prototype property. When you create objects using these constructors with the new keyword, the new object's [[Prototype]] is set to the constructor's prototype.`
+      * Constructor functions in JavaScript have a prototype property. When you create objects using these constructors with the new keyword, the new object's [[Prototype]] is set to the constructor's prototype.`
     },
     {
       question: 'Pass by ref vs pass by value',
@@ -87,8 +87,7 @@ export const STUDY_GUIDE: Record<
     },
     {
       question: 'What is event bubbling?',
-      answer: `
-      During the bubbling phase, each element along the propagation path has the opportunity to respond to the event by executing event handlers registered on those elements. Event handlers can be functions that perform specific actions in response to the event, such as changing the content of an element, toggling a CSS class, or triggering other JavaScript functions. Event bubbling allows you to capture events at higher levels of the DOM hierarchy, making it easier to handle events for multiple elements with a common ancestor. It simplifies event delegation and can lead to more efficient event handling.
+      answer: `During the bubbling phase, each element along the propagation path has the opportunity to respond to the event by executing event handlers registered on those elements. Event handlers can be functions that perform specific actions in response to the event, such as changing the content of an element, toggling a CSS class, or triggering other JavaScript functions. Event bubbling allows you to capture events at higher levels of the DOM hierarchy, making it easier to handle events for multiple elements with a common ancestor. It simplifies event delegation and can lead to more efficient event handling.
       `
     },
     {
@@ -150,8 +149,7 @@ export const STUDY_GUIDE: Record<
     },
     {
       question: 'Explain async/await',
-      answer: `
-      async/await is a powerful and concise way to work with asynchronous code in JavaScript. It provides a more readable and structured approach to handling asynchronous operations compared to traditional callback functions and promises. async/await is built on top of the Promise API and makes asynchronous code appear more like synchronous code, improving code clarity and maintainability.`
+      answer: `async/await is a powerful and concise way to work with asynchronous code in JavaScript. It provides a more readable and structured approach to handling asynchronous operations compared to traditional callback functions and promises. async/await is built on top of the Promise API and makes asynchronous code appear more like synchronous code, improving code clarity and maintainability.`
     },
     {
       question:

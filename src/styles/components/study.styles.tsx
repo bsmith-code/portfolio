@@ -41,6 +41,7 @@ export const StyledFlashCard = styled.div<{ showAnswer: boolean }>`
   }
   .answer {
     transform: rotateY(180deg);
+    max-width: 100%;
   }
   .question {
     top: 50%;

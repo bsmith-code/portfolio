@@ -28,6 +28,7 @@ const ViewStudy = () => {
     () => shuffleArray(STUDY_GUIDE?.[selectedCategory] ?? []),
     [selectedCategory]
   )
+
   const { question, answer } = preparedQuestions?.[currentIndex] ?? {}
 
   const handleNextQuestion = () => {
@@ -68,9 +69,10 @@ const ViewStudy = () => {
         showAnswer={showAnswer}
       >
         <div className="question">{question}</div>
-        <div className="answer">
-          <Markdown remarkPlugins={[remarkGfm]}>{answer}</Markdown>
-        </div>
+        <div className="answer">{answer}</div>
+        {/* <Markdown className="answer" remarkPlugins={[remarkGfm]}>
+          {answer}
+        </Markdown> */}
       </StyledFlashCard>
       <StyledPagination>
         <button type="button" onClick={handlePrevQuestion}>
