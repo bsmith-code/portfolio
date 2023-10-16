@@ -322,6 +322,37 @@ export const STUDY_GUIDE: Record<
       question:
         'What is the difference between local storage and session storage?',
       answer: `Data stored in local storage is only cleared when removed explicitly through the browser's settings or programmatically by the application and can be accessed cross tabs. Data stored in session storage gets cleared when the page session ends. A page session lasts as long as the tab or browser is open and persists between page reloads and restores.`
+    },
+    {
+      question: 'What is the difference between a promise and an observable?',
+      answer: `
+      Promises and Observables are both used for handling asynchronous operations in JavaScript, but they have distinct differences in terms of their functionality and use cases.
+
+      Promises:
+
+      Single Value: A Promise represents a single value that may be available now, or in the future, or never.
+      Eager: Promises are eager, meaning they start executing as soon as they are created. This behavior can lead to some limitations, especially when dealing with cancelation.
+      Non-cancelable: Promises cannot be canceled once initiated. You can't abort an operation initiated by a Promise.
+      Single Emission: A Promise either resolves with a value (fulfilled) or rejects with an error (rejected), but not both.
+      Error Handling: Promises have a .then() method for handling success and a .catch() method for handling errors.
+      Built-in: Promises are built into JavaScript and widely supported in modern browsers and Node.js.
+
+      Observables (from RxJS or other libraries like redux-observable):
+
+      Stream of Values: Observables represent a stream of values that can be emitted over time. They can emit multiple values asynchronously.
+      Lazy: Observables are lazy, meaning they don't start executing until you subscribe to them. This allows for more control over when and how they start.
+      Cancelable: Observables are cancelable. You can unsubscribe to stop receiving values from an Observable. This makes them suitable for scenarios where you want to cancel an ongoing operation.
+      Multiple Emissions: Observables can emit multiple values over time, including errors, and can be used for scenarios like data polling, event handling, and more.
+      Rich Operators: Observables provide a wide range of operators (e.g., map, filter, mergeMap, switchMap) for manipulating, combining, and transforming data within the stream.
+      Not Built-in: Observables are not built into JavaScript but are provided by libraries like RxJS. You need to include the library in your project to use Observables.
+
+      In summary, Promises are suitable for handling single asynchronous operations that resolve with a single value or reject with an error. Observables, on the other hand, are more versatile and are used for handling streams of values over time, making them well-suited for scenarios involving real-time data, events, and complex transformations. The choice between Promises and Observables depends on the specific requirements of your asynchronous operations.
+      `
+    },
+    {
+      question: 'What is XSS?',
+      answer: `
+      XSS, or Cross-Site Scripting, is a type of security vulnerability in web applications where an attacker injects malicious scripts (typically JavaScript) into content that is then served to other users. These scripts can be executed in the context of the victim's browser, potentially compromising the user's session, stealing data, or performing actions on the user's behalf without their consent. To prevent XSS attacks, web developers should implement proper input validation, output encoding, and other security measures like Content Security Policy (CSP) headers to restrict the sources from which content can be loaded. Additionally, security practices such as escaping user-generated content and using secure coding standards can help mitigate the risk of XSS vulnerabilities.`
     }
   ],
   Typescript: [
@@ -798,12 +829,121 @@ export const STUDY_GUIDE: Record<
       answer: `Separates an application into three interconnected components: the Model (data and business logic), the View (user interface), and the Controller (handles user input and updates the Model and View).`
     }
   ],
-  CORS: [],
+  CORS: [
+    {
+      question: 'What is CORS, and why is it necessary in web applications?',
+      answer: `CORS (Cross-Origin Resource Sharing) is a security feature implemented by web browsers to control requests made to a different domain (origin). It is necessary to prevent unauthorized cross-origin requests that could potentially compromise the security of web applications.`
+    },
+    {
+      question:
+        'How does a browser determine if a request is a cross-origin request?',
+      answer: `Browsers use the "Same-Origin Policy" (SOP) to determine if a request is cross-origin. If the protocol, domain, and port of the target resource differ from the origin of the requesting document, it's considered a cross-origin request.`
+    },
+    {
+      question:
+        'Explain the structure of a CORS request, including the key headers involved.',
+      answer: `A CORS request includes the Origin header in the request and the Access-Control-Allow-Origin header in the server's response. Other headers like Access-Control-Allow-Methods and Access-Control-Allow-Headers may also be involved.`
+    },
+    {
+      question:
+        'When is a preflight request generated in a CORS scenario, and what is its purpose?',
+      answer: `A preflight request is generated when the actual request includes non-simple HTTP methods (e.g., PUT, DELETE) or custom headers. It serves to check if the server is willing to accept the actual request and its parameters.`
+    },
+    {
+      question:
+        'How can you configure CORS to allow multiple origins to access your resources?',
+      answer: `You can set the Access-Control-Allow-Origin header to include multiple origins, separated by commas. For example: Access-Control-Allow-Origin: https://example1.com, https://example2.com.`
+    },
+    {
+      question: 'Explain how to configure cookies with CORS requests.',
+      answer: `To enable cookies in a CORS request, both the server (with Access-Control-Allow-Credentials: true) and the client (with credentials: 'include' in the fetch request) need to configure the use of credentials.`
+    },
+    {
+      question:
+        'What are the security implications of enabling CORS on your server for any origin (using Access-Control-Allow-Origin: *)?',
+      answer: `Enabling CORS for any origin is generally discouraged, as it opens up the server to potential security vulnerabilities, including CSRF attacks.`
+    },
+    {
+      question:
+        'Describe the role of the Same-Site attribute in the context of CORS and cookies.',
+      answer: `The Same-Site attribute is used to control when cookies are sent in a cross-origin context. It can be set to SameSite=None to allow cross-origin cookies in a secure way.`
+    },
+    {
+      question:
+        'What is a CORS preflight cache, and how can it be controlled by the server?',
+      answer: `The preflight cache stores preflight request results for subsequent requests. The server can control the cache's duration using the Access-Control-Max-Age header.`
+    },
+    {
+      question:
+        'How can a server protect against CORS-related security risks, such as CSRF attacks?',
+      answer: `To protect against CSRF attacks, the server can implement anti-CSRF tokens and check the Origin or Referer headers on incoming requests to ensure they match an expected value.`
+    },
+    {
+      question:
+        'Explain the differences between JSONP and CORS for cross-origin requests.',
+      answer: `JSONP uses script tags to load data from a different domain, while CORS is a more secure mechanism for making cross-origin requests using XMLHttpRequest or the Fetch API. JSONP is prone to security vulnerabilities.
+      `
+    },
+    {
+      question:
+        'What is a CORS proxy, and when might it be useful in a CORS scenario?',
+      answer: `A CORS proxy is an intermediary server that forwards requests to another server while adding the appropriate CORS headers. It can be useful in scenarios where the target server doesn't support CORS or where you want to control the headers.`
+    },
+    {
+      question:
+        'Explain how to configure and use the Content Security Policy (CSP) header in conjunction with CORS.',
+      answer: `The CSP header can be configured to restrict the sources from which content can be loaded. By aligning the CSP policy with CORS, you can enhance the security of your web application.
+      `
+    },
+    {
+      question:
+        'Discuss the impact of CORS in serverless architectures or cloud-based applications.',
+      answer: `Serverless functions and cloud-based applications often require careful configuration of CORS to ensure proper access control and security. Misconfigured CORS can lead to security vulnerabilities.`
+    },
+    {
+      question:
+        'How can you use CORS with server-side languages like PHP or Node.js to handle cross-origin requests?',
+      answer: `CORS can be implemented on the server using middleware or headers. For example, in Node.js, the CORS package can be used as middleware to configure CORS rules.`
+    },
+    {
+      question:
+        'What is the role of the Access-Control-Expose-Headers header, and how can it be used in a CORS configuration?',
+      answer: `The 'Access-Control-Expose-Headers' header specifies which response headers can be exposed to the requesting client. It can be configured to expose specific headers beyond the default set.`
+    },
+    {
+      question:
+        'Explain how CORS interacts with different HTTP methods like GET, POST, and OPTIONS.',
+      answer: `CORS headers and preflight requests are handled differently for various HTTP methods. For example, a preflight request is generated for non-simple methods, while simple methods may not require a preflight. `
+    },
+    {
+      question:
+        'Describe the role of the Access-Control-Max-Age header in a CORS configuration.',
+      answer: `'Access-Control-Max-Age' header specifies the maximum time (in seconds) that the results of a preflight request can be cached. It can help reduce the number of preflight requests.`
+    },
+    {
+      question:
+        'Discuss the nuances of implementing CORS for web sockets (WebSocket) connections.',
+      answer: `WebSocket connections can be configured to use the 'Sec-WebSocket-Protocol' header to specify the protocol used, and CORS headers can be used to control access to WebSocket endpoints.
+      `
+    },
+    {
+      question: `Can you provide an example of a real-world CORS issue you've encountered and how you resolved it?`,
+      answer: ``
+    }
+  ],
   Interview: [
     {
       question: 'What questions do you have for us?',
       answer: `
-        What's the managing style here? What typical time zones overlap with other engineers? What is the engineering culture? What surrounding technologies do you use? How are deployments handled? What does your ci/cd pipelines look like? Do you have QA? What does the leadership culture look like? Is your company cashflow positive and if not, who are your investors? How much code coverage of unit tests do you have?
+        What's the managing style here?
+        What typical time zones overlap with other engineers?
+        What is the engineering culture?
+        What surrounding technologies do you use?
+        How are deployments handled?
+        What does your ci/cd pipelines look like?
+        Do you have QA? What does the leadership culture look like?
+        Is your company cashflow positive and if not, who are your investors?
+        How much code coverage of unit tests do you have?
       `
     },
     {
