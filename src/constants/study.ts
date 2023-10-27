@@ -477,6 +477,7 @@ export const STUDY_GUIDE: Record<
       answer: `Function overloading helps make functions more flexible and reusable by allowing the same function to behave a different way based on the set of input passed in. Function overload is when the same function name is used multiple times with a different set of arguments - the number of arguments, types, or return types.`
     }
   ],
+  'Data Structures & Algorithms': [],
   React: [
     {
       question: 'What is React?',
@@ -715,15 +716,11 @@ export const STUDY_GUIDE: Record<
     },
     {
       question: 'What is StrictMode in React?',
-      answer: `StrictMode is a tool to highlight potential problems in an application. Although StrictMode is used as a component, it doesn't create a visible UI in the DOM. It only enables additional checks for its descendants.
-      Benefits of using StrictMode include:
+      answer: `StrictMode is a tool to highlight potential problems in an application. Strict Mode enables the following development-only behaviors:
 
-        Identifying components with unsafe lifecycles,
-        Warning about legacy string ref API usage,
-        Warning about deprecated findDOMNode usage,
-        Detecting unexpected side effects,
-        Detecting legacy context API,
-        Ensuring reusable state,
+      Your components will re-render an extra time to find bugs caused by impure rendering.
+      Your components will re-run Effects an extra time to find bugs caused by missing Effect cleanup.
+      Your components will be checked for usage of deprecated APIs.
 
       `
     },

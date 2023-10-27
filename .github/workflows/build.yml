@@ -38,6 +38,6 @@ jobs:
         with:
           host: ${{secrets.SSH_HOST}}
           privateKey: ${{secrets.SSH_KEY}}
-          username: ${{ secrets.SSH_USERNAME }}
+          username: ${{secrets.SSH_USERNAME}}
           local: './build'
-          remote: '/var/www/html/brianmatthewsmith.com/build'
+          remote: '/var/www/html/brianmatthewsmith.com'

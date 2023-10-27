@@ -1,22 +1,6 @@
 import { ITimelineYear } from 'types'
 
 export const TIMELINE: Record<string, ITimelineYear[]> = {
-  1989: [
-    {
-      date: 'April 29th, 1989',
-      title: 'I arrived on Earth',
-      description:
-        'Shortly after I was born in the north my family moved to North Carolina where I would stay until I graduated college. After college I explored the world, moved to different states, and pursued my career as a software developer. I currently live in Cary, NC where I focus mainly on enterprise React, Redux and Node app development.'
-    }
-  ],
-  2007: [
-    {
-      date: 'May 5th, 2007',
-      title: 'Graduated High School',
-      description:
-        'In the summer of 2007, I graduated from Green Hope High School in Cary, NC with my eyes set upon an exciting and fruitful journey.'
-    }
-  ],
   2010: [
     {
       date: 'September 1st, 2010',
