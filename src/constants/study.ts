@@ -477,6 +477,79 @@ export const STUDY_GUIDE: Record<
       answer: `Function overloading helps make functions more flexible and reusable by allowing the same function to behave a different way based on the set of input passed in. Function overload is when the same function name is used multiple times with a different set of arguments - the number of arguments, types, or return types.`
     }
   ],
+  'Docker & UAA': [
+    {
+      question: 'What is AuthN',
+      answer: `
+      "AuthN" stands for "Authentication." It is the process of verifying the identity of a user or system trying to access a resource. Authentication answers the question, "Who are you?"
+      Common methods of authentication include username and password, biometrics (such as fingerprint or facial recognition), multi-factor authentication (MFA), and single sign-on (SSO) systems.
+      The goal of authentication is to ensure that only authorized users or entities gain access to a system or resource.`
+    },
+    {
+      question: 'What is AuthZ',
+      answer: `
+      "AuthZ" stands for "Authorization." It is the process of determining what actions or resources an authenticated user or system is allowed to access. Authorization answers the question, "What are you allowed to do?"
+      Authorization is typically based on the permissions and roles associated with the authenticated user or entity. For example, an authenticated user may have read-only access, while an admin has full access.
+      Access control lists (ACLs), role-based access control (RBAC), and attribute-based access control (ABAC) are common methods for implementing authorization.
+      `
+    },
+    {
+      question:
+        'What is Docker, and how does it differ from traditional virtualization?',
+      answer: `
+      Docker is a containerization platform that allows applications and their dependencies to be packaged into containers. Unlike traditional virtualization, Docker containers share the host OS kernel, which makes them lightweight and efficient.
+      `
+    },
+    {
+      question: 'What are the key components of Docker architecture?',
+      answer: `
+      Docker architecture consists of the Docker Engine (Docker Daemon and Docker Client), Docker Images, Docker Containers, and Docker Registry.
+      `
+    },
+    {
+      question: 'Explain the purpose of a Docker image.',
+      answer: `
+      A Docker image is a read-only template that contains the application and its dependencies. It is used to create Docker containers.
+      `
+    },
+    {
+      question: 'What is a Dockerfile, and how is it used?',
+      answer: `
+      A Dockerfile is a text file that contains instructions for building a Docker image. It defines the application, its dependencies, and the execution environment.
+      `
+    },
+    {
+      question: 'Explain the purpose of a Docker Compose file.',
+      answer: `
+      A Docker Compose file defines a multi-container application, its services, network, and volumes. It allows you to manage and run multi-container applications with a single command.
+      `
+    },
+    {
+      question: 'Explain the concept of Docker volumes.',
+      answer: `
+      Docker volumes are used to persist data between containers and ensure data durability. They can be mounted to container paths for data storage.
+      `
+    },
+    {
+      question:
+        'What is the difference between a Docker container and an image?',
+      answer: `
+      An image is a read-only template, while a container is a running instance of an image. Containers can be created from images.
+      `
+    },
+    {
+      question: ' Explain the differences between Docker and Kubernetes.',
+      answer: `
+      Docker is a containerization platform, while Kubernetes is an orchestration platform for managing containerized applications. Kubernetes provides features for scaling, load balancing, and more.
+      `
+    },
+    {
+      question: 'What is a micro frontend?',
+      answer: `
+      A micro frontend is an architectural approach and development technique that extends the principles of microservices to the frontend of a web application. It involves breaking down a complex monolithic frontend into smaller, independently deployable and maintainable parts, which are often referred to as "micro frontends. Micro frontends offer several advantages, such as improved development velocity, flexibility, and maintainability. However, they also introduce challenges related to orchestration, communication between micro frontends, and ensuring a consistent user experience."
+      `
+    }
+  ],
   'Data Structures & Algorithms': [],
   React: [
     {
