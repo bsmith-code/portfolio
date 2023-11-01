@@ -548,6 +548,12 @@ export const STUDY_GUIDE: Record<
       answer: `
       A micro frontend is an architectural approach and development technique that extends the principles of microservices to the frontend of a web application. It involves breaking down a complex monolithic frontend into smaller, independently deployable and maintainable parts, which are often referred to as "micro frontends. Micro frontends offer several advantages, such as improved development velocity, flexibility, and maintainability. However, they also introduce challenges related to orchestration, communication between micro frontends, and ensuring a consistent user experience."
       `
+    },
+    {
+      question: 'Refresh token vs silent renew',
+      answer: `
+      Both refresh tokens and silent renew are mechanisms to maintain continuous access without requiring the user to log in again, they serve different purposes. Refresh tokens are a standard mechanism to obtain new access tokens when the old ones expire, while silent renew is a technique used to proactively renew an access token before it expires, providing a seamless user experience. Silent renew is often used in Single Sign-On (SSO) and Single Log-Out (SLO) scenarios to keep the user's session alive without noticeable interruptions
+      `
     }
   ],
   'Data Structures & Algorithms': [],
@@ -813,6 +819,17 @@ export const STUDY_GUIDE: Record<
       For example, lets say you have a popup that needs to show up on first render, then go away after 10 seconds and never show back up. In a class component, all the logic for that would go into lifecycle methods, which would be tied to that component alone. So when you need the same behavior of popping in on first render and disappearing after a while for another component, you either need to make a complicated wrapping component, which is gross, or you copy-paste the lifecycle logic.
 
       Now you can wrap that logic in a 'usePopUp' custom hook that can be stuck in any component. You could make every item on your page do the same thing, with very clean code, if you wanted to. A popup is kind of a silly example, but when you extend that to other types of extractable logic, the impact is tremendous.`
+    },
+    {
+      question: 'How do you debug performance issues in a React application?',
+      answer: `
+      Tools like React Profiler and browser developer tools' performance tab can help identify performance bottlenecks. You can also optimize components, use memoization, and implement shouldComponentUpdate or React.memo for optimization.
+    `
+    },
+    {
+      question: 'What tools can you use for debugging a 3rd party package?',
+      answer: `
+      In Chrome DevTools, go to the "Sources" tab. Locate the source code of the third-party package. This may be in a different folder or in the "file://" protocol if you linked the repository manually. Use the debugger statement or set breakpoints by clicking on the line numbers in the source code. When the code execution reaches these points, it will pause, allowing you to inspect variables and the call stack. Run your application or website that uses the third-party package. Trigger the behavior that you want to debug.When execution pauses at a breakpoint, you can inspect variables and step through the code. Use the "Console" tab to view console.log messages. In the "Call Stack" panel, you can navigate through function calls and understand how your code interacts with the third-party package. You can add expressions to the "Watch" panel to monitor variables and expressions during debugging. You can resume execution by clicking the "Play" button or pressing F8. Continue until you reach another breakpoint or the end of the interaction. Examine the behavior, variables, and any error messages in Chrome DevTools. Make any necessary adjustments to the package's source code, configurations, or your own code.`
     }
   ],
   Redux: [
@@ -856,10 +873,6 @@ export const STUDY_GUIDE: Record<
     {
       question: 'What is a redux thunk?',
       answer: `Redux Thunk middleware allows you to write action creators that return a function instead of an action which gives us the power to incorporate some logic or run some asynchronous code before dispatching an action. The functions returned by the action creators have access to the dispatch function, which is used to dispatch actions to the Redux store. This enables you to dispatch actions at various points in an asynchronous operation, such as when data is requested and when it is received.`
-    },
-    {
-      question: '',
-      answer: ``
     }
   ],
   Patterns: [
