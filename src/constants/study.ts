@@ -477,7 +477,7 @@ export const STUDY_GUIDE: Record<
       answer: `Function overloading helps make functions more flexible and reusable by allowing the same function to behave a different way based on the set of input passed in. Function overload is when the same function name is used multiple times with a different set of arguments - the number of arguments, types, or return types.`
     }
   ],
-  'Docker & UAA': [
+  Authorization: [
     {
       question: 'What is AuthN',
       answer: `
@@ -493,6 +493,55 @@ export const STUDY_GUIDE: Record<
       Access control lists (ACLs), role-based access control (RBAC), and attribute-based access control (ABAC) are common methods for implementing authorization.
       `
     },
+    {
+      question:
+        'What are the common types of authorization flows used in web applications?',
+      answer: `
+      Implicit Flow
+      Authorization Code Flow
+      Resource Owner Password Credentials Flow
+      Client Credentials Flow
+      `
+    },
+    {
+      question: 'Explain the Implicit Flow in OAuth 2.0.',
+      answer: `
+      The Implicit Flow is used for client-side applications (e.g., JavaScript-based applications) and is designed for scenarios where the client cannot keep a client secret. It involves the user being redirected to the authorization server to grant permissions, and the access token is returned directly in the URL fragment.
+      `
+    },
+    {
+      question: 'Describe the Authorization Code Flow in OAuth 2.0.',
+      answer: `
+      The Authorization Code Flow is one of the most secure flows in OAuth 2.0. It involves the client first obtaining an authorization code, which is then exchanged for an access token and, optionally, a refresh token. This flow is typically used for server-side applications and requires the client to keep its client secret confidential.
+      `
+    },
+    {
+      question: 'What is the role of a refresh token in an authorization flow?',
+      answer: `
+      A refresh token is used to obtain a new access token after the original access token has expired. It allows for continuous access without requiring the user to log in again. It is often used to maintain long-lived sessions.
+`
+    },
+    {
+      question: 'How does Single Sign-On (SSO) relate to authorization flows?',
+      answer: `
+      Single Sign-On is a system that enables a user to access multiple applications with a single set of credentials. Authorization flows can be used in SSO systems to authenticate a user once and then obtain access tokens for various applications without the need to enter credentials repeatedly.
+      `
+    },
+    {
+      question:
+        'What is the role of JSON Web Tokens (JWTs) in authorization flows?',
+      answer: `
+      JWTs are often used to represent access tokens in authorization flows. They are self-contained, digitally signed tokens that can carry claims about the user and their permissions. JWTs are a popular choice for secure data transfer in authorization processes.
+      `
+    },
+    {
+      question: 'Refresh token vs silent renew',
+      answer: `
+      Both refresh tokens and silent renew are mechanisms to maintain continuous access without requiring the user to log in again, they serve different purposes. Refresh tokens are a standard mechanism to obtain new access tokens when the old ones expire, while silent renew is a technique used to proactively renew an access token before it expires, providing a seamless user experience. Silent renew is often used in Single Sign-On (SSO) and Single Log-Out (SLO) scenarios to keep the user's session alive without noticeable interruptions
+      `
+    }
+  ],
+  Docker: [
     {
       question:
         'What is Docker, and how does it differ from traditional virtualization?',
@@ -547,12 +596,6 @@ export const STUDY_GUIDE: Record<
       question: 'What is a micro frontend?',
       answer: `
       A micro frontend is an architectural approach and development technique that extends the principles of microservices to the frontend of a web application. It involves breaking down a complex monolithic frontend into smaller, independently deployable and maintainable parts, which are often referred to as "micro frontends. Micro frontends offer several advantages, such as improved development velocity, flexibility, and maintainability. However, they also introduce challenges related to orchestration, communication between micro frontends, and ensuring a consistent user experience."
-      `
-    },
-    {
-      question: 'Refresh token vs silent renew',
-      answer: `
-      Both refresh tokens and silent renew are mechanisms to maintain continuous access without requiring the user to log in again, they serve different purposes. Refresh tokens are a standard mechanism to obtain new access tokens when the old ones expire, while silent renew is a technique used to proactively renew an access token before it expires, providing a seamless user experience. Silent renew is often used in Single Sign-On (SSO) and Single Log-Out (SLO) scenarios to keep the user's session alive without noticeable interruptions
       `
     }
   ],
