@@ -599,7 +599,54 @@ export const STUDY_GUIDE: Record<
       `
     }
   ],
-  'Data Structures & Algorithms': [],
+  'Data Structures': [
+    {
+      question: 'What are the fundamental data structures in JavaScript?',
+      answer: `The fundamental data structures in JavaScript include arrays, objects, strings, numbers, booleans, and functions.`
+    },
+    {
+      question: 'Explain the differences between a stack and a queue.',
+      answer: `
+      A stack is a data structure that follows the Last-In-First-Out (LIFO) principle, where the last element added is the first to be removed. A queue, on the other hand, follows the First-In-First-Out (FIFO) principle, where the first element added is the first to be removed.
+      `
+    },
+    {
+      question: 'How would you implement a queue in JavaScript?',
+      answer: `
+      A queue can be implemented in JavaScript using an array or by creating a custom class with methods for enqueue and dequeue operations.
+      `
+    },
+    {
+      question: 'What is a hash table and why is it useful?',
+      answer: `
+      A hash table is a data structure that stores key-value pairs. It uses a hash function to map keys to specific locations in memory, making it efficient for fast data retrieval.
+    `
+    },
+    {
+      question: 'Explain the concept of a linked list.',
+      answer: `
+      A linked list is a linear data structure where elements, called nodes, are connected in a sequence. Each node contains data and a reference (or pointer) to the next node in the sequence.
+      `
+    },
+    {
+      question: 'What is a binary search tree (BST) and how does it work?',
+      answer: `
+      A binary tree is a hierarchical data structure in computer science that consists of nodes connected by edges. Each node in a binary tree has at most two children, referred to as the left child and the right child. Binary trees are used in various applications, such as representing hierarchical structures and for efficient data retrieval and searching.
+      `
+    },
+    {
+      question: 'How can you implement a stack using an array in JavaScript?',
+      answer: `
+      You can implement a stack using an array by using the push method to add elements to the top of the stack and the pop method to remove elements from the top.
+      `
+    },
+    {
+      question: 'What is a priority queue, and why is it useful?',
+      answer: `
+      A priority queue is a data structure that assigns a priority to each element and processes elements in order of their priority. It is useful in scenarios where certain elements need to be processed before others based on their importance or urgency.
+      `
+    }
+  ],
   React: [
     {
       question: 'What is React?',
@@ -1210,3 +1257,5 @@ export const STUDY_GUIDE: Record<
     }
   ]
 }
+
+// are you more of an agency? do you go from project to project?
