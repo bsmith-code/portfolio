@@ -1166,9 +1166,9 @@ export const STUDY_GUIDE: Record<
         Do you have QA? What does the leadership culture look like?
         Is your company cashflow positive and if not, who are your investors?
         How much code coverage of unit tests do you have?
-        What don't you like about the company / management style?
         Is there a clear vision and strong leadership?
         Is there enough work to go around?
+        What don't you like about the company / management style?
       `
     },
     {
