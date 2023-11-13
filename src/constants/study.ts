@@ -4,6 +4,42 @@ export const STUDY_GUIDE: Record<
 > = {
   Javascript: [
     {
+      question: 'What is functional programming?',
+      answer: `
+      Functional Programming (FP) is a programming paradigm that treats computation as the evaluation of mathematical functions and avoids changing state and mutable data. In functional programming, functions are first-class citizens, meaning they can be assigned to variables, passed as arguments to other functions, and returned as values.
+
+      Key principles of Functional Programming include:
+
+      Immutability: Once a piece of data is created, it cannot be changed. Instead of modifying existing data, functional programming encourages creating new data structures with the desired modifications.
+
+      Pure Functions: Functions in FP are considered pure if they produce the same output for the same input and have no side effects. Pure functions are predictable and easier to reason about, test, and parallelize.
+
+      First-Class and Higher-Order Functions: Functions can be assigned to variables, passed as arguments to other functions, and returned as values. Higher-order functions take one or more functions as arguments or return a function as a result.
+
+      Referential Transparency: An expression is said to be referentially transparent if it can be replaced with its value without changing the program's behavior. This property makes code more understandable and facilitates reasoning about programs.
+
+      Function Composition: Functions can be combined to create new functions. This promotes code reusability and the construction of complex functionality from simpler building blocks.
+
+      Declarative Programming: FP emphasizes expressing the logic of a computation without describing its control flow. Declarative code focuses on what should be achieved rather than how it should be achieved.
+      `
+    },
+    {
+      question: 'What is OOP?',
+      answer: `
+      Object-Oriented Programming (OOP) is a programming paradigm that revolves around the concept of "objects." It's a way of organizing and designing code to represent real-world entities and the interactions between them. In OOP, software design is based on the encapsulation of data (attributes or properties) and methods (functions or procedures) into objects.
+
+      Key principles of Object-Oriented Programming include:
+
+      Encapsulation: Encapsulation refers to the bundling of data and the methods that operate on that data into a single unit known as an object. This concept helps to organize and structure code, making it more modular and maintainable.
+
+      Inheritance: Inheritance allows one class (the subclass or derived class) to inherit the properties and behaviors of another class (the superclass or base class). This promotes code reuse and the creation of a hierarchy of classes with shared characteristics.
+
+      Polymorphism: Polymorphism enables objects of different types to be treated as objects of a common type. This is achieved through method overloading (multiple methods with the same name but different parameters) and method overriding (redefining a method in a subclass).
+
+      Abstraction: Abstraction involves simplifying complex systems by modeling classes based on essential properties and behaviors. It allows developers to focus on what an object does rather than how it achieves its functionality.
+      `
+    },
+    {
       question: 'What is prototypal inheritance?',
       answer: `Allows objects to inherit properties and methods from other objects. JavaScript is a prototype-based language, which means that inheritance is achieved by linking objects together through their prototypes rather than through class hierarchies as in class-based languages.
 
@@ -1155,6 +1191,74 @@ export const STUDY_GUIDE: Record<
   ],
   Interview: [
     {
+      question: 'What is excellence to you?',
+      answer: `
+      Excellence is a standard that I strive to embrace at all capacities in software engineering. I believe that coding is an art form and should adhere to the highest levels of creativity and admiration.
+      `
+    },
+    {
+      question: 'What is your greatest strength?',
+      answer: `Technical collaboration and discussions with a cross functional teams - since I am well versed in the entire tech stack I can effectively navigate and lead these discussions. Ability to absorb information and become fluent with tribal knowledge very quickly. Providing multiple solutions to a problem or limitation. Dissect large user stories into more manageable sub tasks.`
+    },
+    {
+      question: 'What is your greatest weakness?',
+      answer: `I tend to let features / bugs / projects consume me until it is perfect or near perfect. May be good for employers since I'm working around the clock to uphold a level of excellence in all aspects of the dev cycle. Sometimes I trip up when I'm trying to articulate something to a junior / someone who doesn't understand tech at all - I like to think of Neil Degrasse Tyson and how he can explain astro physics to an infant. `
+    },
+    {
+      question: 'Why should we hire you?',
+      answer: `I bring and expect a certain level of excellence out of myself and peers around me. I'm extremely hardworking, passionate, and loyal. I want to be able to stay and grow with a company`
+    },
+    {
+      question: 'Why do you want to work here?',
+      answer: `
+      I am actively seeking a company that places a high priority on recognizing and respecting the individual, fostering a positive and supportive work culture. For me, the core of job satisfaction lies in the opportunity to face challenges, engage in meaningful collaboration, and continue my personal and professional growth. The specific product or project I'm working on is secondary to this drive. My passion lies in the transformation of intricate business requirements into works of art—a skill I've honed and excel at.
+
+      Moreover, I place significant importance on work-life balance. While I used to dedicate extra hours to work prior to 2020, a few health concerns led to a shift in my approach. Now, I prioritize a healthier work-life equilibrium, except during crucial deadlines. A clear and compelling company mission, recognition for accomplishments, and a culture of innovation are among the key values I hold dear.
+
+      In essence, I'm on the lookout for an organization that not only values its employees as individuals but also cultivates an environment where professional and personal growth is nurtured and celebrated.`
+    },
+    {
+      question: 'Tell me about a time you showed leadership.',
+      answer: `One of my initiatives (of many) as a team lead was to refactor our Class components to function components. At the time we had 4 front end developers that were working alongside each other to make this dream a reality. I remember a PR came through that I was reviewing and I noticed it was instantly blocked because one of the developers had a different approach to some of the problems they were facing. All I remember was seeing "Immutability is better." and I thought to myself that's not the way we should handle this. I took him aside and said yes immutability is better in the context of react but lets explain this to him in a more empathetic way. I also asked him to explain all the pros and cons and to be open minded on his opinions as well. We all got together on a call and we were able to move forward with a hybrid approach (utilizing immer) but we were also able to complete the project ahead of time because everyone was motivated after we had this fruitful discussion.
+      `
+    },
+    {
+      question: 'Tell me about a time you were successful on a team.',
+      answer: `
+
+      `
+    },
+    {
+      question: 'Tell me about a time you failed or made a mistake.',
+      answer: ``
+    },
+    {
+      question: 'Tell me about a time you worked with a difficult person.',
+      answer: ``
+    },
+    {
+      question: 'Describe a project that you are most proud of',
+      answer: ``
+    },
+    {
+      question: 'How do you give feedback to designers?',
+      answer: ``
+    },
+    {
+      question:
+        'Describe an interesting technical challenge you have faced in your work and how you overcame it as a software developer?',
+      answer: `
+      one notable technical challenge I encountered involved optimizing the rendering performance of a data-intensive map within a web application. The map displayed a magnitude of dynamic layers and graphics and users were experiencing delays and noticeable lag when interacting with the interface.
+
+      To address this challenge, I initiated a thorough analysis of the existing codebase and identified several areas contributing to the performance issues. One major bottleneck was the rendering process for complex data visualizations, especially when dealing with a large dataset. Additionally, inefficient state management and unnecessary re-renders were impacting the overall responsiveness of the application.
+
+      I introduced virtualization techniques to render only the visible data on the screen, significantly reducing the initial load time. For large datasets, I implemented a load more approach to fetch and render smaller chunks of data at a time, preventing the browser from becoming overwhelmed.
+
+      Optimized State Management: I revisited the state management architecture, refactoring it to ensure that only essential data triggered component updates. By utilizing memoization and optimizing state changes, I minimized unnecessary re-renders, enhancing the overall performance of the frontend components.
+
+      `
+    },
+    {
       question: 'What questions do you have for us?',
       answer: `
         What's the managing style here?
@@ -1171,27 +1275,11 @@ export const STUDY_GUIDE: Record<
         What don't you like about the company / management style?
       `
     },
-    {
-      question:
-        'Describe an interesting technical challenge you have faced in your work and how you overcame it as a software developer?',
-      answer: `
-        Point - state the scenario, Evidence - provide the example, Evaluate - What did you learn.
 
-      `
-    },
     {
       question:
         'How do you stay up-to-date with best practices and industry trends?',
       answer: `Bytes.dev & This week in react newsletters / articles. Also react, typescript, software development subreddits which spin off different articles and discussions. I also subscribe to Kent C. Dobbs, Wes Boss, and Dan Abramov.`
-    },
-    {
-      question: 'Why our company?',
-      answer: `
-      I am actively seeking a company that places a high priority on recognizing and respecting the individual, fostering a positive and supportive work culture. For me, the core of job satisfaction lies in the opportunity to face challenges, engage in meaningful collaboration, and continue my personal and professional growth. The specific product or project I'm working on is secondary to this drive. My passion lies in the transformation of intricate business requirements into works of art—a skill I've honed and excel at.
-
-      Moreover, I place significant importance on work-life balance. While I used to dedicate extra hours to work prior to 2020, a few health concerns led to a shift in my approach. Now, I prioritize a healthier work-life equilibrium, except during crucial deadlines. A clear and compelling company mission, recognition for accomplishments, and a culture of innovation are among the key values I hold dear.
-
-      In essence, I'm on the lookout for an organization that not only values its employees as individuals but also cultivates an environment where professional and personal growth is nurtured and celebrated.`
     },
     {
       question:
