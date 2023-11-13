@@ -1155,6 +1155,56 @@ export const STUDY_GUIDE: Record<
   ],
   Interview: [
     {
+      question: 'What is excellence to you?',
+      answer: `
+      Excellence is a standard that I strive to embrace at all capacities in software engineering. I believe that coding is an art form and should adhere to the highest levels of creativity and admiration.
+      `
+    },
+    {
+      question: 'What is your greatest strength?',
+      answer: ``
+    },
+    {
+      question: 'What is your greatest weakness?',
+      answer: ``
+    },
+    {
+      question: 'Why should we hire you?',
+      answer: ``
+    },
+    {
+      question: 'Why do you want to work here?',
+      answer: ``
+    },
+    {
+      question: 'Tell me about a time you showed leadership.',
+      answer: ``
+    },
+    {
+      question: 'Tell me about a time you were successful on a team.',
+      answer: ``
+    },
+    {
+      question: 'Tell me about a time you failed or made a mistake.',
+      answer: ``
+    },
+    {
+      question: 'Tell me about a time you worked with a difficult person.',
+      answer: ``
+    },
+    {
+      question: 'Describe a project that you are most proud of',
+      answer: ``
+    },
+    {
+      question:
+        'Describe an interesting technical challenge you have faced in your work and how you overcame it as a software developer?',
+      answer: `
+        Point - state the scenario, Evidence - provide the example, Evaluate - What did you learn.
+
+      `
+    },
+    {
       question: 'What questions do you have for us?',
       answer: `
         What's the managing style here?
@@ -1171,14 +1221,7 @@ export const STUDY_GUIDE: Record<
         What don't you like about the company / management style?
       `
     },
-    {
-      question:
-        'Describe an interesting technical challenge you have faced in your work and how you overcame it as a software developer?',
-      answer: `
-        Point - state the scenario, Evidence - provide the example, Evaluate - What did you learn.
 
-      `
-    },
     {
       question:
         'How do you stay up-to-date with best practices and industry trends?',
