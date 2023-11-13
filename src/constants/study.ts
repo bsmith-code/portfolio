@@ -1219,11 +1219,14 @@ export const STUDY_GUIDE: Record<
     },
     {
       question: 'Tell me about a time you showed leadership.',
-      answer: ``
+      answer: `One of my initiatives (of many) as a team lead was to refactor our Class components to function components. At the time we had 4 front end developers that were working alongside each other to make this dream a reality. I remember a PR came through that I was reviewing and I noticed it was instantly blocked because one of the developers had a different approach to some of the problems they were facing. All I remember was seeing "Immutability is better." and I thought to myself that's not the way we should handle this. I took him aside and said yes immutability is better in the context of react but lets explain this to him in a more empathetic way. I also asked him to explain all the pros and cons and to be open minded on his opinions as well. We all got together on a call and we were able to move forward with a hybrid approach (utilizing immer) but we were also able to complete the project ahead of time because everyone was motivated after we had this fruitful discussion.
+      `
     },
     {
       question: 'Tell me about a time you were successful on a team.',
-      answer: ``
+      answer: `
+
+      `
     },
     {
       question: 'Tell me about a time you failed or made a mistake.',
