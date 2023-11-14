@@ -1211,7 +1211,7 @@ export const STUDY_GUIDE: Record<
     {
       question: 'Why do you want to work here?',
       answer: `
-      I am actively seeking a company that places a high priority on recognizing and respecting the individual, fostering a positive and supportive work culture. For me, the core of job satisfaction lies in the opportunity to face challenges, engage in meaningful collaboration, and continue my personal and professional growth. My true passion lies in the transformation of intricate business requirements into works of art — a skill I excel at. I understand you are looking for a software developer with extensive experience in building new app features and enhancements to existing platforms - over the course of my career I have written a magnitude of production ready features, enhancements, and tests`
+      Im looking for a company that places a high priority on recognizing and respecting the individual, fostering a positive and supportive work culture. For me, the core of job satisfaction lies in the opportunity to face challenges, engage in meaningful collaboration, and continue my personal and professional growth. My true passion lies in the transformation of intricate business requirements into works of art — a skill I excel at. I understand you are looking for a software developer with extensive experience in building new app features and enhancements to existing platforms - over the course of my career I have written a magnitude of production ready features, enhancements, and tests`
     },
     {
       question: 'Tell me about a time you showed leadership.',
@@ -1225,25 +1225,25 @@ export const STUDY_GUIDE: Record<
     },
     {
       question: 'Tell me about a time you failed or made a mistake.',
-      answer: ``
+      answer: `In my previous position at INE, we did not have a solidified CI/CD pipeline to deploy our micro front ends. At the time, we were uploading our artifacts directly to the s3 buckets from our local machine. Because of this, it was prone to errors at any given time. I once uploaded the wrong micro frontend to a bucket that was for another frontend. I quickly realized what had happened, rolled it back immediately, took full responsibility for any downtime and brought this data to the head of my department and explained the importance of devops engineers being integrated into our team. We took this failure and turned into a positive by hiring devops that created pipelines for us and we never had it happen again.`
     },
     {
       question: 'Tell me about a time you worked with a difficult person.',
-      answer: ``
+      answer: `In my most recent role at PrecisionHawk, we had a java developer that had a difficult personality in the sense that he needed a strict set of requirements to perform his duties. He was not great following directions, staying on track, or communication. He would continuously jump from one task to another leaving the previous task in an unknown and broken state. He would not communicate with the team on or update his tickets in jira. So the manager and I came up with a plan to address the issue and we just came up with a checklist of things that we needed to say / do in our scrum ceremonies. We needed to treat him special and summarize everything, make sure he was on the same page by asking him to repeat what we had said, doing random huddles throughout the day to make sure he was on track and had everything he needed. We basically came up with a checklist that we did throughout the day to make sure he was performing his duties.`
     },
     {
       question: 'Describe a project that you are most proud of',
-      answer: ``
+      answer: `I am most proud of the PrecisionAnalytics application. At the core of this app, it was a data visualization tool that utilize optimization techniques to display data intensive maps, resources viewers, and lists. It utilized mapbox, leaflet, ESRI, chart.js, and other visualization packages to display otherwise boring information in an elegant and friendly way.`
     },
     {
       question: 'How do you give feedback to designers?',
-      answer: ``
+      answer: `Having worked closely with designers for over 10 years I have found that either use visual annotations where I take a quick screenshot of the elements or UX that is in question and annotate with some simple graphics and text Or I will schedule feedback sessions where I can discuss the design in real-time. My feedback typically consists of limitations of their designs and I will usually provide multiple solutions to align with their design system.`
     },
     {
       question:
         'Describe an interesting technical challenge you have faced in your work and how you overcame it as a software developer?',
       answer: `
-      one notable technical challenge I encountered involved optimizing the rendering performance of a data-intensive map within a web application. The map displayed a magnitude of dynamic layers and graphics and users were experiencing delays and noticeable lag when interacting with the interface.
+      one notable technical challenge I encountered involved optimizing the rendering performance of a data-intensive map within PA. The map displayed a magnitude of dynamic layers and graphics and users were experiencing delays and noticeable lag when interacting with the interface.
 
       To address this challenge, I initiated a thorough analysis of the existing codebase and identified several areas contributing to the performance issues. One major bottleneck was the rendering process for complex data visualizations, especially when dealing with a large dataset. Additionally, inefficient state management and unnecessary re-renders were impacting the overall responsiveness of the application.
 
