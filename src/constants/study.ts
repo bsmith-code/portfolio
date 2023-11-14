@@ -1206,16 +1206,12 @@ export const STUDY_GUIDE: Record<
     },
     {
       question: 'Why should we hire you?',
-      answer: `I bring and expect a certain level of excellence out of myself and peers around me. I'm extremely hardworking, passionate, and loyal. I want to be able to stay and grow with a company`
+      answer: `I bring and expect a certain level of excellence out of myself and peers around me. I'm extremely hardworking, passionate, loyal, and I have a track record of experience and responsibilities that align perfectly with the role. You want someone to come in and hit the ground running and I believe that I can be that person.`
     },
     {
       question: 'Why do you want to work here?',
       answer: `
-      I am actively seeking a company that places a high priority on recognizing and respecting the individual, fostering a positive and supportive work culture. For me, the core of job satisfaction lies in the opportunity to face challenges, engage in meaningful collaboration, and continue my personal and professional growth. The specific product or project I'm working on is secondary to this drive. My passion lies in the transformation of intricate business requirements into works of art—a skill I've honed and excel at.
-
-      Moreover, I place significant importance on work-life balance. While I used to dedicate extra hours to work prior to 2020, a few health concerns led to a shift in my approach. Now, I prioritize a healthier work-life equilibrium, except during crucial deadlines. A clear and compelling company mission, recognition for accomplishments, and a culture of innovation are among the key values I hold dear.
-
-      In essence, I'm on the lookout for an organization that not only values its employees as individuals but also cultivates an environment where professional and personal growth is nurtured and celebrated.`
+      I am actively seeking a company that places a high priority on recognizing and respecting the individual, fostering a positive and supportive work culture. For me, the core of job satisfaction lies in the opportunity to face challenges, engage in meaningful collaboration, and continue my personal and professional growth. My true passion lies in the transformation of intricate business requirements into works of art — a skill I excel at. I understand you are looking for a software developer with extensive experience in building new app features and enhancements to existing platforms - over the course of my career I have written a magnitude of production ready features, enhancements, and tests`
     },
     {
       question: 'Tell me about a time you showed leadership.',
@@ -1224,8 +1220,7 @@ export const STUDY_GUIDE: Record<
     },
     {
       question: 'Tell me about a time you were successful on a team.',
-      answer: `
-
+      answer: ` I joined a project that needed an overhaul of their existing global state management system. The data was unorganized, not normalized, not maintainable, not scalable, causing too many rerenders and instability in downstream components, and most importantly -- took too much time to add additional logic. I proposed the idea to the team, whipped up a proof of concept, and proved to the team that not only will this reduce on boiler plate and lines of code by re-organizing the data into more manageable pieces but it would cut down on development time when we needed to add additional logic to the store. The team loved the idea so I began refactoring the store to meet the standard of excellence I demand out of myself. After completing the initiative we were able to capture data through jira that proved story points were significantly reduced when asked to create new features or enhancements that required updates to the store.
       `
     },
     {
@@ -1348,5 +1343,3 @@ export const STUDY_GUIDE: Record<
     }
   ]
 }
-
-// are you more of an agency? do you go from project to project?
