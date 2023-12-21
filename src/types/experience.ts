@@ -5,4 +5,5 @@ export interface IExperienceCompany {
   position: string
   startDate: string
   endDate: string
+  demos?: { title: string; video: string }[]
 }

@@ -1,16 +1,12 @@
-// Common
 import { Route } from 'react-router-dom'
 
-// Constants
-import { ROUTES_PATH_TO_LABEL_MAP } from 'constants/index'
+import { LayoutAppFooter } from 'components/LayoutAppFooter'
+import { LayoutAppHeader } from 'components/LayoutAppHeader'
+import { LayoutViewHeader } from 'components/LayoutViewHeader'
 
-// Components
-import LayoutAppHeader from 'components/LayoutAppHeader'
-import LayoutAppFooter from 'components/LayoutAppFooter'
-import LayoutViewHeader from 'components/LayoutViewHeader'
-
-// Styles
 import { StyledLayoutView } from 'styles/components/layout.styles'
+
+import { ROUTES_PATH_TO_LABEL_MAP } from 'constants/index'
 
 interface IProps {
   path: string
@@ -19,7 +15,7 @@ interface IProps {
   isWideLayout?: boolean
 }
 
-const LayoutDefault = ({
+export const LayoutDefault = ({
   path,
   component: Component,
   isWideLayout = false,
@@ -58,5 +54,3 @@ const LayoutDefault = ({
     />
   )
 }
-
-export default LayoutDefault

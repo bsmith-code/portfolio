@@ -1,14 +1,11 @@
-// Common
 import { useState } from 'react'
 
-// Components
-import TimelineYears from 'components/TimelineYears'
-import TimelineYearsActive from 'components/TimelineYearsActive'
+import { TimelineYears } from 'components/TimelineYears'
+import { TimelineYearsActive } from 'components/TimelineYearsActive'
 
-// Styles
 import { TimelineWrapper } from 'styles/components/timeline.styles'
 
-const ViewAbout = () => {
+export const ViewAbout = () => {
   const [activeYear, setActiveYear] = useState('2021')
 
   return (
@@ -18,5 +15,3 @@ const ViewAbout = () => {
     </TimelineWrapper>
   )
 }
-
-export default ViewAbout

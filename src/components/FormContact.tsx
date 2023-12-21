@@ -1,39 +1,32 @@
-// Common
 import { useForm } from 'react-hook-form'
 import { yupResolver } from '@hookform/resolvers/yup'
 
-// Redux
-import { useSendEmailMutation } from 'store/contact'
+import { useSendEmailMutation } from 'store/server/contactApi'
 
-// Components
-import InputText from 'components/InputText'
-import InputReCaptcha from 'components/InputReCaptcha'
+import { InputReCaptcha } from 'components/InputReCaptcha'
+import { InputText } from 'components/InputText'
 
-// Styles
 import {
   StyledButtonSubmit,
-  StyledFormWrapper,
   StyledFormResponse,
+  StyledFormWrapper,
   StyledInputError
 } from 'styles/components/contact.styles'
 
-// Utils
 import { getQueryError, schemaContactForm } from 'helpers'
 
-// Constants
 import {
-  FORM_EMAIL,
-  FORM_MESSAGE,
-  FORM_SUBJECT,
   FORM_CAPTCHA,
+  FORM_EMAIL,
+  FORM_FIRST_NAME,
   FORM_LAST_NAME,
-  FORM_FIRST_NAME
+  FORM_MESSAGE,
+  FORM_SUBJECT
 } from 'constants/index'
 
-// Types
 import { IFormContact } from 'types'
 
-const FormContact = () => {
+export const FormContact = () => {
   // Composition
   const [sendEmail, { error, isLoading, isSuccess }] = useSendEmailMutation()
 
@@ -78,5 +71,3 @@ const FormContact = () => {
     </StyledFormWrapper>
   )
 }
-
-export default FormContact

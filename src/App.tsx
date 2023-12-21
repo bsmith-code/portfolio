@@ -1,11 +1,10 @@
 import RouterApp from 'routers/RouterApp'
+
 import StylesGlobal from 'styles/globals'
 
-const App = () => (
+export const App = () => (
   <>
     <StylesGlobal />
     <RouterApp />
   </>
 )
-
-export default App

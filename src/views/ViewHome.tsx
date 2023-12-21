@@ -1,5 +1,5 @@
-import styled from 'styled-components'
 import { rem } from 'polished'
+import styled from 'styled-components'
 
 const Wrapper = styled.section`
   width: 100%;
@@ -55,7 +55,7 @@ const Copy = styled.p`
   line-height: 1.6;
 `
 
-const ViewHome = () => (
+export const ViewHome = () => (
   <Wrapper>
     <ContentWrapper>
       <Title>Senior Software Developer</Title>
@@ -64,5 +64,3 @@ const ViewHome = () => (
     <Overlay />
   </Wrapper>
 )
-
-export default ViewHome

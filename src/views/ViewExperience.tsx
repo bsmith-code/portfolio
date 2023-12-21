@@ -1,13 +1,9 @@
-// Components
-import ExperienceCompanies from 'components/ExperienceCompanies'
+import { ExperienceCompanies } from 'components/ExperienceCompanies'
 
-// Styles
 import { ExperienceWrapper } from 'styles/components/experience.styles'
 
-const ViewExperience = () => (
+export const ViewExperience = () => (
   <ExperienceWrapper>
     <ExperienceCompanies />
   </ExperienceWrapper>
 )
-
-export default ViewExperience

@@ -1249,9 +1249,7 @@ export const STUDY_GUIDE: Record<
 
       I introduced virtualization techniques to render only the visible data on the screen, significantly reducing the initial load time. For large datasets, I implemented a load more approach to fetch and render smaller chunks of data at a time, preventing the browser from becoming overwhelmed.
 
-      Optimized State Management: I revisited the state management architecture, refactoring it to ensure that only essential data triggered component updates. By utilizing memoization and optimizing state changes, I minimized unnecessary re-renders, enhancing the overall performance of the frontend components.
-
-      `
+      Optimized State Management: I revisited the state management architecture, refactoring it to ensure that only essential data triggered component updates. By utilizing memoization and optimizing state changes, I minimized unnecessary re-renders, enhancing the overall performance of the frontend components.`
     },
     {
       question: 'What questions do you have for us?',
@@ -1267,10 +1265,9 @@ export const STUDY_GUIDE: Record<
         How much code coverage of unit tests do you have?
         Is there a clear vision and strong leadership?
         Is there enough work to go around?
-        What don't you like about the company / management style?
+        What is one thing you would change about your company?
       `
     },
-
     {
       question:
         'How do you stay up-to-date with best practices and industry trends?',

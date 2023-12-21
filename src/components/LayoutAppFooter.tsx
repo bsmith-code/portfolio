@@ -1,10 +1,9 @@
-// Styles
 import {
-  LayoutAppFooterWrapper,
-  LayoutAppFooterCopyright
+  LayoutAppFooterCopyright,
+  LayoutAppFooterWrapper
 } from 'styles/components/layout.styles'
 
-const Footer = () => {
+export const LayoutAppFooter = () => {
   const year = new Date().getFullYear()
 
   return (
@@ -15,5 +14,3 @@ const Footer = () => {
     </LayoutAppFooterWrapper>
   )
 }
-
-export default Footer

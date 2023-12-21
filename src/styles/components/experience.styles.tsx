@@ -1,5 +1,5 @@
-import styled from 'styled-components'
 import { rem } from 'polished'
+import styled from 'styled-components'
 
 export const ExperienceWrapper = styled.div`
   @media screen and (min-width: 767px) {
@@ -11,12 +11,13 @@ export const ExperienceWrapper = styled.div`
   }
 `
 
-export const ExperienceCompanyWrapper = styled.a`
+export const ExperienceCompanyWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: stretch;
-  padding: 35px;
+  justify-content: center;
+  position: relative;
+  padding: 24px;
   border-radius: 8px;
   margin: 0 15px 30px 15px;
   background: #ffffff;

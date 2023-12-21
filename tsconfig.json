@@ -27,6 +27,7 @@
   },
   "include": [
     "src",
+    ".eslintrc.cjs",
     "vite.config.*"
   ],
   "exclude": [

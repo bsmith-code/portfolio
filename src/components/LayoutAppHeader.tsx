@@ -1,20 +1,17 @@
-// Common
-import { useState, useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import { useLocation } from 'react-router-dom'
 
-// Constants
-import { ROUTES_PUBLIC } from 'constants/index'
-
-// Styles
 import {
-  LayoutAppHeaderMenu,
-  LayoutAppHeaderLogo,
   LayoutAppHeaderLink,
-  LayoutAppHeaderWrapper,
-  LayoutAppHeaderMenuBtn
+  LayoutAppHeaderLogo,
+  LayoutAppHeaderMenu,
+  LayoutAppHeaderMenuBtn,
+  LayoutAppHeaderWrapper
 } from 'styles/components/layout.styles'
 
-const LayoutAppHeader = () => {
+import { ROUTES_PUBLIC } from 'constants/index'
+
+export const LayoutAppHeader = () => {
   // Composition
   const location = useLocation()
 
@@ -51,5 +48,3 @@ const LayoutAppHeader = () => {
     </LayoutAppHeaderWrapper>
   )
 }
-
-export default LayoutAppHeader

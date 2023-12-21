@@ -1,21 +1,17 @@
-// Common
 import ReCAPTCHA from 'react-google-recaptcha'
 import { useController, UseFormReturn } from 'react-hook-form'
 
-// Styles
 import { StyledInputError } from 'styles/components/contact.styles'
 
-// Constants
 import { FORM_CAPTCHA } from 'constants/index'
 
-// Types
 import { IFormContact } from 'types'
 
 interface IProps {
   form: UseFormReturn<IFormContact>
 }
 
-const InputReCaptcha = ({ form }: IProps) => {
+export const InputReCaptcha = ({ form }: IProps) => {
   const {
     field,
     fieldState: { error }
@@ -39,5 +35,3 @@ const InputReCaptcha = ({ form }: IProps) => {
     </fieldset>
   )
 }
-
-export default InputReCaptcha

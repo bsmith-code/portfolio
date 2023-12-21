@@ -1,12 +1,10 @@
-// Common
 import {
-  Path,
   FieldValues,
+  Path,
   useController,
   UseFormReturn
 } from 'react-hook-form'
 
-// Styles
 import { StyledInputError } from 'styles/components/contact.styles'
 
 interface IProps<T extends FieldValues> {
@@ -15,7 +13,7 @@ interface IProps<T extends FieldValues> {
   form: UseFormReturn<T>
 }
 
-const InputText = <T extends FieldValues>({
+export const InputText = <T extends FieldValues>({
   label = '',
   name,
   form
@@ -41,5 +39,3 @@ const InputText = <T extends FieldValues>({
     </fieldset>
   )
 }
-
-export default InputText

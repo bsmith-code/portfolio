@@ -1,8 +1,6 @@
-// Common
 import { configureStore } from '@reduxjs/toolkit'
 
-// APIs
-import { contactApi } from 'store/contact'
+import { contactApi } from 'store/server/contactApi'
 
 const reducer = {
   [contactApi.reducerPath]: contactApi.reducer

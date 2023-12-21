@@ -1,21 +1,19 @@
-// Styles
 import {
   TimelineYearsActiveEvent,
-  TimelineYearsActiveWrapper,
   TimelineYearsActiveEventDate,
   TimelineYearsActiveEventDesc,
+  TimelineYearsActiveEventDivider,
   TimelineYearsActiveEventTitle,
-  TimelineYearsActiveEventDivider
+  TimelineYearsActiveWrapper
 } from 'styles/components/timeline.styles'
 
-// Constants
 import { TIMELINE } from 'constants/index'
 
 interface IProps {
   activeYear: string
 }
 
-const TimelineYearsActive = ({ activeYear }: IProps) => (
+export const TimelineYearsActive = ({ activeYear }: IProps) => (
   <TimelineYearsActiveWrapper>
     {TIMELINE[activeYear].map(({ date, title, description }) => (
       <TimelineYearsActiveEvent key={`event-${title}`}>
@@ -29,5 +27,3 @@ const TimelineYearsActive = ({ activeYear }: IProps) => (
     ))}
   </TimelineYearsActiveWrapper>
 )
-
-export default TimelineYearsActive

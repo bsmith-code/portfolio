@@ -1,5 +1,5 @@
-import styled from 'styled-components'
 import { rem } from 'polished'
+import styled from 'styled-components'
 
 export const ExpertiseWrapper = styled.div`
   @media screen and (min-width: 767px) {

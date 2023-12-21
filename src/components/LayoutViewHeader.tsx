@@ -1,4 +1,3 @@
-// Styles
 import {
   LayoutViewHeaderTitle,
   LayoutViewHeaderWrapper
@@ -8,10 +7,8 @@ interface IProps {
   title: string
 }
 
-const LayoutViewHeader = ({ title }: IProps) => (
+export const LayoutViewHeader = ({ title }: IProps) => (
   <LayoutViewHeaderWrapper>
     <LayoutViewHeaderTitle>{title}</LayoutViewHeaderTitle>
   </LayoutViewHeaderWrapper>
 )
-
-export default LayoutViewHeader

@@ -2,12 +2,34 @@ import { IExperienceCompany } from 'types'
 
 export const EXPERIENCE: IExperienceCompany[] = [
   {
+    url: '//olivertechnology.com',
+    logo: 'company_oliver.svg',
+    name: 'Oliver.',
+    position: 'Senior Software Engineer',
+    startDate: '2023-12-13',
+    endDate: 'Present'
+  },
+  {
     url: '//precisionhawk.com',
     logo: 'company_ph.svg',
     name: 'PrecisionHawk',
     position: 'Senior Software Developer',
     startDate: '2021-09-13',
-    endDate: '2023-10-05'
+    endDate: '2023-10-05',
+    demos: [
+      {
+        title: 'Bulk edit, asset details, compare view',
+        video: 'ph_bulk-edit.mp4'
+      },
+      {
+        title: 'Map, layers, tagging',
+        video: 'ph_map.mp4'
+      },
+      {
+        title: 'Login, overview, projects',
+        video: 'ph_overview.mp4'
+      }
+    ]
   },
   {
     url: '//ine.com',
@@ -21,7 +43,7 @@ export const EXPERIENCE: IExperienceCompany[] = [
     url: '//atlanticbt.com',
     logo: 'company_atlanticbt.svg',
     name: 'Atlantic BT',
-    position: 'Front-end Developer, Javascript Developer',
+    position: 'Frontend Developer, Javascript Developer',
     startDate: '2017-02-27',
     endDate: '2019-07-03'
   },
@@ -37,7 +59,7 @@ export const EXPERIENCE: IExperienceCompany[] = [
     url: '//theedigital.com',
     logo: 'company_thee-digital.png',
     name: 'Thee Digital',
-    position: 'Front-end Developer',
+    position: 'Frontend Developer',
     startDate: '2016-05-02',
     endDate: '2016-07-29'
   },
@@ -45,7 +67,7 @@ export const EXPERIENCE: IExperienceCompany[] = [
     url: '//kruhu.com',
     logo: 'company_kruhu.svg',
     name: 'Kruhu',
-    position: 'Front-end Developer',
+    position: 'Frontend Developer',
     startDate: '2014-06-30',
     endDate: '2016-04-15'
   },
@@ -53,7 +75,7 @@ export const EXPERIENCE: IExperienceCompany[] = [
     url: '#',
     logo: 'company_pilot-design.jpeg',
     name: 'Pilot Design Co.',
-    position: 'Front-end Developer',
+    position: 'Frontend Developer',
     startDate: '2013-06-10',
     endDate: '2014-06-30'
   },
@@ -61,7 +83,7 @@ export const EXPERIENCE: IExperienceCompany[] = [
     url: '#',
     logo: 'company_asn.png',
     name: 'ActionSportsNow',
-    position: 'Front-end Developer, Database Manager',
+    position: 'Frontend Developer, Database Manager',
     startDate: '2010-09-01',
     endDate: '2013-06-07'
   }

@@ -1,10 +1,10 @@
 import {
-  FORM_EMAIL,
-  FORM_MESSAGE,
-  FORM_SUBJECT,
   FORM_CAPTCHA,
+  FORM_EMAIL,
+  FORM_FIRST_NAME,
   FORM_LAST_NAME,
-  FORM_FIRST_NAME
+  FORM_MESSAGE,
+  FORM_SUBJECT
 } from 'constants/index'
 
 export interface IFormContact {

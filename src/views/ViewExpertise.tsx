@@ -1,15 +1,11 @@
-// Components
-import ExpertiseSkills from 'components/ExpertiseSkills'
-import ExpertiseProfile from 'components/ExpertiseProfile'
+import { ExpertiseProfile } from 'components/ExpertiseProfile'
+import { ExpertiseSkills } from 'components/ExpertiseSkills'
 
-// Styles
 import { ExpertiseWrapper } from 'styles/components/expertise.styles'
 
-const ViewExpertise = () => (
+export const ViewExpertise = () => (
   <ExpertiseWrapper>
     <ExpertiseProfile />
     <ExpertiseSkills />
   </ExpertiseWrapper>
 )
-
-export default ViewExpertise

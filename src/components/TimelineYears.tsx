@@ -1,13 +1,10 @@
-// Common
 import { Dispatch, SetStateAction } from 'react'
 
-// Styles
 import {
   TimelineYearsBtn,
   TimelineYearsWrapper
 } from 'styles/components/timeline.styles'
 
-// Constants
 import { TIMELINE } from 'constants/index'
 
 interface IProps {
@@ -15,7 +12,7 @@ interface IProps {
   setActiveYear: Dispatch<SetStateAction<string>>
 }
 
-const TimelineYears = ({ activeYear, setActiveYear }: IProps) => (
+export const TimelineYears = ({ activeYear, setActiveYear }: IProps) => (
   <TimelineYearsWrapper>
     {Object.keys(TIMELINE).map(year => (
       <TimelineYearsBtn
@@ -28,5 +25,3 @@ const TimelineYears = ({ activeYear, setActiveYear }: IProps) => (
     ))}
   </TimelineYearsWrapper>
 )
-
-export default TimelineYears

@@ -1,18 +1,16 @@
-// Styles
 import {
   ExpertiseGroupList,
-  ExpertiseGroupName,
-  ExpertiseSkillName,
-  ExpertiseSkillIcon,
-  ExpertiseSkillsGrid,
   ExpertiseGroupListItem,
+  ExpertiseGroupName,
+  ExpertiseSkillIcon,
+  ExpertiseSkillName,
+  ExpertiseSkillsGrid,
   ExpertiseSkillsGridItem
 } from 'styles/components/expertise.styles'
 
-// Constants
 import { EXPERTISE } from 'constants/index'
 
-const ExpertiseSkills = () => (
+export const ExpertiseSkills = () => (
   <ExpertiseGroupList>
     {EXPERTISE.map(({ name: groupName, skills }) => (
       <ExpertiseGroupListItem key={`expertise-${groupName}`}>
@@ -29,5 +27,3 @@ const ExpertiseSkills = () => (
     ))}
   </ExpertiseGroupList>
 )
-
-export default ExpertiseSkills

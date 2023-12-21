@@ -1,25 +1,21 @@
-// Common
+import { useEffect, useMemo, useState } from 'react'
 import Markdown from 'react-markdown'
 import remarkGfm from 'remark-gfm'
-import { useEffect, useMemo, useState } from 'react'
 
-// Constants
-import { STUDY_GUIDE } from 'constants/index'
-
-// Styles
+import { StyledButtonSubmit } from 'styles/components/contact.styles'
 import {
   StyledFlashCard,
-  StyledStudyTitle,
-  StyledStudyGuide,
   StyledPagination,
-  StyledStudyCategory
+  StyledStudyCategory,
+  StyledStudyGuide,
+  StyledStudyTitle
 } from 'styles/components/study.styles'
-import { StyledButtonSubmit } from 'styles/components/contact.styles'
 
-// Utils
 import { shuffleArray } from 'helpers'
 
-const ViewStudy = () => {
+import { STUDY_GUIDE } from 'constants/index'
+
+export const ViewStudy = () => {
   const [showAnswer, setShowAnswer] = useState(false)
   const [currentIndex, setCurrentIndex] = useState(0)
   const [selectedCategory, setSelectedCategory] = useState('')
@@ -108,5 +104,3 @@ const ViewStudy = () => {
     </StyledStudyGuide>
   )
 }
-
-export default ViewStudy
