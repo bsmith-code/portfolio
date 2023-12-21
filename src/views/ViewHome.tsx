@@ -1,3 +1,4 @@
+import { differenceInYears } from 'date-fns'
 import { rem } from 'polished'
 import styled from 'styled-components'
 
@@ -55,12 +56,18 @@ const Copy = styled.p`
   line-height: 1.6;
 `
 
-export const ViewHome = () => (
-  <Wrapper>
-    <ContentWrapper>
-      <Title>Senior Software Developer</Title>
-      <Copy>10+ years of professional &amp; enterprise-level experience</Copy>
-    </ContentWrapper>
-    <Overlay />
-  </Wrapper>
-)
+export const ViewHome = () => {
+  const elapsedYears = differenceInYears(new Date(), new Date('2010-01-01'))
+
+  return (
+    <Wrapper>
+      <ContentWrapper>
+        <Title>Senior Software Engineer</Title>
+        <Copy>
+          {elapsedYears} years of professional &amp; enterprise-level experience
+        </Copy>
+      </ContentWrapper>
+      <Overlay />
+    </Wrapper>
+  )
+}
