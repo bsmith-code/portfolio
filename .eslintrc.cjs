@@ -20,6 +20,14 @@ module.exports = {
     'plugin:prettier/recommended'
   ],
   rules: {
+    'import/no-extraneous-dependencies': [
+      'error',
+      {
+        devDependencies: true,
+        optionalDependencies: false,
+        peerDependencies: false
+      }
+    ],
     'simple-import-sort/imports': [
       'error',
       {
