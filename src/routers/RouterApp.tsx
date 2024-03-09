@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Redirect, Switch } from 'react-router-dom'
+import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom'
 import { LayoutDefault } from 'layouts/LayoutDefault'
 
 import { ViewAbout } from 'views/ViewAbout'
@@ -19,23 +19,21 @@ import {
 } from 'constants/index'
 
 const AppRoutes = () => (
-  <Router>
-    <Switch>
-      <LayoutDefault exact path="/" component={ViewHome} />
-      <LayoutDefault
-        path={ROUTE_PATH_ABOUT}
-        component={ViewAbout}
-        isWideLayout
-      />
-      <LayoutDefault path={ROUTE_PATH_EXPERTISE} component={ViewExpertise} />
-      <LayoutDefault path={ROUTE_PATH_EXPERIENCE} component={ViewExperience} />
-      <LayoutDefault path={ROUTE_PATH_PROJECTS} component={ViewProjects} />
-      <LayoutDefault path={ROUTE_PATH_CONTACT} component={ViewContact} />
-      <LayoutDefault path={ROUTE_PATH_STUDY} component={ViewStudy} />
+  <BrowserRouter>
+    <Routes>
+      <Route path="/" element={<LayoutDefault />}>
+        <Route path="/" element={<ViewHome />} />
+        <Route path={ROUTE_PATH_ABOUT} element={<ViewAbout />} />
+        <Route path={ROUTE_PATH_EXPERTISE} element={<ViewExpertise />} />
+        <Route path={ROUTE_PATH_EXPERIENCE} element={<ViewExperience />} />
+        <Route path={ROUTE_PATH_PROJECTS} element={<ViewProjects />} />
+        <Route path={ROUTE_PATH_CONTACT} element={<ViewContact />} />
+        <Route path={ROUTE_PATH_STUDY} element={<ViewStudy />} />
+      </Route>
 
-      <Redirect exact from="/*" to="/" />
-    </Switch>
-  </Router>
+      <Route path="/*" element={<Navigate to="/" replace />} />
+    </Routes>
+  </BrowserRouter>
 )
 
 export default AppRoutes
