@@ -1,4 +1,4 @@
-import { IExpertise } from 'types'
+import { IExpertise } from 'types/expertise.types'
 
 export const EXPERTISE: IExpertise[] = [
   {

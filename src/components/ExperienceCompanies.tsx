@@ -19,11 +19,11 @@ import {
   ExperienceCompanyWrapper
 } from 'styles/components/experience.styles'
 
-import { formatDate, getDuration } from 'helpers'
+import { formatDate, getDuration } from 'utils/dates.utils'
 
 import { EXPERIENCE } from 'constants/experience.constants'
 
-import { IExperienceCompany } from 'types'
+import { IExperienceCompany } from 'types/experience.types'
 
 interface IDemosProps {
   demos: IExperienceCompany['demos']

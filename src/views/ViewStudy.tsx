@@ -9,7 +9,7 @@ import {
   StyledStudyTitle
 } from 'styles/components/study.styles'
 
-import { shuffleArray } from 'helpers'
+import { shuffleArray } from 'utils/arrays.utils'
 
 import { STUDY_GUIDE } from 'constants/study.constants'
 

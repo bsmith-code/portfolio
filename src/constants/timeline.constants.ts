@@ -1,4 +1,4 @@
-import { ITimelineYear } from 'types'
+import { ITimelineYear } from 'types/timeline.types'
 
 export const TIMELINE: Record<string, ITimelineYear[]> = {
   2010: [

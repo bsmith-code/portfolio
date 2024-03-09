@@ -5,7 +5,7 @@ import { StyledInputError } from 'styles/components/contact.styles'
 
 import { FORM_CAPTCHA } from 'constants/forms.constants'
 
-import { IFormContact } from 'types'
+import { IFormContact } from 'types/forms.types'
 
 interface IProps {
   form: UseFormReturn<IFormContact>
@@ -17,7 +17,8 @@ export const InputReCaptcha = ({ form }: IProps) => {
     fieldState: { error }
   } = useController({ name: FORM_CAPTCHA, control: form.control })
 
-  const handleReCaptchaChange = (token: string) => {
+  const handleReCaptchaChange = (token: string | null) => {
+    if (!token) return
     field.onChange(token)
   }
   const handleReCaptchaExpired = () => {
@@ -29,7 +30,7 @@ export const InputReCaptcha = ({ form }: IProps) => {
       <ReCAPTCHA
         onChange={handleReCaptchaChange}
         onExpired={handleReCaptchaExpired}
-        sitekey={process.env.REACT_APP_RECAPTCHA_KEY}
+        sitekey={process.env.REACT_APP_RECAPTCHA_KEY ?? ''}
       />
       {!!error && <StyledInputError>{error.message}</StyledInputError>}
     </fieldset>

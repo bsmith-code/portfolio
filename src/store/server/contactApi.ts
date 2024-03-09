@@ -1,6 +1,6 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
 
-import { IFormContact } from 'types'
+import { IFormContact } from 'types/forms.types'
 
 export const contactApi = createApi({
   reducerPath: 'contact',

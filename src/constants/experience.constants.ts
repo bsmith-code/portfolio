@@ -1,4 +1,4 @@
-import { IExperienceCompany } from 'types'
+import { IExperienceCompany } from 'types/experience.types'
 
 export const EXPERIENCE: IExperienceCompany[] = [
   {

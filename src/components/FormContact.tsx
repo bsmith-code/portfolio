@@ -1,5 +1,6 @@
 import { useForm } from 'react-hook-form'
 import { yupResolver } from '@hookform/resolvers/yup'
+import * as yup from 'yup'
 
 import { useSendEmailMutation } from 'store/server/contactApi'
 
@@ -13,7 +14,7 @@ import {
   StyledInputError
 } from 'styles/components/contact.styles'
 
-import { getQueryError, schemaContactForm } from 'helpers'
+import { getQueryError } from 'utils/errors.utils'
 
 import {
   FORM_CAPTCHA,
@@ -24,13 +25,24 @@ import {
   FORM_SUBJECT
 } from 'constants/forms.constants'
 
-import { IFormContact } from 'types'
+import { IFormContact } from 'types/forms.types'
+
+export const contactSchema = yup.object({
+  [FORM_FIRST_NAME]: yup.string().required('First name is required.'),
+  [FORM_LAST_NAME]: yup.string().required('Last name is required.'),
+  [FORM_EMAIL]: yup
+    .string()
+    .email('Email is invalid.')
+    .required('Email is required.'),
+
+  [FORM_SUBJECT]: yup.string().required('Subject is required.'),
+  [FORM_MESSAGE]: yup.string().required('Message is required.'),
+  [FORM_CAPTCHA]: yup.string().required('Recaptcha is required.')
+})
 
 export const FormContact = () => {
-  // Composition
   const [sendEmail, { error, isLoading, isSuccess }] = useSendEmailMutation()
 
-  // Form
   const handleSubmit = async (formData: IFormContact) => {
     await sendEmail(formData)
   }
@@ -45,7 +57,7 @@ export const FormContact = () => {
       [FORM_MESSAGE]: '',
       [FORM_CAPTCHA]: ''
     },
-    resolver: yupResolver(schemaContactForm)
+    resolver: yupResolver(contactSchema)
   })
 
   const formError = error && getQueryError(error)
