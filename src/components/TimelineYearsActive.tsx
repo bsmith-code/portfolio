@@ -7,7 +7,7 @@ import {
   TimelineYearsActiveWrapper
 } from 'styles/components/timeline.styles'
 
-import { TIMELINE } from 'constants/index'
+import { TIMELINE } from 'constants/timeline.constants'
 
 interface IProps {
   activeYear: string

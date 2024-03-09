@@ -6,7 +6,10 @@ import { LayoutViewHeader } from 'components/LayoutViewHeader'
 
 import { StyledLayoutView } from 'styles/components/layout.styles'
 
-import { ROUTE_PATH_ABOUT, ROUTES_PATH_TO_LABEL_MAP } from 'constants/index'
+import {
+  ROUTE_PATH_ABOUT,
+  ROUTES_PATH_TO_LABEL_MAP
+} from 'constants/routes.constants'
 
 export const LayoutDefault = () => {
   const { pathname } = useLocation()

@@ -8,7 +8,7 @@ import {
   ExpertiseSkillsGridItem
 } from 'styles/components/expertise.styles'
 
-import { EXPERTISE } from 'constants/index'
+import { EXPERTISE } from 'constants/expertise.constants'
 
 export const ExpertiseSkills = () => (
   <ExpertiseGroupList>

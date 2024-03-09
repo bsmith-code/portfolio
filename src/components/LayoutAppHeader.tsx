@@ -9,7 +9,7 @@ import {
   LayoutAppHeaderWrapper
 } from 'styles/components/layout.styles'
 
-import { ROUTES_PUBLIC } from 'constants/index'
+import { ROUTES_PUBLIC } from 'constants/routes.constants'
 
 export const LayoutAppHeader = () => {
   // Composition

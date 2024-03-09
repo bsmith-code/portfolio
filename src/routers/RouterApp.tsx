@@ -16,9 +16,9 @@ import {
   ROUTE_PATH_EXPERTISE,
   ROUTE_PATH_PROJECTS,
   ROUTE_PATH_STUDY
-} from 'constants/index'
+} from 'constants/routes.constants'
 
-const AppRoutes = () => (
+export const RouterApp = () => (
   <BrowserRouter>
     <Routes>
       <Route path="/" element={<LayoutDefault />}>
@@ -35,5 +35,3 @@ const AppRoutes = () => (
     </Routes>
   </BrowserRouter>
 )
-
-export default AppRoutes

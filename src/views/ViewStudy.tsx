@@ -1,6 +1,4 @@
 import { useEffect, useMemo, useState } from 'react'
-import Markdown from 'react-markdown'
-import remarkGfm from 'remark-gfm'
 
 import { StyledButtonSubmit } from 'styles/components/contact.styles'
 import {
@@ -13,7 +11,7 @@ import {
 
 import { shuffleArray } from 'helpers'
 
-import { STUDY_GUIDE } from 'constants/index'
+import { STUDY_GUIDE } from 'constants/study.constants'
 
 export const ViewStudy = () => {
   const [showAnswer, setShowAnswer] = useState(false)

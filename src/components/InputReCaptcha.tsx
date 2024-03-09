@@ -3,7 +3,7 @@ import { useController, UseFormReturn } from 'react-hook-form'
 
 import { StyledInputError } from 'styles/components/contact.styles'
 
-import { FORM_CAPTCHA } from 'constants/index'
+import { FORM_CAPTCHA } from 'constants/forms.constants'
 
 import { IFormContact } from 'types'
 

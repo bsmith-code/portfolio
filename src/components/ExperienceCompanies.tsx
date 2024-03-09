@@ -21,7 +21,7 @@ import {
 
 import { formatDate, getDuration } from 'helpers'
 
-import { EXPERIENCE } from 'constants/index'
+import { EXPERIENCE } from 'constants/experience.constants'
 
 import { IExperienceCompany } from 'types'
 

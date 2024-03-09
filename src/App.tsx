@@ -1,4 +1,4 @@
-import RouterApp from 'routers/RouterApp'
+import { RouterApp } from 'routers/RouterApp'
 
 import StylesGlobal from 'styles/globals'
 
