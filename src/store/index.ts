@@ -6,12 +6,10 @@ const reducer = {
   [contactApi.reducerPath]: contactApi.reducer
 }
 
-const store = configureStore({
+export const store = configureStore({
   reducer,
   devTools: process.env.NODE_ENV !== 'production',
   middleware: getDefaultMiddleware =>
     // eslint-disable-next-line unicorn/prefer-spread
     getDefaultMiddleware().concat(contactApi.middleware)
 })
-
-export default store

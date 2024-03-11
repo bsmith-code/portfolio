@@ -7,7 +7,7 @@ export const EXPERIENCE: IExperienceCompany[] = [
     name: 'Oliver.',
     position: 'Senior Software Engineer',
     startDate: '2023-12-13',
-    endDate: 'Present'
+    endDate: '2024-03-09'
   },
   {
     url: '//precisionhawk.com',
