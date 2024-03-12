@@ -1,16 +1,20 @@
-import {
-  LayoutAppFooterCopyright,
-  LayoutAppFooterWrapper
-} from 'styles/components/layout.styles'
+import { rem } from 'polished'
+
+import { Toolbar, Typography } from '@mui/material'
 
 export const LayoutAppFooter = () => {
   const year = new Date().getFullYear()
 
   return (
-    <LayoutAppFooterWrapper>
-      <LayoutAppFooterCopyright>
+    <Toolbar
+      disableGutters
+      variant="dense"
+      component="footer"
+      sx={{ justifyContent: 'center' }}
+    >
+      <Typography fontSize={rem(10)} letterSpacing={2}>
         &copy; Brian Matthew Smith, {year}. All Rights Reserved.
-      </LayoutAppFooterCopyright>
-    </LayoutAppFooterWrapper>
+      </Typography>
+    </Toolbar>
   )
 }

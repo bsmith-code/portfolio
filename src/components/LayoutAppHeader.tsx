@@ -1,50 +1,59 @@
-import { useEffect, useState } from 'react'
-import { useLocation } from 'react-router-dom'
+import { useState } from 'react'
+import { NavLink, useLocation } from 'react-router-dom'
+import { rem } from 'polished'
 
-import {
-  LayoutAppHeaderLink,
-  LayoutAppHeaderLogo,
-  LayoutAppHeaderMenu,
-  LayoutAppHeaderMenuBtn,
-  LayoutAppHeaderWrapper
-} from 'styles/components/layout.styles'
+import { AppBar, Box, styled, Toolbar } from '@mui/material'
 
 import { ROUTES_PUBLIC } from 'constants/routes.constants'
 
+const StyledLink = styled(NavLink)<{ isLogo?: boolean }>(
+  ({ theme, isLogo }) => ({
+    fontWeight: 700,
+    letterSpacing: 2,
+    fontSize: rem(12),
+    textDecoration: 'none',
+    padding: theme.spacing(0, 2),
+    color: theme.palette.primary.main,
+    ...(!isLogo && {
+      '&.active': {
+        color: theme.palette.text.primary
+      }
+    })
+  })
+)
+
 export const LayoutAppHeader = () => {
-  // Composition
   const location = useLocation()
 
-  // Local State
   const [isMenuActive, setIsMenuActive] = useState(true)
 
-  // Handlers
-  const handleMenuBtnClick = () => setIsMenuActive(isActive => !isActive)
+  const handleToggleMenu = () => {
+    setIsMenuActive(isActive => !isActive)
+  }
 
-  // Effects
-  useEffect(() => {
+  const handleCloseMenu = () => {
     setIsMenuActive(false)
-  }, [location])
+  }
 
   return (
-    <LayoutAppHeaderWrapper>
-      <LayoutAppHeaderLogo to="/">Brian M. Smith</LayoutAppHeaderLogo>
-      <LayoutAppHeaderMenu isMenuActive={isMenuActive}>
-        {ROUTES_PUBLIC.map(
-          ({ path, label, isAnchor = false, isIcon = false }) => (
-            <LayoutAppHeaderLink
-              path={path}
-              isAnchor={isAnchor}
+    <AppBar color="secondary">
+      <Toolbar sx={{ justifyContent: 'space-between' }}>
+        <StyledLink isLogo to="/">
+          Brian M. Smith
+        </StyledLink>
+        <Box component="nav">
+          {ROUTES_PUBLIC.map(({ path, label, isAnchor, isIcon }) => (
+            <StyledLink
+              to={path}
+              target={isAnchor ? '_blank' : '_self'}
+              onClick={handleCloseMenu}
               key={`route-${label}`}
             >
               {isIcon ? <i className={label} /> : label}
-            </LayoutAppHeaderLink>
-          )
-        )}
-      </LayoutAppHeaderMenu>
-      <LayoutAppHeaderMenuBtn onClick={handleMenuBtnClick}>
-        <i className="material-icons">{isMenuActive ? 'close' : 'menu'}</i>
-      </LayoutAppHeaderMenuBtn>
-    </LayoutAppHeaderWrapper>
+            </StyledLink>
+          ))}
+        </Box>
+      </Toolbar>
+    </AppBar>
   )
 }

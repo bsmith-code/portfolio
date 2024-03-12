@@ -1,5 +1,7 @@
 import { Outlet, useLocation } from 'react-router-dom'
 
+import { Box } from '@mui/material'
+
 import { LayoutAppFooter } from 'components/LayoutAppFooter'
 import { LayoutAppHeader } from 'components/LayoutAppHeader'
 import { LayoutViewHeader } from 'components/LayoutViewHeader'
@@ -22,7 +24,9 @@ export const LayoutDefault = () => {
     return (
       <>
         <LayoutAppHeader />
-        <Outlet />
+        <Box component="main" height="calc(100% - 48px)">
+          <Outlet />
+        </Box>
         <LayoutAppFooter />
       </>
     )
