@@ -1,3 +1,5 @@
+import { Chip, Divider, Grid, Paper, Stack, Typography } from '@mui/material'
+
 import {
   TimelineYearsActiveEvent,
   TimelineYearsActiveEventDate,
@@ -14,16 +16,22 @@ interface IProps {
 }
 
 export const TimelineYearsActive = ({ activeYear }: IProps) => (
-  <TimelineYearsActiveWrapper>
+  <Grid container justifyContent="center">
     {TIMELINE[activeYear].map(({ date, title, description }) => (
-      <TimelineYearsActiveEvent key={`event-${title}`}>
-        <TimelineYearsActiveEventDate>{date}</TimelineYearsActiveEventDate>
-        <TimelineYearsActiveEventTitle>{title}</TimelineYearsActiveEventTitle>
-        <TimelineYearsActiveEventDivider />
-        <TimelineYearsActiveEventDesc>
-          {description}
-        </TimelineYearsActiveEventDesc>
-      </TimelineYearsActiveEvent>
+      <Grid
+        item
+        md={6}
+        lg={4}
+        xs={12}
+        elevation={10}
+        component={Paper}
+        key={`event-${title}`}
+      >
+        <Chip label={date} color="primary" size="small" />
+        <Typography>{title}</Typography>
+        <Divider />
+        <Typography>{description}</Typography>
+      </Grid>
     ))}
-  </TimelineYearsActiveWrapper>
+  </Grid>
 )

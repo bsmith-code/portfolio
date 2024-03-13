@@ -1,7 +1,6 @@
-import { Fragment } from 'react'
 import { Outlet, useLocation } from 'react-router-dom'
 
-import { Box, Container as MuiContainer, styled } from '@mui/material'
+import { Box, Container, Stack, styled } from '@mui/material'
 
 import { LayoutAppFooter } from 'components/LayoutAppFooter'
 import { LayoutAppHeader } from 'components/LayoutAppHeader'
@@ -12,17 +11,13 @@ import {
   ROUTES_PATH_TO_LABEL_MAP
 } from 'constants/routes.constants'
 
-const StyledMain = styled(Box)`
-  min-height: calc(100% - 48px);
-`
-
 export const LayoutHome = () => (
   <>
     <LayoutAppHeader />
-    <StyledMain component="main">
+    <Stack component="main" height="100%">
       <Outlet />
-    </StyledMain>
-    <LayoutAppFooter />
+      <LayoutAppFooter />
+    </Stack>
   </>
 )
 
@@ -32,18 +27,18 @@ export const LayoutDefault = () => {
   const isWideLayout = [ROUTE_PATH_ABOUT].includes(pathname)
   const viewTitle = ROUTES_PATH_TO_LABEL_MAP?.[pathname] ?? '404 - Not Found'
 
-  const Container = isWideLayout ? Fragment : MuiContainer
+  const Component = isWideLayout ? Box : Container
 
   return (
     <>
       <LayoutAppHeader />
-      <StyledMain component="main">
+      <Stack component="main" height="100%">
         <LayoutViewHeader title={viewTitle} />
-        <Container sx={{ py: 10 }}>
+        <Component sx={{ py: 10, flexGrow: 1 }}>
           <Outlet />
-        </Container>
-      </StyledMain>
-      <LayoutAppFooter />
+        </Component>
+        <LayoutAppFooter />
+      </Stack>
     </>
   )
 }
