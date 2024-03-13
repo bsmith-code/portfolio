@@ -5,8 +5,6 @@ import { Box } from '@mui/material'
 import { TimelineYears } from 'components/TimelineYears'
 import { TimelineYearsActive } from 'components/TimelineYearsActive'
 
-import { TimelineWrapper } from 'styles/components/timeline.styles'
-
 export const ViewAbout = () => {
   const [activeYear, setActiveYear] = useState('2021')
 

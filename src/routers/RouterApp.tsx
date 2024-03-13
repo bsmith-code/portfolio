@@ -15,7 +15,7 @@ import {
   ROUTE_PATH_EXPERIENCE,
   ROUTE_PATH_EXPERTISE,
   ROUTE_PATH_PROJECTS,
-  ROUTE_PATH_STUDY
+  ROUTE_PATH_STUDY,
 } from 'constants/routes.constants'
 
 export const RouterApp = () => (

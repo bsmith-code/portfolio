@@ -18,10 +18,12 @@ export const lightTheme = createTheme({
   palette: {
     mode: 'light',
     primary: {
-      main: '#7ebaeb'
+      main: '#7ebaeb',
+      contrastText: '#fff'
     },
     secondary: {
-      main: '#efefef'
+      main: '#efefef',
+      contrastText: '#151515'
     },
     text: {
       primary: '#151515'

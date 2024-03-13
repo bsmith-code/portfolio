@@ -1,8 +1,11 @@
 import { Dispatch, SetStateAction } from 'react'
+import { rem } from 'polished'
+
+import { Button, Divider, Stack, styled } from '@mui/material'
 
 import {
   TimelineYearsBtn,
-  TimelineYearsWrapper
+  TimelineYearsWrapper,
 } from 'styles/components/timeline.styles'
 
 import { TIMELINE } from 'constants/timeline.constants'
@@ -12,16 +15,55 @@ interface IProps {
   setActiveYear: Dispatch<SetStateAction<string>>
 }
 
+const StyledButton = styled(Button)`
+  position: initial;
+  font-size: ${rem(14)};
+  line-height: 1;
+  border-radius: 0;
+  background: ${props => props.theme.palette.common.white};
+  padding: ${props => props.theme.spacing(2)};
+  @media screen and (min-width: 767px) {
+    width: 150px;
+    border-top: none;
+  }
+  &:hover,
+  &.active {
+    color: ${props => props.theme.palette.common.white};
+    background: ${props => props.theme.palette.primary.main};
+  }
+  &:before {
+    @media screen and (min-width: 767px) {
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      width: 1px;
+      background: rgba(255, 255, 255, 0.7);
+      background: linear-gradient(
+        to top,
+        rgba(0, 0, 0, 0.2),
+        rgba(255, 255, 255, 1)
+      );
+      z-index: -1;
+    }
+  }
+`
 export const TimelineYears = ({ activeYear, setActiveYear }: IProps) => (
-  <TimelineYearsWrapper>
+  <Stack
+    direction="row"
+    justifyContent="center"
+    sx={theme => ({ borderTop: `1px solid ${theme.palette.primary.main}` })}
+  >
     {Object.keys(TIMELINE).map(year => (
-      <TimelineYearsBtn
+      <StyledButton
+        variant="text"
+        disableRipple
         key={`timeline-${year}`}
         onClick={() => setActiveYear(year)}
         className={activeYear === year ? 'active' : ''}
       >
         {year}
-      </TimelineYearsBtn>
+      </StyledButton>
     ))}
-  </TimelineYearsWrapper>
+  </Stack>
 )
