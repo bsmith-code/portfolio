@@ -36,7 +36,7 @@ export const LayoutAppHeader = () => {
   }
 
   return (
-    <AppBar color="secondary">
+    <AppBar sx={theme => ({ bgcolor: theme.palette.common.white })}>
       <Toolbar sx={{ justifyContent: 'space-between' }}>
         <StyledLink isLogo to="/">
           Brian M. Smith

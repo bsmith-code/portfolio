@@ -1,5 +1,5 @@
 import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom'
-import { LayoutDefault } from 'layouts/LayoutDefault'
+import { LayoutDefault, LayoutHome } from 'layouts/LayoutDefault'
 
 import { ViewAbout } from 'views/ViewAbout'
 import { ViewContact } from 'views/ViewContact'
@@ -21,8 +21,10 @@ import {
 export const RouterApp = () => (
   <BrowserRouter>
     <Routes>
-      <Route path="/" element={<LayoutDefault />}>
+      <Route path="/" element={<LayoutHome />}>
         <Route path="/" element={<ViewHome />} />
+      </Route>
+      <Route path="/" element={<LayoutDefault />}>
         <Route path={ROUTE_PATH_ABOUT} element={<ViewAbout />} />
         <Route path={ROUTE_PATH_EXPERTISE} element={<ViewExpertise />} />
         <Route path={ROUTE_PATH_EXPERIENCE} element={<ViewExperience />} />

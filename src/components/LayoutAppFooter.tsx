@@ -10,7 +10,10 @@ export const LayoutAppFooter = () => {
       disableGutters
       variant="dense"
       component="footer"
-      sx={{ justifyContent: 'center' }}
+      sx={theme => ({
+        justifyContent: 'center',
+        bgcolor: theme.palette.secondary.main
+      })}
     >
       <Typography fontSize={rem(10)} letterSpacing={2}>
         &copy; Brian Matthew Smith, {year}. All Rights Reserved.
