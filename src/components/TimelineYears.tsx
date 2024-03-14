@@ -1,12 +1,7 @@
 import { Dispatch, SetStateAction } from 'react'
 import { rem } from 'polished'
 
-import { Button, Divider, Stack, styled } from '@mui/material'
-
-import {
-  TimelineYearsBtn,
-  TimelineYearsWrapper,
-} from 'styles/components/timeline.styles'
+import { Button, Stack, styled } from '@mui/material'
 
 import { TIMELINE } from 'constants/timeline.constants'
 

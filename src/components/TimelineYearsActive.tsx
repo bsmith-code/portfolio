@@ -1,14 +1,6 @@
 import { rem } from 'polished'
 
-import {
-  Box,
-  Chip,
-  Divider,
-  Grid,
-  Paper,
-  Stack,
-  Typography,
-} from '@mui/material'
+import { Box, Chip, Divider, Grid, Paper, Typography } from '@mui/material'
 
 import { TIMELINE } from 'constants/timeline.constants'
 
