@@ -71,4 +71,12 @@ export const TIMELINE: Record<string, ITimelineYear[]> = {
         'As the Senior Software Developer and Front-end tech lead, I provide expertise on system architecture, design, implementation, testing, delivery and operations of the Precision Analytics application. Leveraging React, Redux, Typescript, ESRI, AI, and more, we serve the energy sector by providing actionable data with proprietary AI algorithms and comprehensive visual inspections to companies looking to increase customer satisfaction, save money, and reduce risk of injury.',
     },
   ],
+  2023: [
+    {
+      date: 'December 19th, 2023',
+      title: 'Oliver Technology Corporation',
+      description:
+        'Senior Software Engineer and Frontend Team Lead of the Oliver Ali application - a collection litigation tool that transformed legal servicing by consolidating data and streamlining matter management for law firms and creditor legal departments by automating workflows, document production, case transactions, and vendor coordination, all while ensuring compliance.',
+    },
+  ],
 }

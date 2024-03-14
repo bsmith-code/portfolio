@@ -6,7 +6,7 @@ import { TimelineYears } from 'components/TimelineYears'
 import { TimelineYearsActive } from 'components/TimelineYearsActive'
 
 export const ViewAbout = () => {
-  const [activeYear, setActiveYear] = useState('2021')
+  const [activeYear, setActiveYear] = useState('2023')
 
   return (
     <Box position="relative">
