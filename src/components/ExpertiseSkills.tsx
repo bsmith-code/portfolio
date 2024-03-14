@@ -1,29 +1,30 @@
-import {
-  ExpertiseGroupList,
-  ExpertiseGroupListItem,
-  ExpertiseGroupName,
-  ExpertiseSkillIcon,
-  ExpertiseSkillName,
-  ExpertiseSkillsGrid,
-  ExpertiseSkillsGridItem
-} from 'styles/components/expertise.styles'
+import { rem } from 'polished'
+
+import { Box, Grid, Icon, Stack, Tooltip, Typography } from '@mui/material'
 
 import { EXPERTISE } from 'constants/expertise.constants'
 
 export const ExpertiseSkills = () => (
-  <ExpertiseGroupList>
+  <Box>
     {EXPERTISE.map(({ name: groupName, skills }) => (
-      <ExpertiseGroupListItem key={`expertise-${groupName}`}>
-        <ExpertiseGroupName>{groupName}</ExpertiseGroupName>
-        <ExpertiseSkillsGrid>
+      <Stack mb={5} key={`expertise-${groupName}`}>
+        <Typography mb={2} fontSize={rem(12)} fontWeight={700}>
+          {groupName}
+        </Typography>
+        <Grid container columnSpacing={6} rowSpacing={3}>
           {skills.map(({ name: skillName, icon }) => (
-            <ExpertiseSkillsGridItem key={`skill-${skillName}`}>
-              <ExpertiseSkillName>{skillName}</ExpertiseSkillName>
-              <ExpertiseSkillIcon className={icon} />
-            </ExpertiseSkillsGridItem>
+            <Grid item key={`skill-${skillName}`}>
+              <Tooltip arrow title={skillName} placement="top">
+                <Icon
+                  className={icon}
+                  color="primary"
+                  sx={{ fontSize: rem(55) }}
+                />
+              </Tooltip>
+            </Grid>
           ))}
-        </ExpertiseSkillsGrid>
-      </ExpertiseGroupListItem>
+        </Grid>
+      </Stack>
     ))}
-  </ExpertiseGroupList>
+  </Box>
 )

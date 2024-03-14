@@ -1,11 +1,18 @@
+import { Stack, styled } from '@mui/material'
+
 import { ExpertiseProfile } from 'components/ExpertiseProfile'
 import { ExpertiseSkills } from 'components/ExpertiseSkills'
 
-import { ExpertiseWrapper } from 'styles/components/expertise.styles'
+const StyledStack = styled(Stack)`
+  flex-direction: column;
+  @media screen and (min-width: 767px) {
+    flex-direction: row;
+  }
+`
 
 export const ViewExpertise = () => (
-  <ExpertiseWrapper>
+  <StyledStack direction="row">
     <ExpertiseProfile />
     <ExpertiseSkills />
-  </ExpertiseWrapper>
+  </StyledStack>
 )
