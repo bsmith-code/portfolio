@@ -21,6 +21,7 @@ const StyledCard = styled(Card)<{ showAnswer: boolean }>`
   display: flex;
   max-width: 600px;
   min-height: 300px;
+  overflow: visible;
   position: relative;
   align-items: center;
   flex-direction: column;
@@ -31,8 +32,6 @@ const StyledCard = styled(Card)<{ showAnswer: boolean }>`
   transition: ${({ showAnswer }) => (showAnswer ? '0.5s' : '0s')};
   transform: ${({ showAnswer }) => (showAnswer ? 'rotateY(-180deg)' : '')};
   & > div {
-    margin: auto;
-    text-align: center;
     backface-visibility: hidden;
   }
   .answer {
