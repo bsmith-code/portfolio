@@ -11,7 +11,7 @@ export const formatDate = (date: string) => {
 
 export const getDuration = ({
   startDate,
-  endDate
+  endDate,
 }: {
   startDate: string
   endDate: string
@@ -21,7 +21,7 @@ export const getDuration = ({
 
   const { years = 0, months = 0 } = intervalToDuration({
     start: getIsValidDate(parsedStartDate) ? parsedStartDate : new Date(),
-    end: getIsValidDate(parsedEndDate) ? parsedEndDate : new Date()
+    end: getIsValidDate(parsedEndDate) ? parsedEndDate : new Date(),
   })
 
   const preparedYears = years

@@ -1,23 +1,22 @@
 import { MouseEvent, useState } from 'react'
 import ReactPlayer from 'react-player'
+import { rem } from 'polished'
 
 import OndemandVideoIcon from '@mui/icons-material/OndemandVideo'
 import {
   Backdrop,
   Box,
+  BoxProps,
   ButtonGroup,
+  Grid,
   IconButton,
   Portal,
-  Tooltip
+  Stack,
+  StackProps,
+  styled,
+  Tooltip,
+  Typography,
 } from '@mui/material'
-
-import {
-  ExperienceCompanyDate,
-  ExperienceCompanyDuration,
-  ExperienceCompanyLogoWrapper,
-  ExperienceCompanyPosition,
-  ExperienceCompanyWrapper
-} from 'styles/components/experience.styles'
 
 import { formatDate, getDuration } from 'utils/dates.utils'
 
@@ -39,7 +38,7 @@ const ExperienceDemos = ({ demos = [] }: IDemosProps) => {
 
   return demos.length ? (
     <>
-      <ButtonGroup sx={{ mt: 1 }}>
+      <ButtonGroup sx={{ mt: 1, zIndex: 500 }}>
         {demos.map(({ title, video }) => (
           <Tooltip key={`video-${video}`} title={title}>
             <IconButton onClick={handlePlayVideo(video)}>
@@ -52,6 +51,7 @@ const ExperienceDemos = ({ demos = [] }: IDemosProps) => {
       <Portal>
         <Backdrop
           open={!!currentVideo}
+          unmountOnExit
           onClick={() => setCurrentVideo('')}
           sx={{ zIndex: 9999 }}
         >
@@ -67,35 +67,65 @@ const ExperienceDemos = ({ demos = [] }: IDemosProps) => {
   ) : null
 }
 
+const StyledStack = styled(Stack)<StackProps<'a'>>`
+  height: 100%;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.15s ease;
+  padding: ${({ theme }) => theme.spacing(4, 3)};
+  border-radius: ${({ theme }) => theme.spacing(1)};
+  border: ${({ theme }) => `1px solid ${theme.palette.secondary.main}`};
+  &:hover {
+    background: ${({ theme }) => theme.palette.secondary.main};
+  }
+`
+
+const StyledBox = styled(Box)<BoxProps<'a'>>`
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 10;
+  height: 100%;
+  position: absolute;
+`
 export const ExperienceCompanies = () => (
-  <>
+  <Grid container spacing={4} alignItems="stretch">
     {EXPERIENCE.map(
       ({ url, logo, name, position, startDate, endDate, demos = [] }) => (
-        <ExperienceCompanyWrapper key={`company-${name}`}>
-          <Box
-            top={0}
-            left={0}
-            right={0}
-            href={url}
-            bottom={0}
-            component="a"
-            target="_blank"
-            rel="noreferrer"
-            position="absolute"
-          />
-          <ExperienceCompanyLogoWrapper>
-            <img src={`assets/images/${logo}`} alt={name} />
-          </ExperienceCompanyLogoWrapper>
-          <ExperienceCompanyPosition>{position}</ExperienceCompanyPosition>
-          <ExperienceCompanyDate>
-            {formatDate(startDate)} - {formatDate(endDate)}
-          </ExperienceCompanyDate>
-          <ExperienceCompanyDuration>
-            {getDuration({ startDate, endDate })}
-          </ExperienceCompanyDuration>
-          <ExperienceDemos demos={demos} />
-        </ExperienceCompanyWrapper>
+        <Grid item key={`company-${name}`} xs={12} sm={12} md={6} lg={4}>
+          <StyledStack>
+            <StyledBox
+              href={url}
+              component="a"
+              target="_blank"
+              rel="noreferrer"
+            />
+            <Box mb={3} height="40px" width="100%" textAlign="center">
+              <img
+                alt={name}
+                src={`assets/images/${logo}`}
+                style={{ maxHeight: '100%', maxWidth: '100%' }}
+              />
+            </Box>
+            <Typography
+              mb={3}
+              color="primary"
+              fontWeight={700}
+              fontSize={rem(14)}
+            >
+              {position}
+            </Typography>
+            <Typography mb={1} fontSize={rem(14)}>
+              {formatDate(startDate)} - {formatDate(endDate)}
+            </Typography>
+            <Typography fontSize={rem(12)} fontWeight={300}>
+              {getDuration({ startDate, endDate })}
+            </Typography>
+            <ExperienceDemos demos={demos} />
+          </StyledStack>
+        </Grid>
       )
     )}
-  </>
+  </Grid>
 )
