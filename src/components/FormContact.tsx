@@ -4,15 +4,10 @@ import * as yup from 'yup'
 
 import { useSendEmailMutation } from 'store/server/contactApi'
 
+import { Alert, Button, Snackbar } from '@mui/material'
+
 import { InputReCaptcha } from 'components/InputReCaptcha'
 import { InputText } from 'components/InputText'
-
-import {
-  StyledButtonSubmit,
-  StyledFormResponse,
-  StyledFormWrapper,
-  StyledInputError
-} from 'styles/components/contact.styles'
 
 import { getQueryError } from 'utils/errors.utils'
 
@@ -22,7 +17,7 @@ import {
   FORM_FIRST_NAME,
   FORM_LAST_NAME,
   FORM_MESSAGE,
-  FORM_SUBJECT
+  FORM_SUBJECT,
 } from 'constants/forms.constants'
 
 import { IFormContact } from 'types/forms.types'
@@ -37,15 +32,11 @@ export const contactSchema = yup.object({
 
   [FORM_SUBJECT]: yup.string().required('Subject is required.'),
   [FORM_MESSAGE]: yup.string().required('Message is required.'),
-  [FORM_CAPTCHA]: yup.string().required('Recaptcha is required.')
+  [FORM_CAPTCHA]: yup.string().required('Recaptcha is required.'),
 })
 
 export const FormContact = () => {
   const [sendEmail, { error, isLoading, isSuccess }] = useSendEmailMutation()
-
-  const handleSubmit = async (formData: IFormContact) => {
-    await sendEmail(formData)
-  }
 
   const form = useForm<IFormContact>({
     mode: 'onChange',
@@ -55,31 +46,46 @@ export const FormContact = () => {
       [FORM_EMAIL]: '',
       [FORM_SUBJECT]: '',
       [FORM_MESSAGE]: '',
-      [FORM_CAPTCHA]: ''
+      [FORM_CAPTCHA]: '',
     },
-    resolver: yupResolver(contactSchema)
+    resolver: yupResolver(contactSchema),
   })
 
-  const formError = error && getQueryError(error)
+  const handleSubmit = form.handleSubmit(async (formData: IFormContact) => {
+    await sendEmail(formData)
+  })
 
-  return isSuccess ? (
-    <StyledFormResponse>Message sent successfully</StyledFormResponse>
-  ) : (
-    <StyledFormWrapper
-      onSubmit={e => {
-        void form.handleSubmit(handleSubmit)(e)
-      }}
-    >
-      <InputText name={FORM_FIRST_NAME} label="First Name" form={form} />
-      <InputText name={FORM_LAST_NAME} label="Last Name" form={form} />
-      <InputText name={FORM_EMAIL} label="Email" form={form} />
-      <InputText name={FORM_SUBJECT} label="Subject" form={form} />
-      <InputText name={FORM_MESSAGE} label="Message" form={form} />
-      <InputReCaptcha form={form} />
-      <StyledButtonSubmit disabled={isLoading} type="submit">
-        {isLoading ? 'Submitting...' : 'Submit'}
-      </StyledButtonSubmit>
-      {formError && <StyledInputError>{formError}</StyledInputError>}
-    </StyledFormWrapper>
+  const preparedFields = [
+    { name: FORM_FIRST_NAME, label: 'First Name' },
+    { name: FORM_LAST_NAME, label: 'Last Name' },
+    { name: FORM_EMAIL, label: 'Email' },
+    { name: FORM_SUBJECT, label: 'Subject' },
+    { name: FORM_MESSAGE, label: 'Message' },
+  ]
+
+  const isOpen = !!error || isSuccess
+  const message = error ? getQueryError(error) : 'Form submitted successfully.'
+
+  return (
+    <>
+      <form
+        onSubmit={handleSubmit}
+        style={{ maxWidth: '600px', margin: '0 auto' }}
+      >
+        {preparedFields.map(({ name, label }) => (
+          <InputText sx={{ mb: 2 }} name={name} label={label} form={form} />
+        ))}
+
+        <InputReCaptcha form={form} />
+        <Button disabled={isLoading} type="submit" variant="contained">
+          {isLoading ? 'Submitting...' : 'Submit'}
+        </Button>
+      </form>
+      <Snackbar open={isOpen} autoHideDuration={6000}>
+        <Alert variant="filled" severity={error ? 'error' : 'success'}>
+          {message}
+        </Alert>
+      </Snackbar>
+    </>
   )
 }

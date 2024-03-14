@@ -12,7 +12,6 @@ import {
   IconButton,
   Portal,
   Stack,
-  StackProps,
   styled,
   Tooltip,
   Typography,
@@ -67,7 +66,7 @@ const ExperienceDemos = ({ demos = [] }: IDemosProps) => {
   ) : null
 }
 
-const StyledStack = styled(Stack)<StackProps<'a'>>`
+const StyledStack = styled(Stack)`
   height: 100%;
   position: relative;
   align-items: center;

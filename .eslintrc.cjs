@@ -3,11 +3,11 @@ module.exports = {
   env: {
     node: true,
     browser: true,
-    jest: true
+    jest: true,
   },
   parser: '@typescript-eslint/parser',
   parserOptions: {
-    project: './tsconfig.json'
+    project: './tsconfig.json',
   },
   plugins: ['simple-import-sort'],
   extends: [
@@ -17,7 +17,7 @@ module.exports = {
     'plugin:@typescript-eslint/recommended-requiring-type-checking',
     'plugin:promise/recommended',
     'plugin:unicorn/recommended',
-    'plugin:prettier/recommended'
+    'plugin:prettier/recommended',
   ],
   rules: {
     'import/no-extraneous-dependencies': [
@@ -25,8 +25,8 @@ module.exports = {
       {
         devDependencies: true,
         optionalDependencies: false,
-        peerDependencies: false
-      }
+        peerDependencies: false,
+      },
     ],
     'simple-import-sort/imports': [
       'error',
@@ -51,9 +51,9 @@ module.exports = {
           // Constants
           ['^(constants)(/.*|$)'],
           // Types
-          ['^(types)(/.*|$)']
-        ]
-      }
+          ['^(types)(/.*|$)'],
+        ],
+      },
     ],
     // Floating promises in useEffects
     'no-void': 'off',
@@ -69,13 +69,13 @@ module.exports = {
     // Use function hoisting to improve code readability
     'no-use-before-define': [
       'error',
-      { functions: false, classes: true, variables: true }
+      { functions: false, classes: true, variables: true },
     ],
     // Allow most functions to rely on type inference. If the function is exported, then `@typescript-eslint/explicit-module-boundary-types` will ensure it's typed.
     '@typescript-eslint/explicit-function-return-type': 'off',
     '@typescript-eslint/no-use-before-define': [
       'error',
-      { functions: false, classes: true, variables: true, typedefs: true }
+      { functions: false, classes: true, variables: true, typedefs: true },
     ],
     // Common abbreviations are known and readable
     'unicorn/prevent-abbreviations': 'off',
@@ -94,11 +94,17 @@ module.exports = {
       'error',
       {
         namedComponents: 'arrow-function',
-        unnamedComponents: 'arrow-function'
-      }
+        unnamedComponents: 'arrow-function',
+      },
     ],
     '@typescript-eslint/unbound-method': 'off',
     'react/require-default-props': ['error', { functions: 'defaultArguments' }],
-    'react/jsx-props-no-spreading': 'off'
-  }
+    'react/jsx-props-no-spreading': 'off',
+    '@typescript-eslint/no-misused-promises': [
+      'error',
+      {
+        checksVoidReturn: false,
+      },
+    ],
+  },
 }

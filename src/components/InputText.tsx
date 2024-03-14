@@ -2,12 +2,12 @@ import {
   FieldValues,
   Path,
   useController,
-  UseFormReturn
+  UseFormReturn,
 } from 'react-hook-form'
 
-import { StyledInputError } from 'styles/components/contact.styles'
+import { BaseTextFieldProps, Stack, TextField } from '@mui/material'
 
-interface IProps<T extends FieldValues> {
+interface IProps<T extends FieldValues> extends BaseTextFieldProps {
   label?: string
   name: Path<T>
   form: UseFormReturn<T>
@@ -16,26 +16,26 @@ interface IProps<T extends FieldValues> {
 export const InputText = <T extends FieldValues>({
   label = '',
   name,
-  form
+  form,
+  ...restProps
 }: IProps<T>) => {
   const {
     field,
-    fieldState: { error }
+    fieldState: { error },
   } = useController({ name, control: form.control })
 
-  const { value, onChange: handleChange } = field
-
   return (
-    <fieldset>
-      {!!label && <label htmlFor={`input-text-${name}`}>{label}</label>}
-      <input
+    <Stack>
+      <TextField
+        {...field}
+        fullWidth
         name={name}
-        type="text"
-        value={value}
-        onChange={handleChange}
-        id={`input-text-${name}`}
+        label={label}
+        error={!!error}
+        variant="outlined"
+        helperText={error?.message}
+        {...restProps}
       />
-      {!!error && <StyledInputError>{error.message}</StyledInputError>}
-    </fieldset>
+    </Stack>
   )
 }

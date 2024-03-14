@@ -1,7 +1,7 @@
 import ReCAPTCHA from 'react-google-recaptcha'
 import { useController, UseFormReturn } from 'react-hook-form'
 
-import { StyledInputError } from 'styles/components/contact.styles'
+import { FormHelperText, Stack } from '@mui/material'
 
 import { FORM_CAPTCHA } from 'constants/forms.constants'
 
@@ -14,7 +14,7 @@ interface IProps {
 export const InputReCaptcha = ({ form }: IProps) => {
   const {
     field,
-    fieldState: { error }
+    fieldState: { error },
   } = useController({ name: FORM_CAPTCHA, control: form.control })
 
   const handleReCaptchaChange = (token: string | null) => {
@@ -26,13 +26,13 @@ export const InputReCaptcha = ({ form }: IProps) => {
   }
 
   return (
-    <fieldset>
+    <Stack mb={2}>
       <ReCAPTCHA
         onChange={handleReCaptchaChange}
         onExpired={handleReCaptchaExpired}
         sitekey={process.env.REACT_APP_RECAPTCHA_KEY ?? ''}
       />
-      {!!error && <StyledInputError>{error.message}</StyledInputError>}
-    </fieldset>
+      {!!error && <FormHelperText error>{error.message}</FormHelperText>}
+    </Stack>
   )
 }

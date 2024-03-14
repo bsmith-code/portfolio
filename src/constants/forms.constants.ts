@@ -1,6 +1,6 @@
-export const FORM_EMAIL = 'email'
-export const FORM_SUBJECT = 'subject'
-export const FORM_MESSAGE = 'message'
-export const FORM_CAPTCHA = 'recaptcha'
-export const FORM_LAST_NAME = 'lastName'
-export const FORM_FIRST_NAME = 'firstName'
+export const FORM_EMAIL = 'email' as const
+export const FORM_SUBJECT = 'subject' as const
+export const FORM_MESSAGE = 'message' as const
+export const FORM_CAPTCHA = 'recaptcha' as const
+export const FORM_LAST_NAME = 'lastName' as const
+export const FORM_FIRST_NAME = 'firstName' as const
