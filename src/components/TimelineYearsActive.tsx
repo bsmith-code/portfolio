@@ -9,9 +9,9 @@ interface IProps {
 }
 
 export const TimelineYearsActive = ({ activeYear }: IProps) => (
-  <Grid container justifyContent="center" py={10} columnSpacing={3}>
+  <Grid container justifyContent="center" px={2} py={10} spacing={3}>
     {TIMELINE[activeYear].map(({ date, title, description }) => (
-      <Grid item md={6} lg={3} xs={12} key={`event-${title}`}>
+      <Grid item sm={6} md={6} lg={3} xs={12} key={`event-${title}`}>
         <Box
           p={3}
           elevation={10}

@@ -45,6 +45,7 @@ const StyledButton = styled(Button)`
 `
 export const TimelineYears = ({ activeYear, setActiveYear }: IProps) => (
   <Stack
+    overflow="auto"
     direction="row"
     justifyContent="center"
     sx={theme => ({ borderTop: `1px solid ${theme.palette.primary.main}` })}

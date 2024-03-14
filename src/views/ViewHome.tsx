@@ -14,7 +14,7 @@ const StyledTitle = styled(Typography)`
 const StyledStack = styled(Stack)`
   height: 100%;
   position: relative;
-  background: url('../assets/images/view_home-bg.jpg') no-repeat center;
+  background: url('assets/images/view_home-bg.jpg') no-repeat center;
   background-size: cover;
   justify-content: center;
   align-items: center;

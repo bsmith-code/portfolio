@@ -1,20 +1,26 @@
 import { rem } from 'polished'
 
-import { Stack, styled, Typography } from '@mui/material'
+import {
+  Stack,
+  styled,
+  Typography,
+  useMediaQuery,
+  useTheme,
+} from '@mui/material'
 
 interface IProps {
   title: string
 }
 
-const StyledStack = styled(Stack)`
-  height: 280px;
+const StyledStack = styled(Stack)<{ isMobile: boolean }>`
+  height: ${({ isMobile }) => (isMobile ? '280px' : '320px')};
   flex-shrink: 0;
-  margin-top: 64px;
+  margin-top: ${({ isMobile }) => (isMobile ? '56px' : '64px')};
   position: relative;
   background-size: cover;
   justify-content: center;
   background-position: center;
-  background-image: url('public/assets/images/view_page-bg.jpg');
+  background-image: url('assets/images/view_page-bg.jpg');
   &:after {
     content: '';
     display: block;
@@ -24,9 +30,6 @@ const StyledStack = styled(Stack)`
     right: 0;
     bottom: 0;
     background: rgba(255, 255, 255, 0.5);
-  }
-  @media screen and (min-width: 767px) {
-    height: 320px;
   }
 `
 
@@ -43,8 +46,13 @@ const StyledTypography = styled(Typography)<{ component: string }>`
   }
 `
 
-export const LayoutViewHeader = ({ title }: IProps) => (
-  <StyledStack>
-    <StyledTypography component="h1">{title}</StyledTypography>
-  </StyledStack>
-)
+export const LayoutViewHeader = ({ title }: IProps) => {
+  const theme = useTheme()
+  const isMobile = useMediaQuery(theme.breakpoints.down('sm'))
+
+  return (
+    <StyledStack isMobile={isMobile}>
+      <StyledTypography component="h1">{title}</StyledTypography>
+    </StyledStack>
+  )
+}
