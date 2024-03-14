@@ -28,37 +28,37 @@ export const ROUTES_PUBLIC: {
 }[] = [
   {
     path: ROUTE_PATH_ABOUT,
-    label: ROUTE_LABEL_ABOUT
+    label: ROUTE_LABEL_ABOUT,
   },
   {
     path: ROUTE_PATH_EXPERTISE,
-    label: ROUTE_LABEL_EXPERTISE
+    label: ROUTE_LABEL_EXPERTISE,
   },
   {
     path: ROUTE_PATH_EXPERIENCE,
-    label: ROUTE_LABEL_EXPERIENCE
+    label: ROUTE_LABEL_EXPERIENCE,
   },
   {
     path: ROUTE_PATH_CONTACT,
-    label: ROUTE_LABEL_CONTACT
+    label: ROUTE_LABEL_CONTACT,
   },
   {
     isAnchor: true,
     path: ROUTE_PATH_RESUME,
-    label: ROUTE_LABEL_RESUME
+    label: ROUTE_LABEL_RESUME,
   },
   {
     isAnchor: true,
     isIcon: true,
     path: ROUTE_PATH_LINKEDIN,
-    label: ROUTE_LABEL_LINKEDIN
+    label: ROUTE_LABEL_LINKEDIN,
   },
   {
     isAnchor: true,
     isIcon: true,
     path: ROUTE_PATH_GITHUB,
-    label: ROUTE_LABEL_GITHUB
-  }
+    label: ROUTE_LABEL_GITHUB,
+  },
 ]
 
 export const ROUTES_PATH_TO_LABEL_MAP: Record<string, string> = {
@@ -67,5 +67,5 @@ export const ROUTES_PATH_TO_LABEL_MAP: Record<string, string> = {
   [ROUTE_PATH_EXPERTISE]: ROUTE_LABEL_EXPERTISE,
   [ROUTE_PATH_PROJECTS]: ROUTE_LABEL_PROJECTS,
   [ROUTE_PATH_EXPERIENCE]: ROUTE_LABEL_EXPERIENCE,
-  [ROUTE_PATH_STUDY]: ROUTE_LABEL_STUDY
+  [ROUTE_PATH_STUDY]: ROUTE_LABEL_STUDY,
 }

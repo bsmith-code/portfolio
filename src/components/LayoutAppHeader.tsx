@@ -16,9 +16,9 @@ const StyledLink = styled(NavLink)<{ isLogo?: boolean }>(
     color: theme.palette.primary.main,
     ...(!isLogo && {
       '&.active': {
-        color: theme.palette.text.primary
-      }
-    })
+        color: theme.palette.text.primary,
+      },
+    }),
   })
 )
 

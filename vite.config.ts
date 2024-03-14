@@ -8,19 +8,22 @@ import tsconfigPaths from 'vite-tsconfig-paths'
 // https://vitejs.dev/config/
 export default defineConfig({
   build: {
-    outDir: 'build'
+    outDir: 'build',
   },
   server: {
     port: 3000,
-    host: 'brianmatthewsmith.local'
+    host: 'brianmatthewsmith.local',
   },
   plugins: [
     reactRefresh(),
     tsconfigPaths(),
     svgrPlugin(),
     checker({
-      typescript: true
+      typescript: true,
+      eslint: {
+        lintCommand: 'eslint "./src/**/*.{ts,tsx}"',
+      },
     }),
-    EnvironmentPlugin('all', { prefix: 'REACT_APP_' })
-  ]
+    EnvironmentPlugin('all', { prefix: 'REACT_APP_' }),
+  ],
 })

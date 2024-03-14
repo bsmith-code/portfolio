@@ -4,7 +4,7 @@ import {
   FORM_FIRST_NAME,
   FORM_LAST_NAME,
   FORM_MESSAGE,
-  FORM_SUBJECT
+  FORM_SUBJECT,
 } from 'constants/forms.constants'
 
 export interface IFormContact {

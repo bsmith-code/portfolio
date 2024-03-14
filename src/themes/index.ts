@@ -13,29 +13,29 @@ import { createTheme, PaletteColor, PaletteColorOptions } from '@mui/material'
 export const lightTheme = createTheme({
   typography: {
     fontFamily: 'Open Sans',
-    fontWeightMedium: 600
+    fontWeightMedium: 600,
   },
   palette: {
     mode: 'light',
     primary: {
       main: '#7ebaeb',
-      contrastText: '#fff'
+      contrastText: '#fff',
     },
     secondary: {
       main: '#efefef',
-      contrastText: '#151515'
+      contrastText: '#151515',
     },
     text: {
-      primary: '#151515'
-    }
+      primary: '#151515',
+    },
   },
   components: {
     MuiCssBaseline: {
       styleOverrides: {
         'html, body, #root': {
-          height: '100%'
-        }
-      }
-    }
-  }
+          height: '100%',
+        },
+      },
+    },
+  },
 })

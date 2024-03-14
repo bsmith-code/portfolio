@@ -6,7 +6,7 @@ import {
   StyledPagination,
   StyledStudyCategory,
   StyledStudyGuide,
-  StyledStudyTitle
+  StyledStudyTitle,
 } from 'styles/components/study.styles'
 
 import { shuffleArray } from 'utils/arrays.utils'

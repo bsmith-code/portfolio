@@ -15,8 +15,8 @@ export const EXPERTISE: IExpertise[] = [
       { name: 'Next.js', icon: 'devicon-nextjs-original-wordmark' },
       { name: 'Storybook', icon: 'devicon-storybook-plain' },
       { name: 'Vue & Vuex', icon: 'devicon-vuejs-plain' },
-      { name: 'Socket.io', icon: 'devicon-socketio-original' }
-    ]
+      { name: 'Socket.io', icon: 'devicon-socketio-original' },
+    ],
   },
   {
     name: 'Back End',
@@ -25,8 +25,8 @@ export const EXPERTISE: IExpertise[] = [
       { name: 'Express', icon: 'devicon-express-original' },
       { name: 'Sequelize', icon: 'devicon-sequelize-plain' },
       { name: 'MySQL', icon: 'devicon-mysql-plain' },
-      { name: 'Postgresql', icon: 'devicon-postgresql-plain' }
-    ]
+      { name: 'Postgresql', icon: 'devicon-postgresql-plain' },
+    ],
   },
   {
     name: 'DevOps',
@@ -39,7 +39,7 @@ export const EXPERTISE: IExpertise[] = [
       { name: 'Ubuntu', icon: 'devicon-ubuntu-plain' },
       { name: 'Linux', icon: 'devicon-linux-plain' },
       { name: 'Apache', icon: 'devicon-apache-plain' },
-      { name: 'Nginx', icon: 'devicon-nginx-original' }
-    ]
-  }
+      { name: 'Nginx', icon: 'devicon-nginx-original' },
+    ],
+  },
 ]

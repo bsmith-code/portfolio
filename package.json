@@ -8,7 +8,8 @@
     "preview": "dotenv -e .env.prod vite build && vite preview",
     "build": "tsc && dotenv -e .env.prod vite build",
     "test": "TZ=America/New_York jest --updateSnapshot --watchAll=false --logHeapUsage --maxWorkers=50%",
-    "eject": "react-scripts eject"
+    "lint": "eslint ./src/**/*.{ts,tsx}",
+    "lint-fix": "eslint ./src/**/*.{ts,tsx} --fix"
   },
   "dependencies": {
     "@biere/normalize-scss": "^7.0.1",

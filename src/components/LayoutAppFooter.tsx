@@ -12,7 +12,7 @@ export const LayoutAppFooter = () => {
       component="footer"
       sx={theme => ({
         justifyContent: 'center',
-        bgcolor: theme.palette.secondary.main
+        bgcolor: theme.palette.secondary.main,
       })}
     >
       <Typography fontSize={rem(10)} letterSpacing={2}>
