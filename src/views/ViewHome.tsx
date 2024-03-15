@@ -25,11 +25,7 @@ const StyledStack = styled(Stack)`
     left: 0;
     bottom: 0;
     right: 0;
-    background: radial-gradient(
-      ellipse at center,
-      rgba(21, 21, 21, 0.2) 10%,
-      rgba(255, 255, 255, 0.3) 40%
-    );
+    background: rgba(21, 21, 21, 0.2);
     z-index: 0;
   }
 `
@@ -39,7 +35,7 @@ export const ViewHome = () => {
 
   return (
     <StyledStack>
-      <Box zIndex={500} textAlign="center">
+      <Box zIndex={500} textAlign="center" px={2}>
         <StyledTitle color="common.white">Senior Software Engineer</StyledTitle>
         <Typography color="common.white" fontWeight={700}>
           {elapsedYears} years of professional &amp; enterprise-level experience

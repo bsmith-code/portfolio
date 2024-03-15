@@ -8,6 +8,7 @@ import {
   Box,
   Drawer,
   IconButton,
+  paperClasses,
   styled,
   Toolbar,
   useMediaQuery,
@@ -40,7 +41,7 @@ export const LayoutAppHeader = () => {
   const muiTheme = useTheme()
   const isMobile = useMediaQuery(muiTheme.breakpoints.down('md'))
 
-  const [isMenuActive, setIsMenuActive] = useState(true)
+  const [isMenuActive, setIsMenuActive] = useState(false)
 
   const handleToggleMenu = () => {
     setIsMenuActive(isActive => !isActive)
@@ -67,6 +68,7 @@ export const LayoutAppHeader = () => {
           component="nav"
           open={isMenuActive}
           onClose={handleCloseMenu}
+          sx={{ [`.${paperClasses.root}`]: { py: 2 } }}
         >
           {ROUTES_PUBLIC.map(({ path, label, isAnchor, isIcon }) => (
             <StyledLink
